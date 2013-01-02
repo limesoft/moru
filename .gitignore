@@ -13,3 +13,12 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the vendor
+/vendor
+
+# Ignore the test
+/test
+
+# Ignore the database.yml
+/config/database.yml
