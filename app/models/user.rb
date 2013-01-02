@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
 
   ##
   # Validatetions
-
-  # Э-шуудан давхардах ёсгүй
   validates_uniqueness_of :email
 
   ##

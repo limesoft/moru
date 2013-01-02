@@ -15,7 +15,7 @@ describe User do
   it { should respond_to :email }
 
   it "#has many authentications" do
-    puts '-----------------', authentications
+    pending
     #user.authentications = authentications
     #user.save.should be_valid
   end
