@@ -63,5 +63,10 @@ module Moru
 
     # strong_parameters gem-г ашиглаж байгаа тул attr_accessible-г ашиглах шаардлагагүй
     config.active_record.whitelist_attributes = false
+
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :fabrication
+    end
   end
 end
