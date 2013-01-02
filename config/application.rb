@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -58,5 +60,8 @@ module Moru
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # strong_parameters gem-г ашиглаж байгаа тул attr_accessible-г ашиглах шаардлагагүй
+    config.active_record.whitelist_attributes = false
   end
 end
