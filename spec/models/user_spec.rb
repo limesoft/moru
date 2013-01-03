@@ -7,7 +7,7 @@ describe User do
   let(:user) { Fabricate(:user) }
   let(:authentications) do
     @authentications = []
-    3.times { @authentications << Fabricate.build(:authentication, user: user) }
+    # 3.times { @authentications << Fabricate.build(:authentication, user: user) }
     @authentications
   end
 

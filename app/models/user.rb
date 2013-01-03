@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
   ##
-  # Validatetions
+  # Validations
   validates_uniqueness_of :email
 
   ##
@@ -14,4 +14,14 @@ class User < ActiveRecord::Base
 
   # Уг хэрэглэгчийн устгахад authentications-д нь цуг устгагдана
   has_many :authentications, dependent: :destroy
+
+  # Уг хэрэглэгч ADMIN эсэхийг шалгаж байна
+  def is_admin?
+    role == ROLE_ADMIN
+  end
+
+  # Уг хэрэглэгч USER эсэхийг шалгаж байна
+  def is_user?
+    role == ROLE_USER
+  end
 end
