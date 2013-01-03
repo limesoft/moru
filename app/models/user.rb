@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
   # Уг хэрэглэгчийн устгахад authentications-д нь цуг устгагдана
   has_many :authentications, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Уг хэрэглэгч ADMIN эсэхийг шалгаж байна
   def admin?
