@@ -2,14 +2,36 @@
 
 module Ability
 
-  def self.for(user)
+  def self.for(guest)
+    guest ||= User.new # guest user (not logged in)
+    if guest.admin?
+      AdminAbility.new(guest)
+    elsif guest.user?
+      UserAbility.new(guest)
+    else
+      GuestAbility.new(guest)
+    end
+  end
 
-    user ||= User.new # guest user (not logged in)
+  ##
+  # Guest abilities
+  class GuestAbility
+    include CanCan::Ability
 
-    if user.is_admin?
-      AdminAbility.new(user)
-    elsif user.is_user?
-      UserAbility.new(user)
+    def initialize(user)
+      can :manage, Event
+      can :read, User
+    end
+  end
+
+  ##
+  # User abilities
+  class UserAbility
+    include CanCan::Ability
+
+    def initialize(user)
+      can :read, Event
+      can :read, User
     end
   end
 
@@ -19,18 +41,8 @@ module Ability
     include CanCan::Ability
 
     def initialize(user)
-
-    end
-  end
-
-
-  ##
-  # User abilities
-  class UserAbility
-    include CanCan::Ability
-
-    def initialize(user)
-
+      can :manage, Event
+      can :manage, User
     end
   end
 end

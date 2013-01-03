@@ -2,9 +2,6 @@
 
 class User < ActiveRecord::Base
 
-  # Including strong_parameters gem
-  include ActiveModel::ForbiddenAttributesProtection
-
   ##
   # Validations
   validates_uniqueness_of :email
@@ -17,12 +14,12 @@ class User < ActiveRecord::Base
   has_many :authentications, dependent: :destroy
 
   # Уг хэрэглэгч ADMIN эсэхийг шалгаж байна
-  def is_admin?
+  def admin?
     role == ROLE_ADMIN
   end
 
   # Уг хэрэглэгч USER эсэхийг шалгаж байна
-  def is_user?
+  def user?
     role == ROLE_USER
   end
 end

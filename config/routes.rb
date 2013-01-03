@@ -9,4 +9,6 @@ Moru::Application.routes.draw do
   match "/auth/failure" => "authentications#failure"
   match 'logout' => 'authentications#logout', as: 'logout'
 
+  resources :events
+
 end

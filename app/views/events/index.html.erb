@@ -1,0 +1,22 @@
+<h1>Events</h1>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th></th>
+  </tr>
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= link_to event.title, event_path(event) %></td>
+      <td>
+        <%= link_to "Edit", edit_event_path(event) %>
+        <%= link_to "Destroy", event, data: { confirm: 'Are you sure?', method: :delete } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<% if can? :create, Event %>
+  <%= link_to "New Event", new_event_path %>
+<% end %>
+
