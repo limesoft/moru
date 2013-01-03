@@ -3,7 +3,30 @@
 class AuthenticationsController < ApplicationController
 
   def callback
-    raise omniauth.to_yaml
+    # raise request.env["omniauth.auth"].to_yaml
+    if auth.authenticated?
+      session[:user_id] = auth.user.id
+      redirect_to root_url, notice: "Logged in."
+    elsif user_signed_in?
+      auth.add_authentication_to current_user
+      redirect_to root_url, notice: "Logged in."
+    else
+      reset_session # protect from session fixation attack
+      if auth.already_registered?
+        redirect_to root_url, notice: "Таны \"#{omniauth.provider.capitalize}\" дээр бүртгэгдсэн \"#{omniauth.email}\" э-шуудангийн хаяг манай сайтанд бүртгэлтэй байна."
+      elsif auth.register
+        session[:user_id] = auth.user.id
+        redirect_to root_url, notice: "Signed up."
+      else
+        redirect_to root_url, notice: "Алдаа гарсан тул та хэсэг хугацааны дараа дахин оролдоно уу"
+      end
+    end
+  end
+
+  def logout
+    @current_user = nil
+    reset_session # protect from session fixation attack
+    redirect_to root_url, notice: "Logged out."
   end
 
   def failure
@@ -11,8 +34,12 @@ class AuthenticationsController < ApplicationController
     redirect_to root_url
   end
 
-  protected
+  private
     def omniauth
-      request.env["omniauth.auth"]
+      @omniauth ||= Omniauth.new(request.env["omniauth.auth"])
+    end
+
+    def auth
+      @auth ||= AuthenticationService.new(omniauth)
     end
 end

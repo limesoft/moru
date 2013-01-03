@@ -1,2 +1,11 @@
 <h1>Home#index</h1>
+
+<% flash.each do |key, value| %>
+  <p><%= value%></p>
+<% end %>
+
+<% if user_signed_in? %>
+  <p>Welcome <%= current_user.try :name %>!&nbsp;<%= link_to "Logout", logout_path %></p>
+<% end %>
+
 <p><%= login_with_twitter %></p>

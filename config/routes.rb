@@ -7,5 +7,6 @@ Moru::Application.routes.draw do
   # Omniauth
   match "/auth/:provider/callback" => "authentications#callback"
   match "/auth/failure" => "authentications#failure"
+  match 'logout' => 'authentications#logout', as: 'logout'
 
 end
