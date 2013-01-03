@@ -21,6 +21,7 @@ module Ability
     def initialize(user)
       can :manage, Event
       can :read, User
+      can :read, Comment
     end
   end
 
@@ -32,6 +33,9 @@ module Ability
     def initialize(user)
       can :read, Event
       can :read, User
+      can :read, Comment
+
+      can :manage, Comment, user_id: user.id
     end
   end
 
@@ -43,6 +47,7 @@ module Ability
     def initialize(user)
       can :manage, Event
       can :manage, User
+      can :manage, Comment
     end
   end
 end
