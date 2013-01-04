@@ -9,7 +9,10 @@ gem 'pg'
 gem 'strong_parameters'
 gem 'jquery-rails'
 gem 'cancan'
-gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 
 # Gems used only for assets and not required
 # in production environments by default.

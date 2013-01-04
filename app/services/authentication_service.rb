@@ -16,11 +16,15 @@ class AuthenticationService
 
   def register
     if [PROVIDER_FACEBOOK, PROVIDER_GOOGLE, PROVIDER_GITHUB].include?(@omniauth.provider)
-    elsif PROVIDER_TWITTER == @omniauth.provider
-      @user = User.new(email: "", name: @omniauth.name, role: ROLE_USER)
+      @user = User.new(email: @omniauth.email, role: ROLE_USER, name: @omniauth.name)
       @user.save(validate: false)
       add_authentication_to @user
       return @user
+    #elsif PROVIDER_TWITTER == @omniauth.provider
+    #  @user = User.new(email: "", name: @omniauth.name, role: ROLE_USER)
+    #  @user.save(validate: false)
+    #  add_authentication_to @user
+    #  return @user
     end
     nil
   end
