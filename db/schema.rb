@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103112315) do
+ActiveRecord::Schema.define(:version => 20130104030140) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(:version => 20130103112315) do
     t.text     "content"
     t.float    "latitude"
     t.float    "longitude"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "rsvps", :force => true do |t|
+    t.integer  "going"
+    t.integer  "user_id"
+    t.integer  "event_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

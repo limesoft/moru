@@ -22,6 +22,7 @@ module Ability
       can :manage, Event
       can :read, User
       can :read, Comment
+      can :read, Rsvp
     end
   end
 
@@ -34,8 +35,10 @@ module Ability
       can :read, Event
       can :read, User
       can :read, Comment
+      can :read, Rsvp
 
       can :manage, Comment, user_id: user.id
+      can :manage, Rsvp, user_id: user.id
     end
   end
 
@@ -48,6 +51,7 @@ module Ability
       can :manage, Event
       can :manage, User
       can :manage, Comment
+      can :manage, Rsvp
     end
   end
 end
