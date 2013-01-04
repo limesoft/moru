@@ -49,6 +49,7 @@ module Ability
 
     def initialize(user)
       can :manage, Event
+      can :manage, Authentication
       can :manage, User
       can :manage, Comment
       can :manage, Rsvp
