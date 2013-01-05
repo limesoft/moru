@@ -11,6 +11,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # Github
   provider :github, ENV["OAUTH_GITHUB_CLIENT_ID"], ENV["OAUTH_GITHUB_CLIENT_SECRET"], scope: "user"
 
+  # Google
+  provider :google_oauth2, ENV["OAUTH_GOOGLE_CLIENT_ID"], ENV["OAUTH_GOOGLE_CLIENT_SECRET"]
+
   # Omniauth failure monkey patch
   on_failure do |env|
     message_key = env['omniauth.error.type']
