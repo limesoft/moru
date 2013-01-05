@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :topics
 
   # RSVP
   has_many :rsvps, dependent: :destroy

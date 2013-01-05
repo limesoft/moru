@@ -23,6 +23,7 @@ module Ability
       can :read, User
       can :read, Comment
       can :read, Rsvp
+      can :read, Topic
     end
   end
 
@@ -36,9 +37,12 @@ module Ability
       can :read, User
       can :read, Comment
       can :read, Rsvp
+      can :read, Topic
+      can [:read, :create], Authentication
 
       can :manage, Comment, user_id: user.id
       can :manage, Rsvp, user_id: user.id
+      can :manage, Topic, user_id: user.id
     end
   end
 
@@ -53,6 +57,7 @@ module Ability
       can :manage, User
       can :manage, Comment
       can :manage, Rsvp
+      can :manage, Topic
     end
   end
 end
