@@ -8,6 +8,9 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   # Facebook
   provider :facebook, ENV["OAUTH_FACEBOOK_APP_ID"], ENV["OAUTH_FACEBOOK_APP_SECRET"]
 
+  # Github
+  provider :github, ENV["OAUTH_GITHUB_CLIENT_ID"], ENV["OAUTH_GITHUB_CLIENT_SECRET"], scope: "user"
+
   # Omniauth failure monkey patch
   on_failure do |env|
     message_key = env['omniauth.error.type']
