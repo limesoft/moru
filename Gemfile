@@ -9,8 +9,10 @@ gem 'pg'
 gem 'strong_parameters'
 gem 'jquery-rails'
 gem 'cancan'
+gem 'warden'
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
 

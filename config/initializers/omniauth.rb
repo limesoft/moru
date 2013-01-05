@@ -3,7 +3,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
 
   # Twitter
-  # provider :twitter, ENV["OAUTH_TWITTER_CONSUMER_KEY"], ENV["OAUTH_TWITTER_CONSUMER_SECRET"]
+  provider :twitter, ENV["OAUTH_TWITTER_CONSUMER_KEY"], ENV["OAUTH_TWITTER_CONSUMER_SECRET"]
 
   # Facebook
   provider :facebook, ENV["OAUTH_FACEBOOK_APP_ID"], ENV["OAUTH_FACEBOOK_APP_SECRET"]

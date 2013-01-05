@@ -14,14 +14,19 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
+  protected
+    def warden
+      env['warden']
+    end
+
   private
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      warden.user
     end
     helper_method :current_user
 
     def user_signed_in?
-      current_user.present?
+      warden.authenticated? && current_user.user?
     end
     helper_method :user_signed_in?
 end
