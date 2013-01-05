@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 
   ##
   # Validations
-  validates_uniqueness_of :email
   validates_inclusion_of :role, in: ROLES
 
   ##
