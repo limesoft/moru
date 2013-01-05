@@ -30,11 +30,11 @@ class AuthenticationService
   end
 
   def user
-    @user ||= user_from_omniauth
+    @user ||= from_omniauth
   end
 
   private
-    def user_from_omniauth
+    def from_omniauth
       auth = Authentication.find_by_provider_and_uid(@omniauth.provider, @omniauth.uid)
       return (auth.present? ? auth.user : nil)
     end
