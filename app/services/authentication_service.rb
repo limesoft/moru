@@ -11,13 +11,13 @@ class AuthenticationService
   end
 
   def already_registered?
-    User.exists?(email: @omniauth.email)
+    Authentication.exists?(email: @omniauth.email)
   end
 
   def register
     if PROVIDERS.include?(@omniauth.provider)
-      @user = User.new(email: @omniauth.email, role: ROLE_USER, name: @omniauth.name)
-      @user.save(validate: false)
+      @user = User.new(role: ROLE_USER, name: @omniauth.name)
+      @user.save
       add_authentication_to @user
       return @user
     end
@@ -25,7 +25,7 @@ class AuthenticationService
   end
 
   def add_authentication_to(user)
-    user.authentications << Authentication.new(provider: @omniauth.provider, uid: @omniauth.uid)
+    user.authentications << Authentication.new(provider: @omniauth.provider, uid: @omniauth.uid, email: @omniauth.email)
     user.save
   end
 

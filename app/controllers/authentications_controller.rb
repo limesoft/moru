@@ -4,7 +4,6 @@ class AuthenticationsController < ApplicationController
 
   def callback
     # raise request.env["omniauth.auth"].to_yaml
-    auth = AuthenticationService.new(Omniauth.new(env["omniauth.auth"]))
     if auth.authenticated?
       warden.set_user auth.user
       redirect_to root_url, notice: "Logged in."
