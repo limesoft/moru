@@ -19,7 +19,7 @@ module Ability
     include CanCan::Ability
 
     def initialize(user)
-      can :manage, Event
+      can :read, Event
       can :read, User
       can :read, Comment
       can :read, Rsvp

@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- HEADER -->
 	<%= render 'header' %>	
-	<%= render 'next_event' %>
-		<div class="container_10 clearfix">
-			<%= yield %>
-		</div>
+
+  <!-- CONTAINER -->
+	<%= yield %>
+
+  <!-- FOOTER -->
 	<%= render 'footer' %>
 </body>
 </html>
