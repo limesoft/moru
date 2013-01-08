@@ -1,21 +1,50 @@
-<h1>Home#index</h1>
+<div class="grid_10">
 
-<% flash.each do |key, value| %>
-  <p><%= value%></p>
-<% end %>
+	<div class="grid_7 alpha">
 
-<% if user_signed_in? %>
-  <p>Welcome <%= current_user.try :name %>!&nbsp;<%= link_to "Logout", logout_path %></p>
-<% end %>
+		<!-- begin left content -->
+		<div class="left-content clearfix">
 
-<p>
-  <%= login_with_twitter %><br/>
-  <%= login_with_facebook %><br/>
-  <%= login_with_github %><br/>
-  <%= login_with_google_oauth2 %>
-</p>
+			<div class="post-item">
+				<div class="post-img"> if image is available then is here </div>
+				<div class="post-content">
+					<h2> assembling sass </h2>
+					<span> renno // 5 өдрийн өмнө нийтэлсэн </span>
+					<div class="separator"></div>
+					<div class="post-text">
+						Envy Labs does it again with a great course on using SASS and Compass. This class is a great rundown on 
+						the benefits of utilizing both throughout. Even if you're quite familiar with SASS and COMPASS like I am, you'll be amazed on how thorough Nick Walsh goes through some of the benefits of Compass and underrated SASS functions to achieve more with less code and saving invaluable amounts of time. Whether you're a beginner with using Compass or want to be more refined using Compass, this course won't leave you 
+						disappointed. Assembling Sass Part 2 is a perfect jumpstart for learning how to use Compass. I love how the Code School team focuses in on best practices. Since Compass and Sass are both so extensive, this course helps you weigh the pros and the cons of using certain mixins or functions. This course is excellent, I would recommend it to anyone wanting more practice on their Sass and would like to understand how and why to use Compass in their Sass workflow. Lorem Ipsum is simply dummy text of printing and typesetting.
+					</div>
+					<div class="post-tool clearfix">
+						<a href="javascript:void(0)" class="comment-count"><i class="comment-icon"></i> 5 сэтгэгдэлтэй </a>
+						<a href="javascript:void(0)" class="post-more"> Дэлгэрэнгүй </a>
+					</div>
+				</div>
+			</div>
 
-<p>
-  <%= link_to "Events", events_path %><br/>
-  <%= link_to "Topics", topics_path %>
-</p>
+			<div class="paginate clearfix">
+				<a href="javascript:void(0)" class="prev"> < </a>
+				<a href="javascript:void(0)"> 1 </a>
+				<a href="javascript:void(0)"> 2 </a>
+				<a href="javascript:void(0)"> 3 </a>
+				<a href="javascript:void(0)"> 4 </a>
+				<a href="javascript:void(0)" class="next"> > </a>
+			</div>
+			
+		</div>
+		<!-- end left content -->
+
+	</div>
+
+	<div class="grid_3 omega">
+
+		<!-- begin right content -->
+		<div class="right-content clearfix">
+			fasdfa
+		</div>
+		<!-- end right content -->
+
+	</div>
+
+</div>

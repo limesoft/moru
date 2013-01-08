@@ -1,0 +1,46 @@
+<header class="clearfix">
+	<div class="container_10">
+		<div class="grid_10">
+
+			<!-- moru logo -->
+			<a class="moru-logo"></a>
+
+
+			<!-- ***************** IF USER NOT LOGGED IN THIS SECTION VISIBLE  *********************** -->			
+			<!-- social login section -->
+			<!-- <nav class="social-login"> -->
+				<!-- <ul>
+					<li class="label"> <span> нэвтрэх </span></li>
+					<li><%= login_with_twitter %></li>
+					<li><%= login_with_facebook %></li>
+					<li><%= login_with_github %></li>
+					<li><%= login_with_google_oauth2 %></li>
+				</ul> -->
+			<!-- </nav> -->
+
+
+			<!-- ***************** IF USER LOGGED THIS SECTION VISIBLE  *********************** -->
+			<!-- begin logged section -->
+			<nav class="social-logged">
+				<ul>
+					<li class="label"> <a href="javascript:void(0)">  RENNO </a></li>
+					<li class="avatar"><%= image_tag('avatar.png') %></li>
+					<li class="logout"> <a href="javascript:void(0)"> </a></li>
+				</ul>
+			</nav>
+
+			<!-- main menu -->
+			<nav class="main-menu">
+				<ul>
+					<li><a href="javascript:void(0)" class="active">Нүүр</a></li>
+					<li><a href="javascript:void(0)">блог</a></li>
+					<li><a href="javascript:void(0)">уулзалт</a></li>
+					<li><a href="javascript:void(0)">сэдэв</a></li>
+				</ul>	
+			</nav>
+			<!-- end logged section -->
+
+
+		</div>
+	</div>
+</header>

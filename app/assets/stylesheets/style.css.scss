@@ -1,0 +1,518 @@
+ @import "shared-mixins";
+ @import "reset";
+ body {
+	font: 13px/20px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	color: #444;
+	margin:0;
+	padding:0;
+	background:#f1f2f3;
+}
+
+a{ 
+	color:#00a8e7;
+	text-decoration: none;
+	font-weight:bold; 
+	font-size:13px;
+	transition: color .2s ease-in-out;
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	-khtml-transition: color .2s ease-in-out;
+	&:hover, &:active{
+			color:#444;
+	}
+}
+
+header{
+	display:block;
+	padding:15px 0;
+	border-bottom:solid 5px #eee;
+	background:#fff;
+	a.moru-logo{
+		float:left;
+		width				:	125px;
+		height			:	50px;
+		background	: image-url('sprite.png') 0 0 no-repeat;
+	}
+
+	nav{
+		float:left;
+		-webkit-border-radius: 5px;
+		-moz-border-radius:5px;
+		border-radius: 5px;
+		margin-top:5px;
+	}
+
+
+	/* begin main menu */
+	.main-menu{
+		float:right;
+		background:#707982;
+		padding:9px 10px;
+		margin-right:20px;
+		ul{ 
+			list-style:none;
+			margin:0;
+			padding:0;
+			li{
+				float:left;
+				padding:0 20px;
+				a{
+					font-size:14px;
+					font-weight: bold;
+					text-transform: uppercase;
+					color:#fff;
+					&:hover{
+						color:#7fcde8;
+					}
+				}
+				a.active{
+					color:#7fcde8;
+				}
+			} 
+		}
+	}
+	/* end main menu */
+
+	/* begin social login */
+	.social-login{
+		float:right;
+		background:#7fcde8;
+		padding:5px 10px;
+		ul{ 
+			list-style:none;
+			margin:0;
+			padding:0;
+			li{
+				float:left;
+				padding:0 5px;
+			} 
+			li.label{
+				span{
+					float:left;
+					color:#fff;
+					font-weight: bold;
+					margin:4px 10px 0 0;
+				}
+			}
+		}
+
+		a.social-twitter{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -140px 0 no-repeat;
+			&:hover{
+				background-color:#32ccff;
+			}
+		}
+		a.social-facebook{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -260px 0 no-repeat;	
+			&:hover{
+				background-color:#3b5998;
+			}
+		}
+		a.social-github{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -180px 0 no-repeat;
+			&:hover{
+				background-color:#4c8ac7;
+			}
+		}
+		a.social-google_oauth2{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -220px 0 no-repeat;
+			&:hover{
+				background-color:#d6492d;
+			}
+		}
+
+	}
+	/* end social login */
+
+	/* begin sign out */
+	.social-logged{
+		float:right;
+		overflow:hidden;
+		padding:0 0 0 20px;
+		ul{
+			@include none_styled_ul();
+			li{
+				float:left;
+				height:40px;
+			}
+			li.label{
+				a{
+					-webkit-border-top-left-radius: 5px;
+					-webkit-border-bottom-left-radius: 5px;
+					-moz-border-radius-topleft: 5px;
+					-moz-border-radius-bottomleft: 5px;
+					border-top-left-radius: 5px;
+					border-bottom-left-radius: 5px;
+					float:left;
+					height:30px;
+					@include transit;
+					color:#fff;
+					font-weight: bold;
+					padding:10px 20px 0 20px;
+					background:#7fcde8;
+					&:hover{
+						background:#99d8ed;
+					}
+					&:active{
+						background:#61b0cc;
+					}
+				}
+			}
+			li.logout{
+				a{
+					float:left;
+					width:40px;
+					height:40px;
+					@include transit;
+					background:#707982 image-url("sprite.png") -140px -60px no-repeat;
+					&:hover, &:active{
+						background-color:#858f9a;
+					}	
+					&:active{
+						background-color:#4f5861;
+					}
+				}
+			}
+		}
+	}
+	
+	/* end sign out */
+}
+
+.next_event{
+	background:#707982;
+	padding:40px 0;
+	.event-box{
+		display:block;
+		@include radius(5px);
+		background:#5f6871;
+		padding:20px;
+
+		h2{
+			color:#fff;
+			text-transform: uppercase;
+			font-size:20px;
+			margin-bottom:20px;
+		}
+		.separator{
+			display:block;
+			height:5px;
+			background:#707982;
+		}
+		.event-declare{
+			@include none_styled_ul();
+			padding-top:20px;
+			li{
+				padding-bottom:15px;
+				span{
+					padding:0 0 0 15px;
+					.icon-location {
+						float:left;
+						width:10px;
+						height:15px;
+						margin:2px 0 0 0;
+						background:image-url("sprite.png") 0 -60px no-repeat;
+					}
+					.icon-time{
+						float:left;
+						width:12px;
+						height:12px;
+						margin:4px 0 0 0;
+						background:image-url("sprite.png") -20px -60px no-repeat;
+					}
+					color:#fff;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.event-calendar{
+			@include radius(5px);
+			background:#707982;
+			padding:23px 19px;
+
+			.cal-item{
+				float:left;
+				margin-right:20px;
+				.cal-item-left{
+					float:left;
+					width:12px;
+					height:50px;	
+					background:image-url("sprite.png") -300px 0 no-repeat;
+				}
+				.cal-item-right{
+					float:left;
+					width:12px;
+					height:50px;
+					background:image-url("sprite.png") -320px 0 no-repeat;
+
+				}
+				.cal-item-center{
+					float:left;
+					height:35px;
+					padding:15px 5px 0 5px;
+					color:#fff;
+					font-size:40px;
+					font-weight: bold;
+					text-transform: uppercase;
+					background:image-url("sprite-x.png") 0 0 repeat-x;
+				}
+			}
+			.last-item{
+					margin-right:0;
+					span.cal-item-center{
+						color:#7fcde8;
+					}	
+				}
+		}
+		.event-topic{
+			@include none_styled_ul();
+			li{
+				list-style-image: image-url("list-img.png");
+				list-style-position: inside;
+				margin:8px 0;
+				span{
+					color:#fff;
+					text-transform: uppercase;
+				}
+			}	
+		}
+
+		.guest-tool{
+			padding:20px 0 0 0;
+			.member-count{
+				float:left;
+				background:#fff;
+				-webkit-border-top-right-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+				-moz-border-radius-topright: 5px;
+				-moz-border-radius-bottomright: 5px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				padding:4px 6px;
+				margin:5px 0 0 0;
+				span{
+					color:#707982;
+					font-size:14px;
+					font-weight: bold;
+				}
+			}
+		}
+
+	}
+}
+
+.left-content, .right-content{
+	display:block;
+	margin-top:40px;
+}
+.left-content{
+
+	.post-item{
+		@include radius(10px);		
+		background:#fff;
+		padding:20px 0;
+
+		.post-img{
+			display:block;
+			margin-bottom:20px;
+			img{
+				width:100%;
+			}
+		}
+		.post-content{
+			padding:0 20px;
+			h2{
+				color:#00a8e7;
+				font-size:20px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			span{
+				display:block;
+				color:#444;
+				font-size:11px;
+				margin:15px 0 10px 0;
+				text-transform: uppercase;
+			}
+			.separator{
+				display:block;
+				height:5px;
+				background:#eee;
+			}
+			.post-text{
+				text-align: justify;
+				padding:15px 0 20px 0;
+			}
+			.post-tool{
+				a.comment-count{
+					float:left;
+					color:#444;
+					font-size:13px;
+					margin:15px 0 0 0;
+					.comment-icon{
+						float:left;
+						width:16px;
+						height:15px;
+						margin:3px 10px 0 0 ;
+						background:image-url("sprite.png") -40px -60px no-repeat;
+					}
+				}
+				a.post-more{
+					float:right;
+					background:#00a8e7;
+					@include radius(5px);
+					padding:10px 15px;
+					font-weight: bold;
+					color:#fff;
+					@include transit;
+					&:hover{
+						background:#49c0ec;
+					}
+					&:active{
+						background-color:#108fbe;	
+					}
+				}
+			}
+		}
+		
+	}
+	.paginate{
+		@include radius(5px);
+		background:#707982;
+		padding:10px 15px;
+		margin:40px 0;
+
+		a{
+			float:left;
+			width:30px;
+			line-height:30px;
+			color:#fff;
+			background:#5f6871;
+			margin:0 5px;
+			text-align: center;
+			@include radius(5px);
+			@include transit;
+			&:hover{
+				color:#5f6871;
+				background:#fff;
+				@include radius(5px);
+			}
+		}
+		a.prev, a.next{
+			color:#b6d99f;
+		}
+	}
+	
+}
+
+.right-content{
+	background:#e1e5ea;
+}
+
+footer{
+	padding:30px 0 40px 0;
+	background:#707982;
+
+	.margintop{
+		margin-top:20px;
+	}
+
+	a.footer-moru-logo{
+		float:left;
+		width:50px;
+		height:50px;
+		background:image-url("sprite.png") 0 0 no-repeat;
+	}
+	.moru-desc{
+		padding:0 0 0 60px;
+		h2{
+			color:#fff;			
+			font-weight: bold;
+		}
+		span{
+			color:#fff;
+			font-size:13px;
+		}
+	}
+	.footer-menu{
+		display:block;
+		text-align: right;
+		a{
+			color:#fff;
+			font-size:13px;
+			font-weight: bold;
+			&:hover{
+				color:#7fcde8;
+			}
+		}
+		span{
+			color:#b2d39d;
+			font-weight: bold;
+			margin:0 10px;
+		}
+	}
+
+	.footer-social{
+		float:right;
+		a{
+			margin-left:10px;
+		}	
+		.f-social-git{
+			float:left;
+			width:20px;
+			height:20px;
+			background:image-url("sprite.png") -340px 0 no-repeat;	
+		}
+		.f-social-twitter{
+			float:left;
+			width:20px;
+			height:20px;
+			background:image-url("sprite.png") -370px 0 no-repeat;	
+		}
+		.f-social-facebook{
+			float:left;
+			width:20px;
+			height:20px;
+			background:image-url("sprite.png") -400px 0 no-repeat;		
+		}
+		.f-social-rss{
+			float:left;
+			width:20px;
+			height:20px;
+			background:image-url("sprite.png") -430px 0 no-repeat;			
+		}
+
+	}
+	.dev_by{
+		font-size:12px;
+		color:#a6a7a8;
+		text-transform: uppercase;
+		line-height: 30px;
+	}
+}
+	
+

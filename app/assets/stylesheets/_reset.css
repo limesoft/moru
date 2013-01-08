@@ -1,0 +1,112 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+[hidden] {
+    display: none
+}
+
+:focus {
+	outline: 0!important
+}
+
+iframe, fieldset, img {
+	border:none !important;
+	margin:none !important
+}
+
+html{
+	overflow-y: scroll;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height:100%
+}
+
+/*.clearfix:after{
+	clear:both;
+	content:' ';
+	display:block;
+	font-size:0;
+	line-height:0;
+	visibility:hidden;
+	width:0;
+	height:0
+}
+
+.clearfix{
+	display:inline-block
+}
+
+* html .clearfix{
+	height:1%
+}
+
+.clearfix{
+	display:block
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0
+}
+
+html[xmlns] .clearfix {
+	display: block
+}*/
+
+img::selection{
+	background:transparent
+}
+
+img::-moz-selection{
+	background:transparent
+}
+
+::selection {
+	background: #333;
+	color:#fff
+}
+	
+::-moz-selection {
+	background: #333;
+	color:#fff
+}
+
+hr{
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #d2d3d4;
+	margin:20px 0;
+	padding:0
+}
+
+textarea{
+	resize: vertical;
+	overflow: auto;
+	spelcheck: none
+}

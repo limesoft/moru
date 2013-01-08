@@ -1,0 +1,160 @@
+@import "shared-mixins";
+
+/* One container to bind them... */
+.dk_container {
+  background: #7dcde8;
+  font-family: 'Helvetica', Arial, sans-serif;
+  @include radius(3px);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+  .dk_container:focus {
+    outline: 0;
+  }
+  .dk_container a {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+/* Opens the dropdown and holds the menu label */
+.dk_toggle {
+  background-image: image-url('dk_arrows_white.png');
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  color: #fff;
+  padding: 12px 20px;
+  &:hover{
+    background-color:#99d8ed;
+    @include radius(3px);
+    color:#fff;
+  }
+  &:active{
+    background-color:#61b0cc;
+    @include radius(3px);
+    color:#fff;
+  }
+}
+
+/* Applied whenever the dropdown is open */
+.dk_open {
+  /**
+   * Help: Dropdown menu is covered by something
+   * Try setting this value higher
+   */
+  z-index: 10;
+}
+  .dk_open .dk_toggle {
+     
+  }
+
+/* The outer container of the options */
+.dk_options {
+  
+  border-radius: 0 0 px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+}
+  .dk_options a {
+    background-color: #7fcde8;
+    font-weight: bold;
+    padding: 8px 10px;
+    color:#fff;
+    @include transit;
+  }
+  .dk_options li:last-child {
+     border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+  }
+  .dk_options a:hover{
+    background: #61b0cc;
+    color: #fff;
+  }
+
+  .dk_option_current a{
+    background: #61b0cc;
+    color: #fff;
+  }
+
+/* Inner container for options, this is what makes the scrollbar possible. */
+.dk_options_inner {
+  color: #fff;
+  max-height: 250px;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+}
+
+/* Set a max-height on the options inner */
+.dk_options_inner,
+.dk_touch .dk_options {
+  max-height: 250px;
+}
+
+/******  End Theme ******/
+
+/***** Critical to the continued enjoyment of working dropdowns ******/
+
+.dk_container {
+  display: none;
+  float: left;
+  position: relative;
+}
+  .dk_container a {
+    outline: 0;
+  }
+
+.dk_toggle {
+  display: -moz-inline-stack;
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  zoom: 1;
+}
+
+.dk_open {
+  position: relative;
+}
+  .dk_open .dk_options {
+    display: block;
+  }
+  .dk_open .dk_label {
+    color: inherit;
+  }
+
+.dk_options {
+  display: none;
+  margin-top: -1px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+  .dk_options a,
+  .dk_options a:link,
+  .dk_options a:visited {
+    display: block;
+  }
+  .dk_options_inner {
+    overflow: auto;
+    position: relative;
+  }
+
+.dk_touch .dk_options {
+  overflow: hidden;
+}
+
+.dk_touch .dk_options_inner {
+  max-height: none;
+  overflow: visible;
+}
+
+.dk_fouc select {
+  position: relative;
+  top: -99999em;
+  visibility: hidden;
+}
+
+/***** End Critical to the continued enjoyment of working dropdowns ******/
