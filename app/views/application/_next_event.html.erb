@@ -3,7 +3,7 @@
 		<div class="grid_10">
 			<div class="grid_5 alpha">
 				<div class="event-box">
-					<h2> Дараагийн уулзалт </h2>
+          <h2><%= current_event.title %></h2>
 					<div class="separator clearfix"></div>
 					<ul class="event-declare">
 						<li> <span> <i class="icon-location"></i> EMPATHY ТӨВИЙН 4 ДАВХАРТ ЛЕКТОР ТӨВИЙН БАЙР </span> </li>
@@ -48,15 +48,11 @@
 						<li> <span> FRONT END DEVELOPMENT: +BAYARJA BUYANDELGER </span> </li>
 					</ul>
 					<div class="guest-tool">
-						<select name="pretty" tabindex="1" class="pretty dk_container">
-							<option value="ASK"> Та очих уу? </option>
-							<option value="GOING"> Тийм </option>
-							<option value="MAYBE"> Магадгүй </option>
-							<option value="NO"> Үгүй </option>
-						</select>
-						<div class="member-count">
-							<span> 13 </span>
-						</div>
+            <%= form_for Rsvp.new, remote: true do |f| %>
+              <%= f.hidden_field :event_id, value: 1 %>
+              <%= f.select :going, options_for_select([['Та очих уу?', 0], ['Тийм', 1], ['Магадгүй', 2], ['Үгүй', 3]]), tabindex: 1 %>
+						  <div class="member-count"><span>13</span></div>
+            <% end %>
 					</div>
 				</div>
 			</div>

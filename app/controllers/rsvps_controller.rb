@@ -2,6 +2,13 @@
 
 class RsvpsController < ApplicationController
 
-  load_and_authorize_resource
+  respond_to :json
+
+  # load_and_authorize_resource
+
+  def create
+    @rsvp = Rsvp.new
+    respond_with @rsvp
+  end
 
 end

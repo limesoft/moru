@@ -14,6 +14,6 @@ ROLES = [ROLE_ADMIN, ROLE_USER]
 
 ######################### RSVP #########################
 RSVP_YES = 1
-RSVP_NO = 2
-RSVP_MAYBE = 3
+RSVP_MAYBE = 2
+RSVP_NO = 3
 RSVPS = [RSVP_YES, RSVP_NO, RSVP_MAYBE]
