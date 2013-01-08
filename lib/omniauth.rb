@@ -18,6 +18,10 @@ class Omniauth
     @omniauth[:info][:email].to_s.downcase
   end
 
+  def avatar
+    @omniauth[:info][:image]
+  end
+
   def name
     @omniauth[:info][:name]
   end

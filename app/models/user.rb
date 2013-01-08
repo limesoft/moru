@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
   has_many :rsvps, dependent: :destroy
   has_many :events, through: :rsvps
 
+  def default_avatar
+    authentications.first.avatar
+  end
+
   # Уг хэрэглэгч ADMIN эсэхийг шалгаж байна
   def admin?
     role == ROLE_ADMIN

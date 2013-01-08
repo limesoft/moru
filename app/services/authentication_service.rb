@@ -25,7 +25,7 @@ class AuthenticationService
   end
 
   def add_authentication_to(user)
-    user.authentications << Authentication.new(provider: @omniauth.provider, uid: @omniauth.uid, email: @omniauth.email)
+    user.authentications << Authentication.new(provider: @omniauth.provider, uid: @omniauth.uid, email: @omniauth.email, avatar: @omniauth.avatar)
     user.save
   end
 
