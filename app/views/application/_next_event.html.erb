@@ -6,15 +6,15 @@
           <h2><%= current_event.title %></h2>
 					<div class="separator clearfix"></div>
 					<ul class="event-declare">
-						<li> <span> <i class="icon-location"></i> EMPATHY ТӨВИЙН 4 ДАВХАРТ ЛЕКТОР ТӨВИЙН БАЙР </span> </li>
-						<li> <span> <i class="icon-time"></i> 13:00 ЦАГТ </span> </li>
+						<li><span><i class="icon-location"></i>EMPATHY ТӨВИЙН 4 ДАВХАРТ ЛЕКТОР ТӨВИЙН БАЙР</span></li>
+            <li><span><i class="icon-time"></i><%= current_event.date.strftime("%H:%M") %> ЦАГТ</span></li>
 					</ul>	
 					<div class="event-calendar clearfix">
 
 						<div class="cal-item">
 							<span class="cal-item-left"></span>
 							<span class="cal-item-center">
-									01
+                <%= current_event.date.month %>
 							</span>
 							<span class="cal-item-right"></span>
 						</div>
@@ -22,7 +22,7 @@
 						<div class="cal-item">
 							<span class="cal-item-left"></span>
 							<span class="cal-item-center">
-									01
+                <%= current_event.date.day %>
 							</span>
 							<span class="cal-item-right"></span>
 						</div>
