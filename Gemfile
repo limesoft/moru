@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.10'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,8 +23,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'libv8', '~> 3.11.8'
-  gem 'therubyracer', :platforms => :ruby
+  # gem 'libv8', '3.11.8.11'
+  # gem 'therubyracer', '0.11.1', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
