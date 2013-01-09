@@ -2,7 +2,7 @@
 
 class RsvpsController < ApplicationController
 
-  respond_to :json
+  respond_to :js
 
   # load_and_authorize_resource
 
