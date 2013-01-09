@@ -7,10 +7,19 @@ class RsvpsController < ApplicationController
   # load_and_authorize_resource
 
   def create
-    # current_user-г RsvpContext-р өргөтгөж өгсөнөөр
-    # уг хэрэглэгч RsvpContext-д зааж өгсөн чадваруудтай болно
-    current_user.extend RsvpContext
-    @rsvp = current_user.create_rsvp(event, rsvp_params[:going])
+    # 1. Эхлээд уг event-д rsvp өгсөн эсэхийг шалгана
+    @rsvp = current_user.rsvp_for event
+    if @rsvp.present?
+      # 2. Өгсөн байх юм бол rsvp-г шинэчлэнэ
+      @rsvp.going = rsvp_params[:going]
+      @rsvp.save
+    else
+      # 3. Өгөөгүй байх юм бол шинээр үүсгэнэ
+      # current_user-г RsvpContext-р өргөтгөж өгсөнөөр
+      # уг хэрэглэгч RsvpContext-д зааж өгсөн чадваруудтай болно
+      current_user.extend RsvpContext
+      @rsvp = current_user.create_rsvp(event, rsvp_params[:going])
+    end
 
     # Уг event-г GoingContext-р өргөтгөж өгсөнөөр уг
     # event GoingContext-д зааж өгсөн чадваруудтай болно
