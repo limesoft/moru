@@ -5,5 +5,4 @@ jQuery ->
         v = parseInt value
         if v > 0
           $("#new_rsvp").submit()
-          console.log v
     )

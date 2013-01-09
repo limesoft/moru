@@ -51,7 +51,7 @@
             <%= form_for Rsvp.new, remote: true do |f| %>
               <%= f.hidden_field :event_id, value: 1 %>
               <%= f.select :going, options_for_select([['Та очих уу?', 0], ['Тийм', 1], ['Магадгүй', 2], ['Үгүй', 3]]), {}, tabindex: 0, class: 'dk_container' %>
-						  <div class="member-count"><span>13</span></div>
+              <div class="member-count" id="going-count"><span><%= current_event.count_going %></span></div>
             <% end %>
 					</div>
 				</div>

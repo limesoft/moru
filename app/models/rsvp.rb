@@ -4,7 +4,7 @@ class Rsvp < ActiveRecord::Base
 
   ##
   # Validations
-  validates_inclusion_of :going, in: RSVPS
+  validates_inclusion_of :going, in: RSVPS, allow_blank: false, allow_nil: false
 
   ##
   # Relationships
