@@ -9,4 +9,8 @@ module ApplicationHelper
       super
     end
   end
+
+  def link_to_page(title, url, cond)
+    content_tag(:li, link_to(title, url, class: (request[:controller] == cond ? 'active': '')))
+  end
 end
