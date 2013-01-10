@@ -1,144 +1,30 @@
-
 <div class="container_10 clearfix">
-  <div class="grid_10"> 
+  <div class="grid_10">
     <ul id="container">
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
+      <% @events.each do |event| %>
+        <li class="box">
+          <div class="<%= cycle("odd", "even") %>"></div>
           <div class="event-up clearfix">
             <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
+              <%= link_to event.title, event_path(event) %><br/>
               <span class="event-where"><i class="marker"></i> Empathy төв </span>
             </div>
             <div class="event-date">
-                <span > 13/01/12 </span>
+              <span><%= I18n.localize(event.date, format: :short) %></span>
             </div>
           </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  ТЭГШ БАЙВАЛ "<div class="even"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="even"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-       <li class="box"> 
-          <!--  СОНДГОЙ БАЙВАЛ "<div class="odd"></div>" ийг BOX CLASS ТАЙ LI TAG ДОТОР БИЧИЖ ӨГНӨ-->
-          <div class="odd"></div>
-          <div class="event-up clearfix">
-            <div class="event-title">
-              <a href="javascript:void(0)"> MORU уулзалт #3</a> <br/>
-              <span class="event-where"><i class="marker"></i> Empathy төв </span>
-            </div>
-            <div class="event-date">
-                <span > 13/01/12 </span>
-            </div>
-          </div>
-            <ul class="event-topics">
-              <span>уулзалтанд яригдсан сэдэвүүд:</span>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-              <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
-            </ul>
-       </li>
-     </ul>
+          <ul class="event-topics">
+            <span>уулзалтанд яригдсан сэдэвүүд:</span>
+            <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+            <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+            <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
 
-     <p id="back-top">
-        <a href="#top"><span></span>Дээш очих</a>
-      </p>
+    <p id="back-top">
+      <a href="#top"><span></span>Дээш очих</a>
+    </p>
   </div>
 </div>
