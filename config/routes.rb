@@ -9,7 +9,7 @@ Moru::Application.routes.draw do
   match "/auth/failure" => "authentications#failure"
   match 'logout' => 'authentications#logout', as: 'logout'
 
-  resources :events
+  resources :events, only: [:index, :show]
   resources :topics
   resources :rsvps, only: [:create]
   resources :posts, only: [:index, :show]
