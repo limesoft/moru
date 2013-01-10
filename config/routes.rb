@@ -12,5 +12,6 @@ Moru::Application.routes.draw do
   resources :events
   resources :topics
   resources :rsvps, only: [:create]
+  resources :posts, only: [:index, :show]
 
 end
