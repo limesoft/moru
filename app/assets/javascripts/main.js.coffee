@@ -4,3 +4,28 @@ jQuery ->
       change: (value, label)->
         $("#new_rsvp").submit() if parseInt(value) > 0
     )
+
+		$("#container").masonry itemSelector: ".box", gutterWidth: 60
+
+		# hide #back-top first
+		$("#back-top").hide()
+
+		# fade in #back-top
+		$ ->
+		  $(window).scroll ->
+		    if $(this).scrollTop() > 400
+		      $("#back-top").fadeIn()
+		    else
+		      $("#back-top").fadeOut()
+
+		  
+		  # scroll body to 0px on click
+		  $("#back-top a").click ->
+		    $("body,html").animate
+		      scrollTop: 0
+		    , 800
+		    false
+
+
+
+

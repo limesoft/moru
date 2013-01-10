@@ -514,5 +514,131 @@ footer{
 		line-height: 30px;
 	}
 }
+
+/******************************************/
+/************** BEGIN EVENT CSS ***********/
+
+.event-container{
+	border-top:40px solid #707982;
+
+	#container{
+		overflow:hidden;
+		padding:40px 0 0 0;
+		margin:0;
+		list-style-type: none; 
+		background: url(timeline.png) top center repeat-y;
+		.box{
+			float:left;
+			@include radius(5px);
+			padding:20px;
+			background:#fff;
+			margin-bottom:40px;
+			width:410px;
+			position: relative;
+			min-height: 190px;
+			max-height:250px;
+			.event-up{
+				.event-title{
+					display:inline-block;
+					a{
+						float:left;
+						font-size:18px;
+						font-weight: bold;
+						text-transform: uppercase;
+					}
+					span.event-where{
+						float:left;
+						margin:5px 0 0 0;
+						color:#aeaeae;
+						font-size:12px;
+						text-transform: uppercase;
+						.marker{
+							margin:3px 10px 0 0;
+							float:left;
+							width:10px;
+							height:15px;
+							background:image-url("marker.png") no-repeat;
+
+						}
+					}
+				}
+				.event-date{
+					display:inline-block;
+					float:right;
+					span{
+						float:right;
+						background:#b6d99f;
+						@include radius(5px);
+						color:#fff;
+						font-size:20px;
+						font-weight: bold;
+						text-transform: uppercase;
+						line-height: 40px;
+						padding:0 20px;
+					}
+				}
+			}
+			
+			ul.event-topics{
+				margin-top:20px;
+				span{
+					color:#444;
+					text-transform: uppercase;
+					font-size:13px;
+				}
+				li{
+					list-style-image: image-url('event-list-img.png');
+					list-style-position: inside;
+					list-style-position: center;
+					text-transform: uppercase;
+					font-size:13px;
+					color:#444;
+					margin-top:15px;
+				}
+			}
+
+		}
+		.odd, .even{
+			width:36px;
+			height:15px;
+			position:absolute;
+		}
+		.odd{
+			right:-36px;
+			top:20px;
+			background:image-url("left.png") no-repeat;
+		}
+		.even{
+			left:-36px;
+			bottom:20px;
+			background:image-url("right.png") no-repeat;
+		}
+
+		#up_arraw{
+
+		}
+	}
+}
+
+/*
+Back to top button 
+*/
+#back-top {
+	position: fixed;
+	bottom: 20px;
+	right:200px;
+}
+/* arrow icon (span tag) */
+#back-top span {
+	float:left;
+	width: 10px;
+	height: 15px;
+	margin:3px 10px 0 0;
+	background:image-url('up-arrow.png') no-repeat center center;
+	
+}
+
+/*************** END EVENT CSS ************/
+/******************************************/
 	
 

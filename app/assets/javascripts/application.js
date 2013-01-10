@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.dropkick-1.0.0.js
+//= require jquery.dropkick-1.0.0
+//= require jquery.masonry.min
 //= require main

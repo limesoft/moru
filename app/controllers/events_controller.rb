@@ -4,6 +4,8 @@ class EventsController < ApplicationController
 
   # load_and_authorize_resource
 
+  layout "events"
+
   def index
     @events = Event.order("created_at DESC")
     respond_with @events
