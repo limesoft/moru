@@ -18,6 +18,7 @@ describe User do
     let(:rsvp) { Rsvp.new }
     let(:topic) { Topic.new }
     let(:authentication) { Authentication.new }
+    let(:post) { Post.new }
 
     context "when is a guest" do
       let(:user) { User.new }
@@ -27,6 +28,7 @@ describe User do
       it { should be_able_to(:read, another_user) }
       it { should be_able_to(:read, rsvp) }
       it { should be_able_to(:read, topic) }
+      it { should be_able_to(:read, post) }
     end
 
     context "when is a user" do
@@ -38,6 +40,7 @@ describe User do
       it { should be_able_to(:read, rsvp) }
       it { should be_able_to(:read, topic) }
       it { should be_able_to(:read, authentication) }
+      it { should be_able_to(:read, post) }
       it { should be_able_to(:create, authentication) }
     end
 
@@ -50,6 +53,7 @@ describe User do
       it { should be_able_to(:manage, another_user) }
       it { should be_able_to(:manage, authentication) }
       it { should be_able_to(:manage, topic) }
+      it { should be_able_to(:manage, post) }
     end
   end
 end

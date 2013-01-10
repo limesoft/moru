@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     authentications.first.avatar
   end
 
+  def rsvp_for(event)
+    rsvps.where(event_id: event.id).first
+  end
+
   # Уг хэрэглэгч ADMIN эсэхийг шалгаж байна
   def admin?
     role == ROLE_ADMIN

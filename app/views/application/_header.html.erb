@@ -29,10 +29,10 @@
 			<!-- main menu -->
 			<nav class="main-menu">
 				<ul>
-          <li><%= link_to "Нүүр", root_path, class: "active" %></li>
-					<li><a href="javascript:void(0)">блог</a></li>
-          <li><%= link_to "Уулзалт", events_path %></li>
-          <li><%= link_to "сэдэв", topics_path %></li>
+          <%= link_to_page "Эхлэл", root_path, "home" %>
+          <%= link_to_page "Блог", posts_path, "posts" %>
+          <%= link_to_page "Уулзалт", events_path, "events" %>
+          <%= link_to_page "Сэдэв", topics_path, "topics" %>
 				</ul>	
 			</nav>
 		</div>
