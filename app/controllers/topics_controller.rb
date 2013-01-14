@@ -5,6 +5,9 @@ class TopicsController < ApplicationController
   before_filter :extend_as_speaker, only: [:create, :destroy]
   respond_to :js
 
+	
+	layout "events"
+	
   def index
     @topics = Topic.order("created_at DESC")
     respond_with @topics

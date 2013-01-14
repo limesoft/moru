@@ -19,7 +19,7 @@ jQuery ->
         $("#back-top").fadeIn()
       else
         $("#back-top").fadeOut()
-
+   	
     # scroll body to 0px on click
     $("#back-top a").click ->
       $("body,html").animate
@@ -41,3 +41,12 @@ jQuery ->
       )
   )
   w.scroll()
+
+    #topic list masonry
+    $("#topic-list").masonry
+      itemSelector: ".topic-item", gutterWidth:40,
+      layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+
+
+
+

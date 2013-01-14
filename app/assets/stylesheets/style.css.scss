@@ -25,6 +25,81 @@ a{
 	}
 }
 
+.noneBackground{
+	background: none !important;
+}
+.nonePadding{
+	padding:0 !important;
+}
+.social-login{
+		float:right;
+		background:#7fcde8;
+		padding:5px 10px;
+		ul{ 
+			list-style:none;
+			margin:0;
+			padding:0;
+			li{
+				float:left;
+				padding:0 5px;
+			} 
+			li.label{
+				span{
+					float:left;
+					color:#fff;
+					font-weight: bold;
+					margin:4px 10px 0 0;
+				}
+			}
+		}
+
+		a.social-twitter{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -140px 0 no-repeat;
+			&:hover{
+				background-color:#32ccff;
+			}
+		}
+		a.social-facebook{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -260px 0 no-repeat;	
+			&:hover{
+				background-color:#3b5998;
+			}
+		}
+		a.social-github{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -180px 0 no-repeat;
+			&:hover{
+				background-color:#4c8ac7;
+			}
+		}
+		a.social-google_oauth2{
+			float:left;
+			width:30px;
+			height:30px;
+			@include radius(3px);
+			@include transit;
+			background:#6ab8d3 image-url("sprite.png") -220px 0 no-repeat;
+			&:hover{
+				background-color:#d6492d;
+			}
+		}
+
+	}
+
 header{
 	display:block;
 	padding:15px 0;
@@ -640,5 +715,214 @@ Back to top button
 
 /*************** END EVENT CSS ************/
 /******************************************/
-	
 
+
+/******************************************/
+/*************** BEGIN TOPIC CSS ************/
+
+.offer-topic{
+	background:#fff;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding:20px;
+	margin:20px 0;
+	.topic-type{
+		width:260px;
+		margin-right:20px;		
+		float:left;
+		.talk-topic1, .talk-topic2{
+			float:left;
+			width:220px;
+			@include radius(5px);
+			padding:10px 20px;
+			overflow:hidden;
+			input{
+				float:left;
+				margin-right:20px;
+				margin-top:10px;
+			}
+			span{
+				float:left;
+				color:#fff;
+				font-size:11px;
+				line-height: 16px;
+				h2{
+					font-size:13px;
+					font-weight: bold;
+					text-transform: uppercase
+				}
+			}
+		}
+		.talk-topic1{
+			background:#b6d99f;
+			margin-bottom:10px;
+		}
+		.talk-topic2{
+			background:#707982;
+		}
+	}
+	textarea.topicarea{
+		float:left;
+		background:#e1e5ea;
+		@include radius(5px);
+		border:none;
+		width:480px;
+		height:94px;
+		padding:10px;
+		margin-right:20px;
+	}
+	.send-topic{
+		float:left;
+		width:120px;
+		.logo{
+			width:60px;
+			height:60px;
+			margin:0 auto;
+			background:image-url("sprite.png") 0 -100px no-repeat;
+		}
+		a.send-topic{
+			width:100%;
+			@include radius(5px);
+			background:#7fcde8;
+			color:#fff;
+			font-size:13px;
+			font-weight: bold;
+			text-align: center;
+			line-height:40px;
+			text-transform: uppercase;
+			margin-top:12px;
+		}
+	}
+}
+
+.topic-list-title{
+	margin-top:50px;
+	background:image-url("hr.png") center repeat-x;
+	span{
+		text-transform: uppercase;
+		color:#00a8e7;
+		font-weight: bold;
+		font-size:15px;
+		background:#f1f3f5;
+		padding:0 20px 0 0 ;
+	}
+}
+.topic-list{
+	margin-top:30px;
+	margin-bottom:60px;
+	.topic-item{
+		float:left;
+		width:460px;
+		margin-top:40px;
+		.topic-context{
+			@include radius(5px);
+			background:#fff;
+			.topic-header{
+				.avatar, .pulse{
+					float:left;
+					width:50px;
+					height:50px;
+					padding:10px;
+					text-align:center;
+					@include radius(100%);
+					background:#f1f3f5;
+					margin-left:-10px;
+					margin-top:-10px;
+					overflow:hidden;
+					img{
+						@include radius(100%);
+						width:50px;
+						height:50px;
+					}
+				}
+				.pulse{
+					float:right;
+					margin-right:-10px;
+					span{
+						float:left;
+						width:50px;
+						line-height:50px;
+						background:#fff;
+						@include radius(100%);
+						text-align: center;
+						font-size:16px;
+						font-weight: bold;
+					}
+					.down{
+						color:#dd7e7e;
+					}
+					.up{
+						color:#b6d99f;
+					}
+				}
+				.topic-user{
+					float:left;
+					width:320px;
+					padding:10px 10px 0 10px;
+					span{
+						float:left;
+						color:#00a8e7;
+						font-size:13px;	
+						font-weight: bold;
+						line-height: 16px;
+
+						em{
+							font-size:11px;
+							color:#aeaeae;
+						}
+					}
+					.vote-down, .vote-up{
+						float:right;
+						@include radius(100%);
+						width:24px;
+						line-height: 24px;
+						text-align: center;
+						color:#fff;
+					}
+					.vote-down{
+						background:#dd7e7e;
+					}
+					.vote-up{
+						background:#b6d99f;
+						margin-right:5px;
+					}
+				}
+			}
+			.topic-text{
+				padding:20px;
+			}
+		}
+		.topic-tools{
+			background:#e1e5ea;
+			margin:0 10px;
+			padding:10px;
+			-webkit-border-bottom-right-radius: 5px;
+			-webkit-border-bottom-left-radius: 5px;
+			-moz-border-radius-bottomright: 5px;
+			-moz-border-radius-bottomleft: 5px;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			a.speak-topic{
+				float:left;
+				background:#707982;
+				text-transform: uppercase;
+				@include radius(5px);
+				color:#fff;
+				font-size:12px;
+				font-weight: bold;
+				padding:5px 20px;
+				&:hover{
+					color:#7fcde8;
+				}
+			}
+		}
+	}
+}
+
+
+/*************** END TOPIC CSS ************/
+/******************************************/
