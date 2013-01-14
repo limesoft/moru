@@ -3,11 +3,12 @@
 class EventsController < ApplicationController
 
   # load_and_authorize_resource
+  respond_to :js
 
   layout "events"
 
   def index
-    @events = Event.order("created_at DESC")
+    @events = Event.order("created_at DESC").page(params[:page]).per(3)
     respond_with @events
   end
 

@@ -5,30 +5,35 @@ jQuery ->
         $("#new_rsvp").submit() if parseInt(value) > 0
     )
 
-		$("#container").masonry 
-				itemSelector: ".box", gutterWidth: 60,
-				layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+  if $('#event-list').length > 0
+    $("#event-list").masonry itemSelector: ".box", gutterWidth: 60, layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+    $("#back-top").hide()
+    # fade in #back-top
+    $(window).scroll ->
+      if $(this).scrollTop() > 400
+        $("#back-top").fadeIn()
+      else
+        $("#back-top").fadeOut()
 
+    # scroll body to 0px on click
+    $("#back-top a").click ->
+      $("body,html").animate
+        scrollTop: 0
+      , 800
+      false
 
-		# hide #back-top first
-		$("#back-top").hide()
-
-		# fade in #back-top
-		$ ->
-		  $(window).scroll ->
-		    if $(this).scrollTop() > 400
-		      $("#back-top").fadeIn()
-		    else
-		      $("#back-top").fadeOut()
-
-		  
-		  # scroll body to 0px on click
-		  $("#back-top a").click ->
-		    $("body,html").animate
-		      scrollTop: 0
-		    , 800
-		    false
-
-
-
-
+@infinity_pagination = (url, number_of_pages)->
+  page = 1
+  loading = false
+  w = $(window)
+  w.scroll( ->
+    return if loading
+    if w.scrollTop() > ($(document).height()-w.height()-5) && page <= number_of_pages
+      loading = true
+      page += 1
+      url += "?page="+page
+      $.getScript(url, ()->
+        loading = false
+      )
+  )
+  w.scroll()

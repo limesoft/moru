@@ -1,0 +1,18 @@
+<li class="box">
+  <div class="<%= cycle("odd", "even") %>"></div>
+  <div class="event-up clearfix">
+    <div class="event-title">
+      <%= link_to event.title, event_path(event) %><br/>
+      <span class="event-where"><i class="marker"></i> Empathy төв </span>
+    </div>
+    <div class="event-date">
+      <span><%= I18n.localize(event.date, format: :short) %></span>
+    </div>
+  </div>
+  <ul class="event-topics">
+    <span>уулзалтанд яригдсан сэдэвүүд:</span>
+    <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+    <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+    <li> FRONTEND DEVELOPENT: +Bayarja Buyandelger </li>
+  </ul>
+</li>
