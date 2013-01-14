@@ -27,6 +27,14 @@ jQuery ->
       , 800
       false
 
+  if $('#topic-list').length > 0
+    $("#topic-list").masonry(
+                            itemSelector: ".topic-item"
+                            , gutterWidth: 40
+                            , layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+                            , isAnimated: true
+                            )    
+
 @infinity_pagination = (url, number_of_pages)->
   page = 1
   loading = false
@@ -42,10 +50,6 @@ jQuery ->
   )
   w.scroll()
 
-    #topic list masonry
-    $("#topic-list").masonry
-      itemSelector: ".topic-item", gutterWidth:40,
-      layoutPriorities: { upperPosition: 1, shelfOrder: 1}
 
 
 
