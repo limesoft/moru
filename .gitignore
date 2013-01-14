@@ -22,3 +22,6 @@
 
 # Ignore the database.yml
 /config/database.yml
+
+# Ignore all merb's template files
+*.orig
