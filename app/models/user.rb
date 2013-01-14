@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :authentications, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :topics
+  has_many :topics, dependent: :destroy
+  has_many :assigned_topics, class_name: 'Topic', foreign_key: 'speaker_id', dependent: :nullify
 
   # RSVP
   has_many :rsvps, dependent: :destroy
