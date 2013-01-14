@@ -1,4 +1,4 @@
 <% unless @events.empty? %>
   var events = $("<%=j(render(partial: 'event', collection: @events)) %>");
-  $('#event-list').masonry('appended', events);
+  $('#event-list').append(events).masonry('appended', events, true);
 <% end %>

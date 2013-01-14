@@ -6,7 +6,12 @@ jQuery ->
     )
 
   if $('#event-list').length > 0
-    $("#event-list").masonry itemSelector: ".box", gutterWidth: 60, layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+    $("#event-list").masonry(
+                            itemSelector: ".box"
+                            , gutterWidth: 60
+                            , layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+                            , isAnimated: true
+                            )
     $("#back-top").hide()
     # fade in #back-top
     $(window).scroll ->
@@ -31,8 +36,7 @@ jQuery ->
     if w.scrollTop() > ($(document).height()-w.height()-5) && page <= number_of_pages
       loading = true
       page += 1
-      url += "?page="+page
-      $.getScript(url, ()->
+      $.getScript(url+"?page="+page, ()->
         loading = false
       )
   )
