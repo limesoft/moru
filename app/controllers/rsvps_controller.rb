@@ -8,7 +8,7 @@ class RsvpsController < ApplicationController
 
   def create
     # 1. Эхлээд уг event-д rsvp өгсөн эсэхийг шалгана
-    @rsvp = current_user.rsvp_for event
+    @rsvp = current_user.rsvp_of current_event
     if @rsvp.present? && @rsvp.going != going
       # 2. Өгсөн байх юм бол rsvp-г шинэчлэнэ
       @rsvp.going = going
@@ -18,20 +18,19 @@ class RsvpsController < ApplicationController
       # current_user-г RsvpContext-р өргөтгөж өгсөнөөр
       # уг хэрэглэгч RsvpContext-д зааж өгсөн чадваруудтай болно
       current_user.extend RsvpContext
-      @rsvp = current_user.create_rsvp(event, going)
+      @rsvp = current_user.create_rsvp(current_event, going)
     end
 
     # Уг event-г GoingContext-р өргөтгөж өгсөнөөр уг
     # event GoingContext-д зааж өгсөн чадваруудтай болно
     # Жишээ нь: count_rsvp, count_going гэх мэт
-    event.extend GoingContext
-    @counter = event.count_rsvp(going)
+    @counter = current_event.count_rsvp(going)
     respond_with @rsvp
   end
 
   private
-    def event
-      @event ||= Event.find(rsvp_params[:event_id])
+    def current_event
+      @event ||= Event.last.extend GoingContext
     end
 
     def going
@@ -39,7 +38,7 @@ class RsvpsController < ApplicationController
     end
 
     def rsvp_params
-      params.require(:rsvp).permit(:event_id, :going)
+      params.require(:rsvp).permit(:going)
     end
 
 end

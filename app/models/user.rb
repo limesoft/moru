@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     authentications.first.avatar
   end
 
-  def rsvp_for(event)
+  def rsvp_of(event)
     rsvps.where(event_id: event.id).first
   end
 
