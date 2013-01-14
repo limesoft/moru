@@ -5,7 +5,10 @@ jQuery ->
         $("#new_rsvp").submit() if parseInt(value) > 0
     )
 
-		$("#container").masonry itemSelector: ".box", gutterWidth: 60
+		$("#container").masonry 
+				itemSelector: ".box", gutterWidth: 60,
+				layoutPriorities: { upperPosition: 1, shelfOrder: 1}
+
 
 		# hide #back-top first
 		$("#back-top").hide()

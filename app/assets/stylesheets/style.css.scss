@@ -535,8 +535,8 @@ footer{
 			margin-bottom:40px;
 			width:410px;
 			position: relative;
-			min-height: 190px;
-			max-height:250px;
+			/*min-height: 190px;
+			max-height:250px;*/
 			.event-up{
 				.event-title{
 					display:inline-block;
@@ -610,7 +610,7 @@ footer{
 		}
 		.even{
 			left:-36px;
-			bottom:20px;
+			top:80px;
 			background:image-url("right.png") no-repeat;
 		}
 
