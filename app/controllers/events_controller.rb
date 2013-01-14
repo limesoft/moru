@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   layout "events"
 
   def index
-    @events = Event.order("created_at DESC").page(params[:page]).per(3)
+    @events = Event.order("created_at DESC").page(params[:page]).per(6)
     respond_with @events
   end
 
