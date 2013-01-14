@@ -5,6 +5,9 @@ require 'simplecov'
 SimpleCov.start do
   add_group 'Controllers', 'app/controllers'
   add_group 'Models', 'app/models'
+  add_group 'Contexts', 'app/contexts'
+  add_group 'Roles', 'app/roles'
+  add_group 'Services', 'app/services'
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
