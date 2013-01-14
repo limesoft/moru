@@ -25,3 +25,6 @@
 
 # Ignore all merb's template files
 *.orig
+
+# Ignore all simplecov files
+/coverage
