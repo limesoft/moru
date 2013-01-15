@@ -15,12 +15,15 @@
 	</div>
 
 	<div class="topic-tools clearfix">
-	  <!-- <a href="javascript:void(0)" class="speak-topic" id="speak-topic"> энэ сэдвийг ярих</a> -->
-		<div class="presenter">
-			<%= image_tag(topic.user.default_avatar) %>
-			<span><%= topic.user.name %></span>
-			<a href="javascript:void(0)" class="close" id="close-presenter"></a>
-		</div>
+    <% if topic.speaker %>
+		  <div class="presenter">
+			  <%= image_tag(topic.user.default_avatar) %>
+			  <span><%= topic.user.name %></span>
+			  <a href="javascript:void(0)" class="close" id="close-presenter"></a>
+		  </div>
+    <% else %>
+	    <a href="javascript:void(0)" class="speak-topic" id="speak-topic"> энэ сэдвийг ярих</a>
+    <% end %>
 		<nav class="social-login noneBackground nonePadding">
 		  <ul>
 			  <li><a href="javascript:void(0)" class="social-twitter"></a></li>

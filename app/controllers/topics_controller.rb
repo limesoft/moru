@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
 	layout "events"
 	
   def index
-    @topics = Topic.order("created_at DESC")
+    @topics = Topic.includes(:user).order("created_at DESC")
     respond_with @topics
   end
 
