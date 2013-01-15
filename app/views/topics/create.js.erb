@@ -1,5 +1,8 @@
 <% if @topic.errors.empty? %>
-  
+  $("#topic_error_messages").empty();
+  $("#topic_type_yes").prop('checked', false);
+  $("#topic_type_no").prop('checked', false);
+  $("#topic_content").val('');
 <% else %>
-
+  $("#topic_error_messages").html("<%= j(render("shared/error_messages", errors: @topic.errors)) %>");
 <% end %>
