@@ -966,6 +966,7 @@ Back to top button
  /********* BEGIN EVENT VIEW CSS ***********/
 
  .event-view-container{
+   padding:0 0 20px 0;
     .event-content{
        @include radius(5px);
        background:#fff;
@@ -974,7 +975,7 @@ Back to top button
 
       }
       .event-text{
-        background:yellow;
+        padding:20px 0 0 0;
         overflow:hidden;
         .event-topic-schedule{
           float:left;
@@ -1012,17 +1013,258 @@ Back to top button
           }
         }
         .event-topic-text{
+          overflow:hidden;
           h2{
             color:#00a8e7;
             font-size: 20px;
             font-weight: bold;
             text-transform: uppercase;
           }
+          span{
+            float:left;
+            margin:10px 0 0 0;
+            font-size:13px;
+          }
+          ul{
+            @include none_styled_ul();
+            li{
+
+            }
+          }
+
+        }
+      }
+      .event-bottom-tool{
+        padding:40px 0 0 0;
+        ul.social-buttons{
+          float:left;
+          background:#e1e5ea;
+          @include none_styled_ul();
+          @include radius(5px);
+          padding:10px 10px 10px 20px;
+          li{
+            float:left;
+            margin:0 10px 0 0;
+            a.social-twitter{
+              float:left;
+              width:30px;
+              height:30px;
+              @include radius(3px);
+              @include transit;
+              background:#5f6871 image-url("sprite.png") -140px 0 no-repeat;
+              &:hover{
+                background-color:#32ccff;
+              }
+            }
+            a.social-facebook{
+              float:left;
+              width:30px;
+              height:30px;
+              @include radius(3px);
+              @include transit;
+              background:#5f6871 image-url("sprite.png") -260px 0 no-repeat;
+              &:hover{
+                background-color:#3b5998;
+              }
+            }
+            a.social-github{
+              float:left;
+              width:30px;
+              height:30px;
+              @include radius(3px);
+              @include transit;
+              background:#5f6871 image-url("sprite.png") -180px 0 no-repeat;
+              &:hover{
+                background-color:#4c8ac7;
+              }
+            }
+            a.social-google_oauth2{
+              float:left;
+              width:30px;
+              height:30px;
+              @include radius(3px);
+              @include transit;
+              background:#5f6871 image-url("sprite.png") -220px 0 no-repeat;
+              &:hover{
+                background-color:#d6492d;
+              }
+            }
+          }
+        }
+        a.event-members{
+          float:right;
+          background:#7fcde8;
+          @include radius(5px);
+          color:#fff;
+          font-weight: bold;
+          font-size:13px;
+          padding:0 20px;
+          text-align: center;
+          text-transform: uppercase;
+          line-height: 50px;
+          &:hover{
+            background:#99d8ed;
+          }
+          &:active{
+            background:#61b0cc;
+          }
         }
       }
     }
- }
+   .member-list{
+     margin:0 10px;
+     padding:10px;
+     background: #e1e5ea;
+     -webkit-border-bottom-right-radius: 5px;
+     -webkit-border-bottom-left-radius: 5px;
+     -moz-border-radius-bottomright: 5px;
+     -moz-border-radius-bottomleft: 5px;
+     border-bottom-right-radius: 5px;
+     border-bottom-left-radius: 5px;
+     ul{
+        @include none_styled_ul;
+       li{
+        float:left;
+        height:30px;
+         margin-right:10px;
+         img{
+           width:30px;
+           height:30px;
+           @include radius(5px);
+         }
+       }
+     }
+   }
+   .comment-container{
+     padding:40px 0 0 0;
+      .write-comment{
+         .write-title{
+           padding:0 20px;
+           line-height: 60px;
+           background:#5f6871;
+           -webkit-border-top-left-radius: 5px;
+           -webkit-border-top-right-radius: 5px;
+           -moz-border-radius-topleft: 5px;
+           -moz-border-radius-topright: 5px;
+           border-top-left-radius: 5px;
+           border-top-right-radius: 5px;
+           span{
+             float:left;
+             color:#fff;
+             font-weight: bold;
+             text-transform: uppercase;
+             font-size:15px;
+           }
+           em{
+             float:right;
+             color: #b6d99f;
+             font-size:12px;
+             text-transform: uppercase;
+           }
+         }
+        .write-field{
+          background:#fff;
+          -webkit-border-bottom-right-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-bottomright: 5px;
+          -moz-border-radius-bottomleft: 5px;
+          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 5px;
+          padding:20px;
 
+          img{
+            float:left;
+            width:40px;
+            height:40px;
+            margin-right:20px;
+            @include radius(5px);
+          }
+          textarea{
+            float:left;
+            background:#e1e5ea;
+            @include radius(5px);
+            border:none;
+            width:535px;
+            height:94px;
+            padding:10px;
+            text-align: left;
+            &:focus{
+              background: #eee;
+            }
+
+          }
+          span{
+            float:right;
+            margin:15px 0 0 0;
+            color:#aeaeae;
+            font-size:11px;
+            text-transform: uppercase;
+            em{
+              color:#00a8e7;
+            }
+          }
+        }
+      }
+     .comment-list{
+       padding:10px 0 0 0;
+       .comment-item{
+         position:relative;
+         @include radius(5px);
+         margin-top:30px;
+         background:#fff;
+         padding:20px;
+         .comment-arrow{
+           float:left;
+           width:10px;
+           height:10px;
+           overflow:hidden;
+           position:absolute;
+           left:20px;
+           top:-10px;
+           background:image-url("sprite.png") -80px -100px no-repeat;
+         }
+         img{
+           float:left;
+           width:40px;
+           height:40px;
+           margin-right:20px;
+           @include radius(5px);
+         }
+         .item-left{
+           float:left;
+           width:560px;
+           .comment-info{
+             overflow:hidden;
+             span{
+               float:left;
+               color:#00a8e7;
+               text-transform: uppercase;
+               font-size:14px;
+               font-weight: bold;
+               line-height:16px;
+             }
+             em{
+               float:right;
+               color:#aeaeae;
+               font-size:11px;
+               line-height:12px;
+               i.comment-date{
+                 float:left;
+                 width:12px;
+                 height:12px;
+                 margin-right:5px;
+                 background:image-url("sprite.png") -110px -60px no-repeat;
+               }
+             }
+           }
+           .comment-text{
+             margin-top:10px;
+           }
+         }
+       }
+     }
+   }
+ }
  /********** END EVENT VIEW CSS ************/
  /******************************************/
 

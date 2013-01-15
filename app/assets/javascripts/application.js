@@ -15,4 +15,5 @@
 //= require jquery.dropkick-1.0.0
 //= require jquery.masonry.min
 //= require jquery.masonry.ordered
+//= require bootstrap-tooltip
 //= require main
