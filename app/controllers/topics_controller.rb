@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
 	layout "events"
 	
   def index
-    @topics = Topic.includes(:user).order("created_at DESC")
+    @topics = Topic.includes(:user).order("created_at DESC").page(params[:page]).per(6)
     respond_with @topics
   end
 
@@ -21,7 +21,7 @@ class TopicsController < ApplicationController
     else
       raise "Validation errors"
     end
-    respond_with topic
+    respond_with @topic
   end
 
   def destroy
@@ -34,8 +34,8 @@ class TopicsController < ApplicationController
       current_user.extend Speaker
     end
 
-    def topic
-      @topic ||= Topic.find(params.permit(:topic_id))
+    def page
+      params.permit(:page)
     end
 
     def topic_params

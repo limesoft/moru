@@ -1,0 +1,4 @@
+<% unless @topics.empty? %>
+  var topics = $("<%= j(render(partial: 'topic', collection: @topics)) %>");
+  $("#topic-list").append(topics).masonry('appended', topics, true);
+<% end %>

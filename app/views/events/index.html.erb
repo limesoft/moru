@@ -11,9 +11,6 @@
 </div>
 <script>
 $(function(){
-  $.moru = {
-    event_list: $('#event-list')
-  };
   infinity_pagination('<%= events_path %>', <%= @events.num_pages %>);
 });
 </script>
