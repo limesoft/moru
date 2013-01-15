@@ -2,7 +2,7 @@
 
 class TopicsController < ApplicationController
 
-  before_filter :extend_as_speaker, only: [:create, :destroy, :assign, :unassign]
+  before_filter :extend_as_speaker, only: [:create, :assign, :unassign]
   respond_to :js
 
 	layout "events"
@@ -41,10 +41,6 @@ class TopicsController < ApplicationController
 
     def topic
       @topic ||= Topic.find(params[:id])
-    end
-
-    def page
-      params.permit(:page)
     end
 
     def topic_params
