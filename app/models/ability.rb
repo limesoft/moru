@@ -45,6 +45,8 @@ module Ability
       can :manage, Comment, user_id: user.id
       can :manage, Rsvp, user_id: user.id
       can :manage, Topic, user_id: user.id
+      can :unassign, Topic, speaker_id: user.id
+      can :assign, Topic, speaker_id: user.id
     end
   end
 
