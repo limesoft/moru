@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    respond_with event
+    respond_with event, layout: "application"
   end
 
   private

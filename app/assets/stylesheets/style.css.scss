@@ -960,3 +960,71 @@ Back to top button
 
 /*************** END TOPIC CSS ************/
 /******************************************/
+
+
+ /******************************************/
+ /********* BEGIN EVENT VIEW CSS ***********/
+
+ .event-view-container{
+    .event-content{
+       @include radius(5px);
+       background:#fff;
+       padding:20px;
+      .event-map{
+
+      }
+      .event-text{
+        background:yellow;
+        overflow:hidden;
+        .event-topic-schedule{
+          float:left;
+          width:115px;
+          margin-right:20px;
+          .event-date{
+            overflow:hidden;
+            padding:10px 15px;
+            background:#7fcde8;
+            @include radius(5px);
+            text-align: center;
+            span{
+              color:#fff;
+              font-weight: bold;
+              font-size:25px;
+            }
+            em{
+              display:block;
+              font-size:13px;
+              text-align: center;
+              color:#fff
+            }
+          }
+          .event-time{
+             margin-top:20px;
+             padding:10px 15px;
+             background:#b6d99f;
+             @include radius(5px);
+            text-align: center;
+             span{
+               color:#fff;
+               font-weight: bold;
+               font-size:25px;
+             }
+          }
+        }
+        .event-topic-text{
+          h2{
+            color:#00a8e7;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+ }
+
+ /********** END EVENT VIEW CSS ************/
+ /******************************************/
+
+
+

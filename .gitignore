@@ -20,6 +20,9 @@
 # Ignore the test
 /test
 
+
+.idea/*
+
 # Ignore the database.yml
 /config/database.yml
 
