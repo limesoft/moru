@@ -1,0 +1,27 @@
+<div class="topic-item">
+  <div class="topic-context clearfix">
+	  <div class="topic-header clearfix">
+		  <div class="avatar"><%= image_tag(topic.user.default_avatar) %></div>
+			<div class="topic-user">
+        <span><%= topic.user.name %><br/>
+          <em><%= time_ago_in_words(topic.created_at) %> өмнө</em>
+				</span>
+				<a href="javascript:void(0)" class="vote-down">-</a>
+				<a href="javascript:void(0)" class="vote-up">+</a>
+			</div>
+			<div class="pulse"><span class="down"> -3 </span></div>
+		</div>
+		<div class="topic-text"><%= topic.content %></div>
+	</div>
+
+	<div class="topic-tools clearfix">
+	  <a href="javascript:void(0)" class="speak-topic"> энэ сэдвийг ярих</a>
+		<nav class="social-login noneBackground nonePadding">
+		  <ul>
+			  <li><a href="javascript:void(0)" class="social-twitter"></a></li>
+				<li><a href="javascript:void(0)" class="social-facebook"></a></li>
+				<li><a href="javascript:void(0)" class="social-google_oauth2"></a></li>
+			</ul>
+		</nav>
+	</div>
+</div>

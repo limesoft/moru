@@ -11,6 +11,6 @@ class Topic < ActiveRecord::Base
 
   ##
   # Validations
-  validates :content, presence: true, length: { in: 3...500 }
+  validates :content, presence: true, length: { in: 100...1000 }
 
 end

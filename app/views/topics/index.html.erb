@@ -2,79 +2,16 @@
 
   <%= render 'new_topic' %>
 
-	<div class="grid_10">
-		<div class="topic-list-title">
-			<span>Сэдвүүд</span>
-		</div>
-		<div class="topic-list" id="topic-list">
-			<div class="topic-item">
-				<div class="topic-context clearfix">
-					<div class="topic-header clearfix">
-						<div class="avatar"> <%=  image_tag("avatar.png") %></div>
-						<div class="topic-user"> 
-								<span> TSOLBAYAR DONCHINNYAMBEE<br/>
-									<em> 2013 оны 01 сарын 05 13:00 цаг </em>
-								</span> 
-								<a href="javascript:void(0)" class="vote-down"> - </a>
-								<a href="javascript:void(0)" class="vote-up"> + </a>
-
-						</div>
-						<div class="pulse"> <span class="down"> -3 </span> </div>
-					</div>
-					<div class="topic-text">
-							Want to learn how to write cleaner & more efficient markup? We'll review 
-							how Haml can help you do that, and how it'll make your life easier when 
-							
-					</div>
-				</div>
-				<div class="topic-tools clearfix">
-					<a href="javascript:void(0)" class="speak-topic"> энэ сэдвийг ярих</a>
-
-					<nav class="social-login noneBackground nonePadding">
-				    <ul>
-						  <li><a href="javascript:void(0)" class="social-twitter"></a></li>
-						  <li><a href="javascript:void(0)" class="social-facebook"></a></li>
-						  <li><a href="javascript:void(0)" class="social-google_oauth2"></a></li>
-					  </ul>
-			  	</nav>
-				</div>
-			</div>
-
-			<div class="topic-item">
-				<div class="topic-context clearfix">
-					<div class="topic-header clearfix">
-						<div class="avatar"> <%=  image_tag("avatar.png") %></div>
-						<div class="topic-user"> 
-								<span> TSOLBAYAR DONCHINNYAMBEE<br/>
-									<em> 2013 оны 01 сарын 05 13:00 цаг </em>
-								</span> 
-								<a href="javascript:void(0)" class="vote-down"> - </a>
-								<a href="javascript:void(0)" class="vote-up"> + </a>
-
-						</div>
-						<div class="pulse"> <span class="down"> -3 </span> </div>
-					</div>
-					<div class="topic-text">
-							Want to learn how to write cleaner & more efficient markup? We'll review 
-							how Haml can help you do that, and how it'll make your life easier when 
-							
-					</div>
-				</div>
-				<div class="topic-tools clearfix">
-					<a href="javascript:void(0)" class="speak-topic"> энэ сэдвийг ярих</a>
-
-					<nav class="social-login noneBackground nonePadding">
-				    <ul>
-						  <li><a href="javascript:void(0)" class="social-twitter"></a></li>
-						  <li><a href="javascript:void(0)" class="social-facebook"></a></li>
-						  <li><a href="javascript:void(0)" class="social-google_oauth2"></a></li>
-					  </ul>
-			  	</nav>
-				</div>
-			</div>
-
-		</div>
-	</div>
+  <% unless @topics.empty? %>
+	  <div class="grid_10">
+		  <div class="topic-list-title">
+			  <span>Сэдвүүд</span>
+		  </div>
+		  <div class="topic-list" id="topic-list">
+        <%= render partial: 'topic', collection: @topics %>
+		  </div>
+	  </div>
+  <% end %>
 </div>
  <p id="back-top">
     <a href="#top"><span></span>Дээш очих</a>
