@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
     elsif topic_type == 'no'
       current_user.create_topic @topic
     else
-      raise "Validation errors"
+      @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
     end
     respond_with @topic
   end

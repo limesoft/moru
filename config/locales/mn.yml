@@ -2,3 +2,8 @@ mn:
   time:
     formats:
       weekday: "%A"
+  activerecord:
+    attributes:
+      topic:
+        type: 'Сэдэв'
+        content: 'Агуулга'
