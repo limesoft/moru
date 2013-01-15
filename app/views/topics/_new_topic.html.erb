@@ -1,0 +1,30 @@
+<div class="grid_10">
+  <!-- сэдэв ярих санал тавих -->
+	<div class="offer-topic clearfix">
+    <%= form_for Topic.new, remote: true do |f| %>
+	  <div class="topic-type">
+		  <label for="tt1" class="talk-topic1">
+        <%= f.radio_button :type, 'yes' %>
+				<span>
+					<h2>сэдэв ярих</h2>
+					Сэдэв ярих санал тавих 
+				</span>
+			</label>
+
+			<label  for="tt2" class="talk-topic2">
+        <%= f.radio_button :type, 'no' %>
+				<span>
+					<h2>Сэдэв яриулах</h2>
+					Сэдэв яриулах санал тавих
+				</span>
+			</label>
+		</div>
+    <%= f.text_area :content, class: "topicarea" %>
+		<div class="send-topic">
+			<div class="logo"></div>	
+      <%= f.submit "Илгээх", class: "send-topic" %>
+			<a href="javascript:void(0)" class="send-topic">Илгээх</a>
+		</div>
+    <% end %>
+	</div>
+</div>

@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 
   ##
   # Relationships
-
   has_many :authentications, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :topics, dependent: :destroy

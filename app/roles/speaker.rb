@@ -5,9 +5,17 @@ require_dependency 'context'
 module Speaker
   include Context
 
-  def create_topic(topic)
+  def create_and_assign_topic(topic)
     in_context do
       topic.speaker = self
+      topic.user = self
+      topic.save
+    end
+  end
+
+  def create_topic(topic)
+    in_context do
+      topic.user = self
       topic.save
     end
   end

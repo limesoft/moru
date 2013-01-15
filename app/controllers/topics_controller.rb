@@ -5,7 +5,6 @@ class TopicsController < ApplicationController
   before_filter :extend_as_speaker, only: [:create, :destroy]
   respond_to :js
 
-	
 	layout "events"
 	
   def index
@@ -14,7 +13,14 @@ class TopicsController < ApplicationController
   end
 
   def create
-    current_user.add_topic topic
+    @topic = Topic.new(topic_params)
+    if topic_type == 'yes'
+      current_user.create_and_assign_topic @topic
+    elsif topic_type == 'no'
+      current_user.create_topic @topic
+    else
+      raise "Validation errors"
+    end
     respond_with topic
   end
 
@@ -30,5 +36,13 @@ class TopicsController < ApplicationController
 
     def topic
       @topic ||= Topic.find(params.permit(:topic_id))
+    end
+
+    def topic_params
+      params.require(:topic).permit(:content)
+    end
+
+    def topic_type
+      params.require(:topic).permit(:type)[:type].to_s.downcase
     end
 end
