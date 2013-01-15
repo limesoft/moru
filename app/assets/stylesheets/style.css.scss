@@ -784,9 +784,10 @@ Back to top button
 			margin:0 auto;
 			background:image-url("sprite.png") 0 -100px no-repeat;
 		}
-		a.send-topic{
+		input.send{
 			width:100%;
 			@include radius(5px);
+      border:none;
 			background:#7fcde8;
 			color:#fff;
 			font-size:13px;
@@ -795,6 +796,12 @@ Back to top button
 			line-height:40px;
 			text-transform: uppercase;
 			margin-top:12px;
+      &:hover{
+        background:#99d8ed;
+      }
+      &:active{
+        background:#61b0cc;
+      }
 		}
 	}
 }
@@ -905,6 +912,34 @@ Back to top button
 			-moz-border-radius-bottomleft: 5px;
 			border-bottom-right-radius: 5px;
 			border-bottom-left-radius: 5px;
+      .presenter{
+        float:left;
+        background:#707982;
+        @include radius(5px);
+        padding:0 10px 0 0;
+        height:30px;
+        img{
+          float:left;
+          @include radius(5px);
+          width:30px;
+          height:30px;
+        }
+        span{
+          float:left;
+          color:#fff;
+          font-size:12px;
+          font-weight: bold;
+          text-transform: uppercase;
+          margin:6px 0 0 10px;
+        }
+        a.close{
+          float:right;
+          width:15px;
+          height:15px;
+          margin:8px 0 0 10px;
+          background:url("sprite.png") -80px -60px no-repeat;
+        }
+      }
 			a.speak-topic{
 				float:left;
 				background:#707982;
