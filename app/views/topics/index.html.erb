@@ -1,6 +1,6 @@
 <div class="container_10 clearfix">
 
-  <%= render 'new_topic' %>
+  <%= render 'new_topic' if user_signed_in? %>
 
   <% unless @topics.empty? %>
 	  <div class="grid_10">
@@ -13,6 +13,4 @@
 	  </div>
   <% end %>
 </div>
- <p id="back-top">
-    <a href="#top"><span></span>Дээш очих</a>
- </p>
+<p id="back-top"><a href="#top"><span></span>Дээш очих</a></p>
