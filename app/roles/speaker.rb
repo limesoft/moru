@@ -20,7 +20,12 @@ module Speaker
     end
   end
 
-  def delete_topic(topic)
+  def assign_topic(topic)
+    topic.speaker = self
+    topic.save
+  end
+
+  def unassign_topic(topic)
     in_context do
       topic.speaker = nil
       topic.save

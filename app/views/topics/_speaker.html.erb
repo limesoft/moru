@@ -1,0 +1,5 @@
+<div class="presenter">
+  <%= image_tag(topic.user.default_avatar) %>
+	<span><%= topic.user.name %></span>
+  <%= link_to_if(user_signed_in? && can?(:unassign, topic), "", unassign_topic_path(topic), class: "close", remote: true, method: :put) %>
+</div>

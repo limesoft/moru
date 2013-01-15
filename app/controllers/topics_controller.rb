@@ -2,7 +2,7 @@
 
 class TopicsController < ApplicationController
 
-  before_filter :extend_as_speaker, only: [:create, :destroy]
+  before_filter :extend_as_speaker, only: [:create, :destroy, :assign, :unassign]
   respond_to :js
 
 	layout "events"
@@ -24,14 +24,23 @@ class TopicsController < ApplicationController
     respond_with @topic
   end
 
-  def destroy
-    current_user.delete_topic topic
+  def assign
+    current_user.assign_topic topic
+    respond_with topic
+  end
+
+  def unassign
+    current_user.unassign_topic topic
     respond_with topic
   end
 
   private
     def extend_as_speaker
       current_user.extend Speaker
+    end
+
+    def topic
+      @topic ||= Topic.find(params[:id])
     end
 
     def page

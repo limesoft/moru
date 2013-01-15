@@ -1,0 +1,1 @@
+$('#topic-speaker-<%= @topic.id %>').html("<%= j(link_to("энэ сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put)) %>");
