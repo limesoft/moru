@@ -37,14 +37,11 @@
 					</div>
 					<div class="member-list clearfix">
 						<ul id="member-list">
-							<li><%= image_tag('avatar.png', rel: "tooltip", alt: "fasdfasdfasdfasdf") %></li>
-							<li><%= image_tag('avatar.png', rel: "tooltip", alt: "aaaaaaaaaa") %></li>
-							<li><%= image_tag('avatar.png',rel: "tooltip", alt: "bbbbbbbbbb") %></li>
-							<li><%= image_tag('avatar.png',rel: "tooltip", alt: "cccccccccc") %></li>
-							<li><%= image_tag('avatar.png') %></li>
-							<li><%= image_tag('avatar.png') %></li>
-							<li><%= image_tag('avatar.png') %></li>
-							<li><%= image_tag('avatar.png') %></li>
+              <% event.with_going.each do |rsvp| %>
+                <li>
+                  <%= image_tag(rsvp.user.default_avatar, rel: 'tooltip', title: 'Foobar') %>
+                </li>
+              <% end %>
 						</ul>
 					</div>
 

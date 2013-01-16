@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   ##
   # Relationships
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :with_going, class_name: 'Rsvp', conditions: ['going=?', RSVP_YES], include: :user
 
   # RSVP
   has_many :rsvps, dependent: :destroy

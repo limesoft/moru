@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   private
     def event
-      @event ||= Event.find(params[:id])
+      @event ||= Event.find(params[:id], include: :with_going)
     end
     helper_method :event
 
