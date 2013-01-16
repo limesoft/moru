@@ -11,23 +11,19 @@
 						<div class="event-text">
 							<div class="event-topic-schedule">
 								<div class="event-date">
-									<span>2013 </span>
+                  <span><%= event.date.year %></span>
 									<em>1 сарын 23</em>
 								</div>
 								<div class="event-time"><span>13:00</span></div>
 							</div>
 							<div class="event-topic-text">
-								<h2>MORU уулзалт #3</h2>
-								<span>
-									Энэ сарын 12-нд зохиогдох MORU-н ээлжилт уулзалтын товыг зарлаж байна.
-									Уулзалтанд одоогийн байдлаар дараах сэдвүүд яригдахаар боллоо.
-								</span>
+                <h2><%= event.title %></h2>
+                <span><%= event.content %></span>
 								<ul>
 									<li> - Front End Development: +Bayarja Buyandelger </li>
 									<li> - Backbone.js: +Khaschuluu Munkhbayar </li>
 									<li> - Data-Context-Interaction /DCI/: Zolzaya </li>
 								</ul>
-								<span>Сэдэв нэмж ярих хүсэлтэй хүмүүс нь саналаа үлдээнэ үү </span>
 							</div>
 						</div>
 						<div class="event-bottom-tool clearfix">
@@ -52,57 +48,8 @@
 						</ul>
 					</div>
 
-					<div class="comment-container">
-						<div class="write-comment ">
-							<div class="write-title clearfix">
-								<span> сэтгэгдэл үлдээх </span>
-								<em> нийт сэтгэгдэл 15 </em>
-							</div>
-							<div class="write-field clearfix">
-								<%= image_tag('avatar.png') %>
-								<textarea></textarea>
-								<span>сэтгэгдэл бичээд <em>enter</em> дарна уу</span>
-							</div>
-						</div>
-						<div class="comment-list">
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+          <%= render 'comments' %>
+
 				</div>
 			</div>
 			<!-- end left content -->

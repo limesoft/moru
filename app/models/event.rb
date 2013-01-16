@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
   ##
   # Relationships
-  has_many :comments, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   # RSVP
   has_many :rsvps, dependent: :destroy

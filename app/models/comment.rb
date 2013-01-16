@@ -8,6 +8,6 @@ class Comment < ActiveRecord::Base
 
   ##
   # Relationships
-  belongs_to :event
+  belongs_to :commentable, polymorphic: true
   belongs_to :user
 end

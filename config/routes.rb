@@ -14,6 +14,7 @@ Moru::Application.routes.draw do
     put :assign, on: :member
     put :unassign, on: :member
   end
+  resources :comments
   resources :rsvps, only: [:create]
   resources :posts, only: [:index, :show]
 

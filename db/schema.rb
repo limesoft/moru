@@ -11,7 +11,38 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114042242) do
+ActiveRecord::Schema.define(:version => 20130116020325) do
+
+  create_table "admin_notes", :force => true do |t|
+    t.string   "resource_id",     :null => false
+    t.string   "resource_type",   :null => false
+    t.integer  "admin_user_id"
+    t.string   "admin_user_type"
+    t.text     "body"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "admin_notes", ["admin_user_type", "admin_user_id"], :name => "index_admin_notes_on_admin_user_type_and_admin_user_id"
+  add_index "admin_notes", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "admin_users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+  end
+
+  add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
+  add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -27,9 +58,10 @@ ActiveRecord::Schema.define(:version => 20130114042242) do
   create_table "comments", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   create_table "events", :force => true do |t|

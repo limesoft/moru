@@ -1,0 +1,13 @@
+<div class="write-comment">
+  <div class="write-title clearfix">
+	  <span> сэтгэгдэл үлдээх </span>
+		<em> нийт сэтгэгдэл 25</em>
+	</div>
+	<div class="write-field clearfix">
+    <%= form_for Comment.new, remote: true do |f| %>
+		  <%= image_tag(current_user.default_avatar) %>
+      <%= f.text_area :content %>
+		  <span>сэтгэгдэл бичээд <em>enter</em> дарна уу</span>
+    <% end %>
+	</div>
+</div>
