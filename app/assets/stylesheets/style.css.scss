@@ -375,7 +375,6 @@ header{
 				}
 			}	
 		}
-
 		.guest-tool{
 			padding:20px 0 0 0;
 			.member-count{
@@ -410,7 +409,7 @@ header{
 		@include radius(10px);		
 		background:#fff;
 		padding:20px 0;
-
+    margin-top:40px;
 		.post-img{
 			display:block;
 			margin-bottom:20px;
@@ -960,15 +959,11 @@ Back to top button
 		}
 	}
 }
-
-
 /*************** END TOPIC CSS ************/
 /******************************************/
 
-
  /******************************************/
  /********* BEGIN EVENT VIEW CSS ***********/
-
  .event-view-container{
    padding:0 0 20px 0;
     .event-content{
