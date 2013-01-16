@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116020325) do
+ActiveRecord::Schema.define(:version => 20130116050651) do
 
   create_table "admin_notes", :force => true do |t|
     t.string   "resource_id",     :null => false
@@ -69,9 +69,10 @@ ActiveRecord::Schema.define(:version => 20130116020325) do
     t.text     "content"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.datetime "date"
+    t.integer  "comments_count", :default => 0
   end
 
   create_table "posts", :force => true do |t|
