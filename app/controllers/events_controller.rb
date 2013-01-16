@@ -13,12 +13,13 @@ class EventsController < ApplicationController
   end
 
   def show
+    @comments = event.comments.includes(:user).page(params[:page]).per(3)
     respond_with event, layout: "application"
   end
 
   private
     def event
-      @event ||= Event.includes(comments: :user).find(params[:id])
+      @event ||= Event.find(params[:id])
     end
     helper_method :event
 

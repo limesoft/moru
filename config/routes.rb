@@ -10,7 +10,7 @@ Moru::Application.routes.draw do
   match 'logout' => 'authentications#logout', as: 'logout'
 
   resources :events, only: [:index, :show] do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :index]
   end
   resources :topics, only: [:index, :create] do
     put :assign, on: :member

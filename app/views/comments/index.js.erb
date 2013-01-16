@@ -1,0 +1,3 @@
+<% unless @comments.empty? %>
+  $('#comment-list').append("<%= j(render(partial: 'events/comment', collection: @comments)) %>");
+<% end %>

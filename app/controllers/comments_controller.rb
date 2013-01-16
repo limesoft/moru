@@ -2,14 +2,19 @@
 
 class CommentsController < ApplicationController
 
-  before_filter :become_commenter, only: [:create]
+  before_filter :become_commenter, only: [:create, :index]
 
   # load_and_authorize_resource
   respond_to :js
 
+  def index
+    @comments = commentable.comments.page(params[:page]).per(3)
+    respond_with @comments
+  end
+
   def create
     @comment = Comment.new(comment_params)
-    current_user.create_comment @comment, params
+    current_user.create_comment @comment, commentable
     respond_with @comment
   rescue Exception => e
     puts '----------------- EXCEPTION'
@@ -18,6 +23,11 @@ class CommentsController < ApplicationController
   private
     def comment_params
       params.require(:comment).permit(:content)
+    end
+
+    def commentable
+      klass = [Event, Post].detect { |t| params["#{t.name.underscore}_id"] }
+      @commentable ||= klass.find(params["#{klass.name.underscore}_id"])
     end
 
     def become_commenter
