@@ -12,9 +12,9 @@
 							<div class="event-topic-schedule">
 								<div class="event-date">
                   <span><%= event.date.year %></span>
-									<em>1 сарын 23</em>
+                  <em><%= l(event.date, format: :event_short) %></em>
 								</div>
-								<div class="event-time"><span>13:00</span></div>
+                <div class="event-time"><span><%= event.date.strftime("%H:%M") %></span></div>
 							</div>
 							<div class="event-topic-text">
                 <h2><%= event.title %></h2>

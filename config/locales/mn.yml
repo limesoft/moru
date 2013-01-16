@@ -2,6 +2,7 @@ mn:
   time:
     formats:
       weekday: "%A"
+      event_short: '%_m сарын %d'
   activerecord:
     attributes:
       topic:
