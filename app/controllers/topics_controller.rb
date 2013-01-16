@@ -2,7 +2,7 @@
 
 class TopicsController < ApplicationController
 
-  before_filter :extend_as_speaker, only: [:create, :assign, :unassign]
+  before_filter :become_speaker, only: [:create, :assign, :unassign]
   respond_to :js
 
 	layout "events"
@@ -35,7 +35,7 @@ class TopicsController < ApplicationController
   end
 
   private
-    def extend_as_speaker
+    def become_speaker
       current_user.extend Speaker
     end
 

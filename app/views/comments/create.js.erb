@@ -1,0 +1,5 @@
+$('#comment_content').val('');
+<% if @comment.errors.empty? %>
+  $('#comment-list').append("<%= j(render(partial: 'events/comment', locals: {comment: @comment})) %>");
+<% else %>
+<% end %>

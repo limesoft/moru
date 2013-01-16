@@ -1,0 +1,13 @@
+<div class="comment-item clearfix">
+  <div class="comment-arrow"></div>
+  <%= image_tag(comment.user.default_avatar) %>
+	<div class="item-left">
+    <div class="comment-info">
+      <span><%= comment.user.name %></span>&nbsp;
+      <em><i class="comment-date"></i><%= time_ago_in_words comment.created_at %> өмнө</em>
+    </div>
+		<div class="comment-text">
+      <%= comment.content %>
+		</div>
+	</div>
+</div>

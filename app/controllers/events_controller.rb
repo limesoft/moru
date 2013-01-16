@@ -18,7 +18,7 @@ class EventsController < ApplicationController
 
   private
     def event
-      @event ||= Event.find(params[:id])
+      @event ||= Event.includes(comments: :user).find(params[:id])
     end
     helper_method :event
 

@@ -2,44 +2,7 @@
 
   <%= render 'new_comment' if user_signed_in? %>
 
-						<div class="comment-list">
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-							<div class="comment-item clearfix">
-								<div class="comment-arrow"></div>
-								<%= image_tag('avatar.png') %>
-								<div class="item-left">
-									<div class="comment-info"> <span>tsolbayar Donchinnyambuu</span> <em><i class="comment-date"></i> 4 өдрийн өмнө</em> </div>
-									<div class="comment-text">
-										MORU буюу Mongolian Rubyist бүлгэм нь Ruby програмчлалын хэл, Ruby on Rails
-										технологи, вэб хөгжүүлэх сүүлийн үеийн арга, технологиудыг судлах, түгээн дэлгэрүүлэх
-										зорилготой бүлгэм юм.
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+	<div class="comment-list" id="comment-list">
+    <%= render partial: 'comment', collection: event.comments %>
+	</div>
+</div>

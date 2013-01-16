@@ -37,6 +37,13 @@ jQuery ->
                             , isAnimated: true
                             )
 
+  if $('#new_comment').length > 0
+    $('#new_comment').keypress((event)->
+        if event.which == 13 && !!$('#comment_content').val()
+          event.preventDefault()
+          $("#new_comment").submit()
+    )
+
 @infinity_pagination = (url, number_of_pages)->
   page = 1
   loading = false
