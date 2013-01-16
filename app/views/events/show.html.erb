@@ -18,8 +18,8 @@
 							</div>
 							<div class="event-topic-text">
                 <h2><%= event.title %></h2>
-                <span><%= event.content %></span>
 								<ul>
+									<li> <span><%= event.content %></span> </li>
 									<li> - Front End Development: +Bayarja Buyandelger </li>
 									<li> - Backbone.js: +Khaschuluu Munkhbayar </li>
 									<li> - Data-Context-Interaction /DCI/: Zolzaya </li>
@@ -39,7 +39,7 @@
 						<ul id="member-list">
               <% event.with_going.each do |rsvp| %>
                 <li>
-                  <%= image_tag(rsvp.user.default_avatar, rel: 'tooltip', title: 'Foobar') %>
+									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: 'Bayarjargal' } %>
                 </li>
               <% end %>
 						</ul>
