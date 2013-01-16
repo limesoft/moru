@@ -8,8 +8,7 @@
 	padding:0;
 	background:#f1f2f3;
 }
-
-a{ 
+a{
 	color:#00a8e7;
 	text-decoration: none;
 	font-weight:bold; 
@@ -24,7 +23,6 @@ a{
 			color:#444;
 	}
 }
-
 .noneBackground{
 	background: none !important;
 }
@@ -472,7 +470,63 @@ header{
 				}
 			}
 		}
-		
+		.post-item-tools{
+      overflow:hidden;
+      padding:0 20px;
+      ul{
+        float:left;
+        background: #b6d99f;
+        @include none_styled_ul();
+        @include radius(5px);
+        padding:10px 0 10px 10px;
+        li{
+          float:left;
+          margin-right:10px;
+          span{
+            color:#fff;
+            font-size:13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right:10px;
+          }
+          .f-social-git{
+            float:left;
+            width:20px;
+            height:20px;
+            background:image-url("sprite.png") -340px 0 no-repeat;
+          }
+          .f-social-twitter{
+            float:left;
+            width:20px;
+            height:20px;
+            background:image-url("sprite.png") -370px 0 no-repeat;
+          }
+          .f-social-facebook{
+            float:left;
+            width:20px;
+            height:20px;
+            background:image-url("sprite.png") -400px 0 no-repeat;
+          }
+          .f-social-rss{
+            float:left;
+            width:20px;
+            height:20px;
+            background:image-url("sprite.png") -430px 0 no-repeat;
+          }
+        }
+      }
+      .published_by{
+        float:right;
+        background:#eee;
+        @include radius(5px);
+        padding:10px 20px;
+        span{
+          font-size:11px;
+          text-transform: uppercase;
+          color:#555;
+        }
+      }
+    }
 	}
 	.paginate{
 		@include radius(5px);
@@ -500,13 +554,11 @@ header{
 			color:#b6d99f;
 		}
 	}
-	
-}
 
+}
 .right-content{
 	background:#e1e5ea;
 }
-
 footer{
 	padding:30px 0 40px 0;
 	background:#707982;
@@ -965,7 +1017,6 @@ Back to top button
  /******************************************/
  /********* BEGIN EVENT VIEW CSS ***********/
  .event-view-container{
-   padding:0 0 20px 0;
     .event-content{
        @include radius(5px);
        background:#fff;
@@ -1134,131 +1185,131 @@ Back to top button
        }
      }
    }
-   .comment-container{
-     padding:40px 0 0 0;
-      .write-comment{
-         .write-title{
-           padding:0 20px;
-           line-height: 60px;
-           background:#5f6871;
-           -webkit-border-top-left-radius: 5px;
-           -webkit-border-top-right-radius: 5px;
-           -moz-border-radius-topleft: 5px;
-           -moz-border-radius-topright: 5px;
-           border-top-left-radius: 5px;
-           border-top-right-radius: 5px;
+ }
+ .comment-container{
+   padding:40px 0;
+   .write-comment{
+     .write-title{
+       padding:0 20px;
+       line-height: 60px;
+       background:#5f6871;
+       -webkit-border-top-left-radius: 5px;
+       -webkit-border-top-right-radius: 5px;
+       -moz-border-radius-topleft: 5px;
+       -moz-border-radius-topright: 5px;
+       border-top-left-radius: 5px;
+       border-top-right-radius: 5px;
+       span{
+         float:left;
+         color:#fff;
+         font-weight: bold;
+         text-transform: uppercase;
+         font-size:15px;
+       }
+       em{
+         float:right;
+         color: #b6d99f;
+         font-size:12px;
+         text-transform: uppercase;
+       }
+     }
+     .write-field{
+       background:#fff;
+       -webkit-border-bottom-right-radius: 5px;
+       -webkit-border-bottom-left-radius: 5px;
+       -moz-border-radius-bottomright: 5px;
+       -moz-border-radius-bottomleft: 5px;
+       border-bottom-right-radius: 5px;
+       border-bottom-left-radius: 5px;
+       padding:20px;
+
+       img{
+         float:left;
+         width:40px;
+         height:40px;
+         margin-right:20px;
+         @include radius(5px);
+       }
+       textarea{
+         float:left;
+         background:#e1e5ea;
+         @include radius(5px);
+         border:none;
+         width:535px;
+         height:94px;
+         padding:10px;
+         text-align: left;
+         &:focus{
+           background: #eee;
+         }
+
+       }
+       span{
+         float:right;
+         margin:15px 0 0 0;
+         color:#aeaeae;
+         font-size:11px;
+         text-transform: uppercase;
+         em{
+           color:#00a8e7;
+         }
+       }
+     }
+   }
+   .comment-list{
+     padding:10px 0 0 0;
+     .comment-item{
+       position:relative;
+       @include radius(5px);
+       margin-top:30px;
+       background:#fff;
+       padding:20px;
+       .comment-arrow{
+         float:left;
+         width:10px;
+         height:10px;
+         overflow:hidden;
+         position:absolute;
+         left:20px;
+         top:-10px;
+         background:image-url("sprite.png") -80px -100px no-repeat;
+       }
+       img{
+         float:left;
+         width:40px;
+         height:40px;
+         margin-right:20px;
+         @include radius(5px);
+       }
+       .item-left{
+         float:left;
+         width:560px;
+         .comment-info{
+           overflow:hidden;
            span{
              float:left;
-             color:#fff;
-             font-weight: bold;
+             color:#00a8e7;
              text-transform: uppercase;
-             font-size:15px;
+             font-size:14px;
+             font-weight: bold;
+             line-height:16px;
            }
            em{
              float:right;
-             color: #b6d99f;
-             font-size:12px;
-             text-transform: uppercase;
-           }
-         }
-        .write-field{
-          background:#fff;
-          -webkit-border-bottom-right-radius: 5px;
-          -webkit-border-bottom-left-radius: 5px;
-          -moz-border-radius-bottomright: 5px;
-          -moz-border-radius-bottomleft: 5px;
-          border-bottom-right-radius: 5px;
-          border-bottom-left-radius: 5px;
-          padding:20px;
-
-          img{
-            float:left;
-            width:40px;
-            height:40px;
-            margin-right:20px;
-            @include radius(5px);
-          }
-          textarea{
-            float:left;
-            background:#e1e5ea;
-            @include radius(5px);
-            border:none;
-            width:535px;
-            height:94px;
-            padding:10px;
-            text-align: left;
-            &:focus{
-              background: #eee;
-            }
-
-          }
-          span{
-            float:right;
-            margin:15px 0 0 0;
-            color:#aeaeae;
-            font-size:11px;
-            text-transform: uppercase;
-            em{
-              color:#00a8e7;
-            }
-          }
-        }
-      }
-     .comment-list{
-       padding:10px 0 0 0;
-       .comment-item{
-         position:relative;
-         @include radius(5px);
-         margin-top:30px;
-         background:#fff;
-         padding:20px;
-         .comment-arrow{
-           float:left;
-           width:10px;
-           height:10px;
-           overflow:hidden;
-           position:absolute;
-           left:20px;
-           top:-10px;
-           background:image-url("sprite.png") -80px -100px no-repeat;
-         }
-         img{
-           float:left;
-           width:40px;
-           height:40px;
-           margin-right:20px;
-           @include radius(5px);
-         }
-         .item-left{
-           float:left;
-           width:560px;
-           .comment-info{
-             overflow:hidden;
-             span{
+             color:#aeaeae;
+             font-size:11px;
+             line-height:12px;
+             i.comment-date{
                float:left;
-               color:#00a8e7;
-               text-transform: uppercase;
-               font-size:14px;
-               font-weight: bold;
-               line-height:16px;
-             }
-             em{
-               float:right;
-               color:#aeaeae;
-               font-size:11px;
-               line-height:12px;
-               i.comment-date{
-                 float:left;
-                 width:12px;
-                 height:12px;
-                 margin-right:5px;
-                 background:image-url("sprite.png") -110px -60px no-repeat;
-               }
+               width:12px;
+               height:12px;
+               margin-right:5px;
+               background:image-url("sprite.png") -110px -60px no-repeat;
              }
            }
-           .comment-text{
-             margin-top:10px;
-           }
+         }
+         .comment-text{
+           margin-top:10px;
          }
        }
      }
