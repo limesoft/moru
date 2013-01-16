@@ -1,7 +1,7 @@
 <div class="write-comment">
   <div class="write-title clearfix">
 	  <span> сэтгэгдэл үлдээх </span>
-		<em> нийт сэтгэгдэл 25</em>
+    <em> нийт сэтгэгдэл <%= event.comments_count %></em>
 	</div>
 	<div class="write-field clearfix">
     <%= form_for [@event, Comment.new], remote: true do |f| %>
