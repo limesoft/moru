@@ -44,6 +44,8 @@ jQuery ->
           $("#new_comment").submit()
     )
 
+  $(".alerts").alert()
+
 @infinity_pagination = (url, number_of_pages)->
   page = 1
   loading = false
