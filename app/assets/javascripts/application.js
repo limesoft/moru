@@ -16,4 +16,5 @@
 //= require jquery.masonry.min
 //= require jquery.masonry.ordered
 //= require bootstrap-tooltip
+//= require html5shiv
 //= require main
