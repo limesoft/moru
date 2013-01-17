@@ -46,7 +46,7 @@ jQuery ->
 
   $(".alerts").alert()
 
-  $("a[rel='tooltip']").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
+  $("a[rel*=tooltip]").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
 
 @infinity_pagination = (url, number_of_pages)->
   page = 1

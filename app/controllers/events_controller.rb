@@ -13,7 +13,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @comments = event.comments.includes(:user).page(params[:page]).per(3)
+    @comments = event.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     respond_with event, layout: "application"
   end
 

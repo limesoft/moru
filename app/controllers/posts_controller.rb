@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = post.comments.includes(:user).page(params[:page]).per(3)
+    @comments = post.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     respond_with post
   end
 

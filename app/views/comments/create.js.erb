@@ -1,5 +1,5 @@
 $('#comment_content').val('');
 <% if @comment.errors.empty? %>
-  $('#comment-list').append("<%= j(render(partial: 'comment', locals: {comment: @comment})) %>");
+  $('#comment-list').prepend("<%= j(render(partial: 'comment', locals: {comment: @comment})) %>");
 <% else %>
 <% end %>
