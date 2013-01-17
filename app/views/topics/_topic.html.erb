@@ -6,10 +6,10 @@
         <span><%= topic.user.name %><br/>
           <em><%= time_ago_in_words(topic.created_at) %> өмнө</em>
 				</span>
-				<a href="javascript:void(0)" class="vote-down">-</a>
-				<a href="javascript:void(0)" class="vote-up">+</a>
+        <%= link_to "-", downvote_topic_path(topic), class: "vote-down", remote: true, method: :put %>
+        <%= link_to "+", upvote_topic_path(topic), class: "vote-up", remote: true, method: :put %>
 			</div>
-			<div class="pulse"><span class="down"> -3 </span></div>
+      <div class="pulse"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
 		</div>
 		<div class="topic-text"><%= topic.content %></div>
 	</div>

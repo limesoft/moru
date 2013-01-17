@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117020631) do
+ActiveRecord::Schema.define(:version => 20130117031808) do
 
   create_table "admin_notes", :force => true do |t|
     t.string   "resource_id",     :null => false
@@ -110,5 +110,18 @@ ActiveRecord::Schema.define(:version => 20130117020631) do
     t.datetime "updated_at",               :null => false
     t.string   "role",       :limit => 50
   end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "votes", ["votable_id", "votable_type"], :name => "index_votes_on_votable_id_and_votable_type"
+  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end

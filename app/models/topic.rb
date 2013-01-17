@@ -15,4 +15,10 @@ class Topic < ActiveRecord::Base
   validates :content, presence: true, length: { in: 100..1000 }
   validates :title, presence: true, length: { in: 3..100 }
 
+  acts_as_votable
+
+  def avg_votes
+    upvotes.size-downvotes.size
+  end
+
 end

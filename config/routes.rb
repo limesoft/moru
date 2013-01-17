@@ -15,6 +15,8 @@ Moru::Application.routes.draw do
   resources :topics, only: [:index, :create] do
     put :assign, on: :member
     put :unassign, on: :member
+    put :upvote, on: :member
+    put :downvote, on: :member
   end
   resources :rsvps, only: [:create]
   resources :posts, only: [:index, :show]

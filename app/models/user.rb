@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :rsvps, dependent: :destroy
   has_many :events, through: :rsvps
 
+  acts_as_voter
+
   def default_avatar
     authentications.first.avatar
   end

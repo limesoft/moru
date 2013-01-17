@@ -34,6 +34,16 @@ class TopicsController < ApplicationController
     respond_with topic
   end
 
+  def upvote
+    topic.liked_by current_user
+    respond_with topic
+  end
+
+  def downvote
+    topic.downvote_from current_user
+    respond_with topic
+  end
+
   private
     def become_speaker
       current_user.extend Speaker
