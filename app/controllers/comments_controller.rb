@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   respond_to :js
 
   def index
-    @comments = commentable.comments.page(params[:page]).per(3)
+    @comments = commentable.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     respond_with @comments
   end
 
