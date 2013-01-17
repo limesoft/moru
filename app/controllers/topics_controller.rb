@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
 	layout "events"
 	
   def index
-    @topics = Topic.includes(:user).order("created_at DESC").page(params[:page]).per(6)
+    @topics = Topic.includes(:user).order("(cached_votes_up-cached_votes_down) DESC").page(params[:page]).per(6)
     respond_with @topics
   end
 
