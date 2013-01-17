@@ -45,7 +45,12 @@
 					</div>
 
           <!-- COMMENTS -->
-          <%= render 'comments' %>
+          <%= render(partial: 'comments/comments',
+                     locals: {
+                        comments: @comments,
+                        pagination_url: event_comments_path(event),
+                        commentable: event
+                    }) %>
 
 				</div>
 			</div>

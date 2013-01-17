@@ -19,6 +19,8 @@ Moru::Application.routes.draw do
     put :downvote, on: :member
   end
   resources :rsvps, only: [:create]
-  resources :posts, only: [:index, :show]
+  resources :posts, only: [:index, :show] do
+    resources :comments, only: [:create, :index]
+  end
 
 end

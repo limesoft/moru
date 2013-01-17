@@ -1,0 +1,15 @@
+<div class="comment-container">
+
+  <!-- NEW COMMENT -->
+  <%= render(partial: 'comments/new_comment', locals: { commentable: commentable }) if user_signed_in? %>
+
+  <!-- COMMENT LIST -->
+	<div class="comment-list" id="comment-list">
+    <%= render partial: 'comments/comment', collection: comments %>
+	</div>
+</div>
+<script>
+  $(function(){
+    infinity_pagination('<%= pagination_url %>', <%= comments.num_pages %>);
+  });
+</script>
