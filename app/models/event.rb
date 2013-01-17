@@ -14,5 +14,6 @@ class Event < ActiveRecord::Base
   # RSVP
   has_many :rsvps, dependent: :destroy
   has_many :users, through: :rsvps
+  has_many :topics
 
 end

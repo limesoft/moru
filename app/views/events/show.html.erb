@@ -20,9 +20,9 @@
                 <h2><%= event.title %></h2>
 								<ul>
 									<li> <span><%= event.content %></span> </li>
-									<li> - Front End Development: +Bayarja Buyandelger </li>
-									<li> - Backbone.js: +Khaschuluu Munkhbayar </li>
-									<li> - Data-Context-Interaction /DCI/: Zolzaya </li>
+                  <% event.topics.each do |topic| %>
+                    <li>- <%= topic.speaker.name %>:&nbsp;<%= topic.title %></li>
+                  <% end %>
 								</ul>
 							</div>
 						</div>
@@ -32,7 +32,6 @@
 								<li><a href="javascript:void(0)" class="social-twitter"></a></li>
 								<li><a href="javascript:void(0)" class="social-google_oauth2"></a></li>
 							</ul>
-							<a href="javascript:void(0)" class="event-members">ирсэн гишүүд</a>
 						</div>
 					</div>
 					<div class="member-list clearfix">
