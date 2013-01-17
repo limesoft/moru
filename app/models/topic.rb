@@ -18,7 +18,7 @@ class Topic < ActiveRecord::Base
   acts_as_votable
 
   def avg_votes
-    positives.size-negatives.size
+    cached_votes_up-cached_votes_down
   end
 
 end
