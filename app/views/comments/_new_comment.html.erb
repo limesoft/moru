@@ -4,6 +4,7 @@
     <em>нийт сэтгэгдэл <em id="comments-counter"><%= commentable.comments_count %></em></em>
 	</div>
 	<div class="write-field clearfix">
+    <div id="comment_error_messages"></div>
     <%= form_for [commentable, Comment.new], remote: true do |f| %>
 		  <%= image_tag(current_user.default_avatar) %>
       <%= f.text_area :content %>

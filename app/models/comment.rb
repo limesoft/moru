@@ -4,7 +4,7 @@ class Comment < ActiveRecord::Base
 
   ##
   # Validations
-  validates_presence_of :content
+  validates :content, presence: true, length: { in: 3..100 }
 
   ##
   # Relationships

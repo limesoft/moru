@@ -1,6 +1,8 @@
 $('#comment_content').val('');
+$("#comment_error_messages").empty();
 <% if @comment.errors.empty? %>
   $('#comments-counter').html(<%= @commentable.comments_count %>);
   $('#comment-list').prepend("<%= j(render(partial: 'comment', locals: {comment: @comment})) %>");
 <% else %>
+  $("#comment_error_messages").html("<%= j(render("shared/error_messages", errors: @comment.errors)) %>");
 <% end %>
