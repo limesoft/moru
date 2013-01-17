@@ -5,8 +5,6 @@ class EventsController < ApplicationController
   # load_and_authorize_resource
   respond_to :js
 
-  layout "events"
-
   def index
     @events = Event.order("created_at DESC").page(params[:page]).per(6)
     respond_with @events
@@ -14,7 +12,7 @@ class EventsController < ApplicationController
 
   def show
     @comments = event.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
-    respond_with event, layout: "application"
+    respond_with event
   end
 
   private

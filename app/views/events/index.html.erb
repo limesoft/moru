@@ -1,16 +1,18 @@
-<div class="container_10 clearfix">
-  <div class="grid_10">
-    <ul id="event-list">
-      <%= render partial: 'event', collection: @events %>
-    </ul>
+<div class="event-container">
+  <div class="container_10 clearfix">
+    <div class="grid_10">
+      <ul id="event-list">
+        <%= render partial: 'event', collection: @events %>
+      </ul>
 
-    <p id="back-top">
-      <a href="#top"><span></span>Дээш очих</a>
-    </p>
+      <p id="back-top">
+        <a href="#top"><span></span>Дээш очих</a>
+      </p>
+    </div>
   </div>
+  <script>
+    $(function(){
+      infinity_pagination('<%= events_path %>', <%= @events.num_pages %>);
+    });
+  </script>
 </div>
-<script>
-  $(function(){
-    infinity_pagination('<%= events_path %>', <%= @events.num_pages %>);
-  });
-</script>

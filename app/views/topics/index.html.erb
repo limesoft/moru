@@ -1,3 +1,4 @@
+<div class="event-container">
 <div class="container_10 clearfix">
 
   <%= render 'new_topic' if user_signed_in? %>
@@ -19,3 +20,4 @@
     infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>);
   });
 </script>
+</div>

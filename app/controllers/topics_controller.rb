@@ -4,8 +4,6 @@ class TopicsController < ApplicationController
 
   before_filter :become_speaker, only: [:create, :assign, :unassign]
   respond_to :js
-
-	layout "events"
 	
   def index
     @topics = Topic.includes(:user).order("(cached_votes_up-cached_votes_down) DESC").page(params[:page]).per(6)
