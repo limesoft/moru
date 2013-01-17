@@ -11,7 +11,10 @@
 			</div>
       <div class="pulse"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
 		</div>
-		<div class="topic-text"><%= topic.content %></div>
+    <div class="topic-text">
+      <h3><%= topic.try(:title) %></h3>
+      <%= topic.content %>
+    </div>
 	</div>
 
 	<div class="topic-tools clearfix">
