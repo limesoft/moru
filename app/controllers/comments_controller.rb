@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     current_user.create_comment @comment, commentable
+    commentable.reload
     respond_with @comment
   rescue Exception => e
     puts '----------------- EXCEPTION'

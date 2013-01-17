@@ -1,5 +1,6 @@
 $('#comment_content').val('');
 <% if @comment.errors.empty? %>
+  $('#comments-counter').html(<%= @commentable.comments_count %>);
   $('#comment-list').prepend("<%= j(render(partial: 'comment', locals: {comment: @comment})) %>");
 <% else %>
 <% end %>
