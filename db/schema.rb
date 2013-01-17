@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117031808) do
+ActiveRecord::Schema.define(:version => 20130117040054) do
 
   create_table "admin_notes", :force => true do |t|
     t.string   "resource_id",     :null => false
@@ -95,13 +95,19 @@ ActiveRecord::Schema.define(:version => 20130117031808) do
   create_table "topics", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
     t.integer  "speaker_id"
     t.integer  "event_id"
-    t.string   "title",      :limit => 100
+    t.string   "title",              :limit => 100
+    t.integer  "cached_votes_total",                :default => 0
+    t.integer  "cached_votes_up",                   :default => 0
+    t.integer  "cached_votes_down",                 :default => 0
   end
 
+  add_index "topics", ["cached_votes_down"], :name => "index_topics_on_cached_votes_down"
+  add_index "topics", ["cached_votes_total"], :name => "index_topics_on_cached_votes_total"
+  add_index "topics", ["cached_votes_up"], :name => "index_topics_on_cached_votes_up"
   add_index "topics", ["speaker_id"], :name => "index_topics_on_speaker_id"
 
   create_table "users", :force => true do |t|
