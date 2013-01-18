@@ -5,7 +5,8 @@ class AuthenticationsController < ApplicationController
   def callback
     # raise request.env["omniauth.auth"].to_yaml
     if auth.authenticated?
-      warden.set_user auth.user
+      # warden.set_user auth.user
+      session[:user_id] = auth.user.id
       redirect_to root_url, notice: "Logged in."
     elsif user_signed_in?
       auth.add_authentication_to current_user
@@ -15,7 +16,8 @@ class AuthenticationsController < ApplicationController
       if auth.already_registered?
         redirect_to root_url, notice: "Таны \"#{omniauth.provider.capitalize}\" дээр бүртгэгдсэн \"#{omniauth.email}\" э-шуудангийн хаяг манай сайтанд бүртгэлтэй байна."
       elsif auth.register
-        warden.set_user auth.user
+        session[:user_id] = auth.user.id
+        # warden.set_user auth.user
         redirect_to root_url, notice: "Signed up."
       else
         redirect_to root_url, notice: "Алдаа гарсан тул та хэсэг хугацааны дараа дахин оролдоно уу"
@@ -24,7 +26,8 @@ class AuthenticationsController < ApplicationController
   end
 
   def logout
-    warden.logout
+    # warden.logout
+    reset_session
     redirect_to root_url, notice: "Logged out."
   end
 
