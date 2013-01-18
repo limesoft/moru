@@ -9,7 +9,6 @@ gem 'pg'
 gem 'strong_parameters'
 gem 'jquery-rails'
 gem 'cancan'
-gem 'warden'
 gem 'kaminari', '~> 0.14.1'
 
 gem 'omniauth-facebook'
