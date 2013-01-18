@@ -835,16 +835,55 @@ Back to top button
 			background:#707982;
 		}
 	}
-	textarea.topicarea{
-		float:left;
-		background:#e1e5ea;
-		@include radius(5px);
-		border:none;
-		width:480px;
-		height:94px;
-		padding:10px;
-		margin-right:20px;
-	}
+  .topic-write-side{
+    float:left;
+    width:500px;
+    padding:0 0 10px 0;
+    margin-right:20px;
+    label{
+      float:left;
+      background:#707982;
+      color:#fff;
+      padding:0;
+      margin:0 0 10px 0;
+      width:100%;
+      @include radius(8px);
+      span{
+        color:#fff;
+        font-size:12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        line-height:40px;
+        padding:0 0 0 20px;
+      }
+      input{
+        float:right;
+        height:40px;
+        width:75%;
+        padding:0 15px;
+        border:none;
+        color:#666;
+        margin:0;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background:#eee;
+      }
+    }
+    textarea.topicarea{
+      float:left;
+      background:#e1e5ea;
+      @include radius(5px);
+      border:none;
+      width:480px;
+      height:48px;
+      padding:10px;
+      color:#666;
+    }
+  }
 	.send-topic{
 		float:left;
 		width:120px;
