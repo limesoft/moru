@@ -20,7 +20,7 @@
 							<div class="event-topic-text">
                 <h2><%= event.title %></h2>
 								<ul>
-									<li> <span><%= event.content %></span> </li>
+									<li> <span><%=raw(event.content) %></span> </li>
                   <% event.topics.each do |topic| %>
                     <li>- <%= topic.speaker.name %>:&nbsp;<%= topic.title %></li>
                   <% end %>
