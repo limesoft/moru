@@ -16,4 +16,19 @@ class Event < ActiveRecord::Base
   has_many :users, through: :rsvps
   has_many :topics
 
+
+  rails_admin do
+    configure :title, :string
+    configure :content, :text
+    configure :date, :datetime
+    configure :comments_count, :integer
+
+    list do
+      field :title
+      field :content
+      field :date
+      field :comments_count
+    end
+  end
+
 end

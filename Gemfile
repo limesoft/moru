@@ -10,12 +10,14 @@ gem 'strong_parameters'
 gem 'jquery-rails'
 gem 'cancan'
 gem 'kaminari', '~> 0.14.1'
+gem 'acts_as_votable', '~> 0.4.0'
+gem 'bootstrap-wysihtml5-rails'
+gem 'rails_admin', '0.4.1'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-github'
-gem 'acts_as_votable', '~> 0.4.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -53,3 +55,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+
+gem "devise"

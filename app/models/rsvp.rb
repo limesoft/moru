@@ -11,4 +11,16 @@ class Rsvp < ActiveRecord::Base
   # Relationships
   belongs_to :user
   belongs_to :event
+
+  rails_admin do
+    configure :going, :integer
+    configure :user_id, :integer
+    configure :event_id, :integer
+
+    list do
+      field :going
+      field :user_id
+      field :event_id
+    end
+  end
 end

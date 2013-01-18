@@ -21,4 +21,15 @@ class Topic < ActiveRecord::Base
     cached_votes_up-cached_votes_down
   end
 
+  rails_admin do
+    configure :user, :belongs_to_association
+    configure :speaker, :belongs_to_association
+
+    list do
+      field :title
+      field :content
+      field :user_id
+    end
+  end
+
 end

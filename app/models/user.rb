@@ -36,4 +36,12 @@ class User < ActiveRecord::Base
   def user?
     role == ROLE_USER
   end
+
+  rails_admin do
+    list do
+      field :name
+      field :role
+      field :created_at
+    end
+  end
 end
