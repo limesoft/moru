@@ -392,11 +392,28 @@ header{
 					font-weight: bold;
 				}
 			}
+      .rsvp-statistics{
+        @include radius(5px);
+        background:#707982;
+        padding:20px;
+        span{
+          font-weight: bold;
+          font-size:18px;
+          text-transform: uppercase;
+          color:#fff
+        }
+        span.yes-stat{
+          float:left;
+          color:#7fcde8;
+        }
+        span.other-stat{
+          float:right;
+          padding:0 0 0 20px;
+        }
+      }
 		}
-
 	}
 }
-
 .left-content, .right-content{
 	display:block;
 	margin-top:40px;

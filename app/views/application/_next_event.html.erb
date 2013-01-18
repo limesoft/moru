@@ -56,9 +56,11 @@
                 <div class="member-count" id="going-count"><span><%= current_event.count_going %></span></div>
               <% end %>
             <% else %>
-              Yes: <%= current_event.count_going %>
-              Maybe: <%= current_event.count_maybe %>
-              No: <%= current_event.count_not_going %>
+							<div class="rsvp-statistics clearfix">
+								<span class="yes-stat">Yes: <%= current_event.count_going %></span>
+								<span class="other-stat">No: <%= current_event.count_not_going %></span>
+								<span class="other-stat">Maybe: <%= current_event.count_maybe %></span>
+							</div>
             <% end %>
 					</div>
 				</div>
