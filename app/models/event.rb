@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
 
   ##
   # Relationships
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy, inverse_of: :commentable
   has_many :with_going, class_name: 'Rsvp', conditions: ['going=?', RSVP_YES], include: :user
 
   # RSVP
@@ -28,6 +28,18 @@ class Event < ActiveRecord::Base
       field :content
       field :date
       field :comments_count
+    end
+
+    edit do
+
+      configure :topics, :has_many_association
+
+      field :title
+      field :content, :text do
+        bootstrap_wysihtml5 true
+      end
+      field :date
+      field :topics
     end
   end
 

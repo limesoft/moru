@@ -12,16 +12,12 @@ class Authentication < ActiveRecord::Base
 
   rails_admin do
     configure :user, :belongs_to_association
-    configure :provider, :string
-    configure :uid, :string
-    configure :user_id, :integer
-    configure :email, :string
 
     list do
       field :email
       field :provider
       field :uid
-      field :user_id
+      field :user
     end
   end
 

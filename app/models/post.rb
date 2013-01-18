@@ -8,12 +8,11 @@ class Post < ActiveRecord::Base
 
   ##
   # Relationships
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy, inverse_of: :commentable
 
   rails_admin do
-    configure :comments, :has_many_association 
-    configure :title, :string
-    configure :content, :text
+
+    configure :comments, :has_many_association
 
     list do
       field :title

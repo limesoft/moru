@@ -38,10 +38,14 @@ class User < ActiveRecord::Base
   end
 
   rails_admin do
+
+    configure :authentications, :has_many_association 
+
     list do
       field :name
       field :role
       field :created_at
+      field :authentications
     end
   end
 end

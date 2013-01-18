@@ -27,8 +27,15 @@ class Topic < ActiveRecord::Base
 
     list do
       field :title
+      field :user
+      field :speaker
+    end
+
+    edit do
+      field :title
       field :content
-      field :user_id
+      field :user
+      field :speaker
     end
   end
 

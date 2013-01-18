@@ -1,0 +1,6 @@
+en:
+  time:
+    formats:
+      weekday: "%A"
+      event_short: '%_m сарын %d'
+

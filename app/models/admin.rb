@@ -10,12 +10,15 @@ class Admin < ActiveRecord::Base
   # attr_accessible :title, :body
 
   rails_admin do
-    configure :email, :string
-    configure :created_at, :string
-
     list do
       field :email
       field :created_at
+    end
+
+    edit do
+      field :email
+      field :password
+      field :password_confirmation
     end
   end
 end
