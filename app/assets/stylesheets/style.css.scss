@@ -1222,11 +1222,14 @@ Back to top button
          text-transform: uppercase;
          font-size:15px;
        }
-       em{
+       span.comment-count{
          float:right;
          color: #b6d99f;
          font-size:12px;
          text-transform: uppercase;
+         em{
+           padding:0 0 0 5px;
+         }
        }
      }
      .write-field{
