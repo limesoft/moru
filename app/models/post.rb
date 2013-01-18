@@ -9,21 +9,23 @@ class Post < ActiveRecord::Base
   ##
   # Relationships
   has_many :comments, as: :commentable, dependent: :destroy, inverse_of: :commentable
+  belongs_to :user
 
   rails_admin do
 
     configure :comments, :has_many_association
+    configure :user, :belongs_to_association
 
     list do
       field :title
-      field :content
-      field :user_id
+      field :user
+      field :comments_count
       field :created_at
-      field :comments
     end
 
     edit do
       field :title
+      field :user
       field :content, :text do
         bootstrap_wysihtml5 true
       end

@@ -10,9 +10,7 @@
 					<div class="post-content">
             <h2><%= post.title %></h2>
 						<div class="post-text">
-							Envy Labs does it again with a great course on using SASS and Compass. This class is a great rundown on
-							the benefits of utilizing both throughout. Even if you're quite familiar with SASS and COMPASS like I am, you'll be amazed on how thorough Nick Walsh goes through some of the benefits of Compass and underrated SASS functions to achieve more with less code and saving invaluable amounts of time. Whether you're a beginner with using Compass or want to be more refined using Compass, this course won't leave you
-							disappointed. Assembling Sass Part 2 is a perfect jumpstart for learning how to use Compass. I love how the Code School team focuses in on best practices. Since Compass and Sass are both so extensive, this course helps you weigh the pros and the cons of using certain mixins or functions. This course is excellent, I would recommend it to anyone wanting more practice on their Sass and would like to understand how and why to use Compass in their Sass workflow. Lorem Ipsum is simply dummy text of printing and typesetting.
+              <%= raw(post.content) %>
 						</div>
 					</div>
 					<div class="post-item-tools">
@@ -25,7 +23,7 @@
 						</ul>
 
 						<div class="published_by">
-							<span>reNNo  // 15 өдрийн өмнө нийтэлсэн</span>
+              <span><%= post.user.name %>  // <%= time_ago_in_words post.created_at %> өмнө нийтэлсэн</span>
 						</div>
 					</div>
 				</div>

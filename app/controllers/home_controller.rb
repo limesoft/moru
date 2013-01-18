@@ -11,4 +11,8 @@ class HomeController < ApplicationController
       @current_event.extend GoingContext
     end
     helper_method :current_event
+
+    def latest_post
+      @latest_post ||= Post.last
+    end
 end
