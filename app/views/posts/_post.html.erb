@@ -1,7 +1,6 @@
 <div class="post-item">
-  <div class="post-img"> if image is available then is here </div>
 	<div class="post-content">
-    <h2><%= post.title %></h2>
+    <h2><%= link_to post.title, post_path(post) %></h2>
     <span><%= post.user.try(:name) %> // <%= time_ago_in_words post.created_at %> өмнө нийтэлсэн </span>
 		<div class="separator"></div>
 		<div class="post-text"><%= raw(post.content) %></div>
