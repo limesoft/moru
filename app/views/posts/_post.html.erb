@@ -6,7 +6,7 @@
 		<div class="post-text"><%= raw(post.content) %></div>
 
 		<div class="post-tool clearfix">
-      <a href="javascript:void(0)" class="comment-count"><i class="comment-icon"></i><%= post.comments_count %> сэтгэгдэлтэй </a>
+      <span class="comment-count"><i class="comment-icon"></i><%= post.comments_count %> сэтгэгдэлтэй</span>
       <%= link_to 'Дэлгэрэнгүй', post_path(post), class: 'post-more' %>
 		</div>
 	</div>
