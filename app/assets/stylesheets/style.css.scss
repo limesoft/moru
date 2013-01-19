@@ -363,14 +363,12 @@ header{
 		}
 		.event-topic{
 			@include none_styled_ul();
-			li{
+			li {
 				list-style-image: image-url("list-img.png");
 				list-style-position: inside;
 				margin:8px 0;
-				span{
-					color:#fff;
-					text-transform: uppercase;
-				}
+				color:#fff;
+				text-transform: uppercase;
 			}	
 		}
 		.guest-tool{

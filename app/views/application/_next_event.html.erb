@@ -37,12 +37,9 @@
 			</div>
 			<div class="grid_5 omega">
 				<div class="event-box clearfix">
-					<h2> яригдах сэдвүүд </h2>
+					<h2> яригдах сэдвүүд:</h2>
 					<ul class="event-topic">
-						<li> <span> FRONT END DEVELOPMENT: +BAYARJA BUYANDELGER </span> </li>
-						<li> <span> FRONT END DEVELOPMENT: +BAYARJA BUYANDELGER </span> </li>
-						<li> <span> FRONT END DEVELOPMENT: +BAYARJA BUYANDELGER </span> </li>
-						<li> <span> FRONT END DEVELOPMENT: +BAYARJA BUYANDELGER </span> </li>
+            <%= render partial: 'events/topic', collection: current_event.topics %>
 					</ul>
 					<div class="guest-tool">
             <% if user_signed_in? %>

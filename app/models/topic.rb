@@ -13,7 +13,7 @@ class Topic < ActiveRecord::Base
   ##
   # Validations
   validates :content, presence: true, length: { in: 100..1000 }
-  validates :title, presence: true, length: { in: 3..100 }
+  validates :title, presence: true, length: { in: 2..100 }
 
   acts_as_votable
 
