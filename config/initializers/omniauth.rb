@@ -2,17 +2,17 @@
 
 Rails.application.config.middleware.use OmniAuth::Builder do
 
-  # Twitter
-  provider :twitter, ENV["OAUTH_TWITTER_CONSUMER_KEY"], ENV["OAUTH_TWITTER_CONSUMER_SECRET"]
-
   # Facebook
   provider :facebook, ENV["OAUTH_FACEBOOK_APP_ID"], ENV["OAUTH_FACEBOOK_APP_SECRET"]
 
+  # Twitter
+  # provider :twitter, ENV["OAUTH_TWITTER_CONSUMER_KEY"], ENV["OAUTH_TWITTER_CONSUMER_SECRET"]
+
   # Github
-  provider :github, ENV["OAUTH_GITHUB_CLIENT_ID"], ENV["OAUTH_GITHUB_CLIENT_SECRET"], scope: "user"
+  # provider :github, ENV["OAUTH_GITHUB_CLIENT_ID"], ENV["OAUTH_GITHUB_CLIENT_SECRET"], scope: "user"
 
   # Google
-  provider :google_oauth2, ENV["OAUTH_GOOGLE_CLIENT_ID"], ENV["OAUTH_GOOGLE_CLIENT_SECRET"]
+  # provider :google_oauth2, ENV["OAUTH_GOOGLE_CLIENT_ID"], ENV["OAUTH_GOOGLE_CLIENT_SECRET"]
 
   # Omniauth failure monkey patch
   on_failure do |env|
