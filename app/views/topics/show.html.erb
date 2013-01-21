@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "fb:app_id", content: ENV["OAUTH_FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:site_name", content: "Moru" %>
+  <%= tag :meta, property: "og:type", content: "mongolian_rubyist:topic" %>
+  <%= tag :meta, property: "og:title", content: topic.title %>
+  <%= tag :meta, property: "og:url", content: topic_url(topic) %>
+<% end %>
+
+<%= topic.title %>

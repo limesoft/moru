@@ -19,7 +19,12 @@ class TopicsController < ApplicationController
     else
       @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
     end
+    ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.errors.empty?
     respond_with @topic
+  end
+
+  def show
+    respond_with topic
   end
 
   def assign
@@ -50,6 +55,7 @@ class TopicsController < ApplicationController
     def topic
       @topic ||= Topic.find(params[:id])
     end
+    helper_method :topic
 
     def topic_params
       params.require(:topic).permit(:content, :title)
@@ -57,5 +63,9 @@ class TopicsController < ApplicationController
 
     def topic_type
       params.require(:topic).permit(:type)[:type].to_s.downcase
+    end
+
+    def ogp
+      @ogp ||= FacebookOgpService.new
     end
 end

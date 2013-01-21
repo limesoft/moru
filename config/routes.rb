@@ -16,7 +16,7 @@ Moru::Application.routes.draw do
   resources :events, only: [:index, :show] do
     resources :comments, only: [:create, :index]
   end
-  resources :topics, only: [:index, :create] do
+  resources :topics, only: [:index, :create, :show] do
     put :assign, on: :member
     put :unassign, on: :member
     put :upvote, on: :member

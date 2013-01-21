@@ -2,6 +2,7 @@
   $("#topic_error_messages").empty();
   $("#topic_type_yes").prop('checked', false);
   $("#topic_type_no").prop('checked', false);
+  $("#topic_title").val('');
   $("#topic_content").val('');
   var topic = $("<%= j(render(@topic)) %>");
   $("#topic-list").prepend(topic).masonry('reload');
