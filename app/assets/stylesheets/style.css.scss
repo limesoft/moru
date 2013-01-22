@@ -9,7 +9,7 @@
 	background:#f1f2f3;
 }
 a {
-	color:#00a8e7;
+  color:#00a8e7;
 	text-decoration: none !important;
 	font-weight:bold;
 	font-size:13px;
@@ -33,15 +33,15 @@ a {
 		float:right;
 		background:#7fcde8;
 		padding:5px 10px;
-		ul{ 
+		ul{
 			list-style:none;
 			margin:0;
 			padding:0;
 			li{
 				float:left;
 				padding:0 5px;
-			} 
-			li.label{
+			}
+			li.login_btn{
 				span{
 					float:left;
 					color:#fff;
@@ -287,7 +287,6 @@ header{
 			color:#fff;
 			text-transform: uppercase;
 			font-size:20px;
-			margin-bottom:20px;
 		}
 		.separator{
 			display:block;
@@ -378,7 +377,7 @@ header{
 			}	
 		}
 		.guest-tool{
-			padding:20px 0 0 0;
+			padding:10px 0 0 0;
 			.member-count{
 				float:left;
 				background:#fff;
@@ -592,7 +591,7 @@ header{
 
 }
 .right-content{
-	background:#e1e5ea;
+	// background:#e1e5ea;
 }
 footer{
 	padding:30px 0 40px 0;

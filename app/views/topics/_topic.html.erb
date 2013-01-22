@@ -12,7 +12,7 @@
       <div class="pulse"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
 		</div>
     <div class="topic-text">
-      <h2><%= link_to topic.try(:title), topic_path(topic) %></h2>
+      <h2><%= topic.try(:title) %></h2>
       <%= topic.content %>
     </div>
 	</div>
