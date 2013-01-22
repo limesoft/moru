@@ -8,8 +8,6 @@ class FacebookOgpService
 
   def post_topic(user_id, topic_id, topic_url)
     @user_id = user_id
-    puts '------------------------------ NOTIFY TOPIC'
-    puts '---------------------------iD: ', topic_id
     ogp.put_connections("me", "mongolian_rubyist:create", topic: topic_url)
   end
   handle_asynchronously :post_topic, run_at: Proc.new { 10.seconds.from_now }
