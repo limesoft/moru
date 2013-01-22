@@ -1,1 +1,1 @@
-<li><%= topic.speaker.try(:name) %>:&nbsp;<%= topic.try(:title) %></li>
+<li><%= topic.speaker.try(:name) %>:&nbsp;<%= link_to topic.try(:title), topic_path(topic) %></li>
