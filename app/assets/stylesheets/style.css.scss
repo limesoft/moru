@@ -368,6 +368,14 @@ header{
 				margin:8px 0;
 				color:#fff;
 				text-transform: uppercase;
+        a{
+          color:#fff;
+          text-transform: none;
+          font-weight: normal;
+          &:hover, &:active{
+            color:#7fcde8;
+          }
+        }
 			}	
 		}
 		.guest-tool{
@@ -427,6 +435,7 @@ header{
 .left-content, .right-content{
 	display:block;
 	margin-top:40px;
+  margin-bottom:40px;
 }
 .left-content{
 
@@ -748,6 +757,10 @@ footer{
 					font-size:13px;
 					color:#444;
 					margin-top:15px;
+          a{
+            text-transform: none;
+            font-weight: normal;
+          }
 				}
 			}
 
