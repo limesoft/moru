@@ -16,6 +16,7 @@ gem 'rails_admin', '0.4.1'
 gem 'koala'
 gem 'daemons'
 gem 'delayed_job_active_record'
+gem 'unicorn'
 
 gem 'omniauth-facebook'
 #gem 'omniauth-twitter'
