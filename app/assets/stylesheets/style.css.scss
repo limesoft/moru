@@ -8,10 +8,10 @@
 	padding:0;
 	background:#f1f2f3;
 }
-a{
+a {
 	color:#00a8e7;
-	text-decoration: none;
-	font-weight:bold; 
+	text-decoration: none !important;
+	font-weight:bold;
 	font-size:13px;
 	transition: color .2s ease-in-out;
 	-webkit-transition: color .2s ease-in-out;
@@ -110,7 +110,7 @@ header{
 		background	: image-url('sprite.png') 0 0 no-repeat;
 	}
 
-	nav{
+	nav {
 		float:left;
 		-webkit-border-radius: 5px;
 		-moz-border-radius:5px;
@@ -118,31 +118,30 @@ header{
 		margin-top:5px;
 	}
 
-
 	/* begin main menu */
 	.main-menu{
-		float:right;
-		background:#707982;
-		padding:9px 10px;
-		margin-right:20px;
-		ul{ 
-			list-style:none;
-			margin:0;
-			padding:0;
-			li{
-				float:left;
-				padding:0 20px;
-				a{
-					font-size:14px;
+		float: right;
+		background: #707982;
+		padding: 10px 10px;
+		margin-right: 20px;
+		ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			li {
+				float: left;
+				padding: 0px 20px;
+				a {
+					font-size: 14px;
 					font-weight: bold;
 					text-transform: uppercase;
-					color:#fff;
-					&:hover{
-						color:#7fcde8;
+					color: #fff;
+					&:hover {
+						color: #7fcde8;
 					}
 				}
-				a.active{
-					color:#7fcde8;
+				a.active {
+					color: #7fcde8;
 				}
 			} 
 		}
