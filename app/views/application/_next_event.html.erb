@@ -54,11 +54,11 @@
               <% end %>
             <% else %>
 							<div class="rsvp-statistics clearfix">
-								<span class="yes-stat">Yes: <%= current_event.count_going %></span>
-								<span class="other-stat">No: <%= current_event.count_not_going %></span>
-								<span class="other-stat">Maybe: <%= current_event.count_maybe %></span>
+								<span class="yes-stat">Очно: <%= current_event.count_going %></span>
+								<span class="other-stat">Магадгүй: <%= current_event.count_maybe %></span>
 							</div>
             <% end %>
+            <%= link_to "Дэлгэрэнгүй", event_path(current_event) %>
 					</div>
 				</div>
 			</div>
