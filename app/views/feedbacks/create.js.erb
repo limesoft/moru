@@ -1,1 +1,11 @@
-alert(1);
+$('#feedback_notifications').empty();
+<% if @feedback.errors.empty? %>
+  $("#feedback_notifications").html("<%= j(content_tag(:div, "Таны зурвас амжилттай илгээгдлээ", class: 'alert alert-info')) %>");
+  $("#feedback_content").val('');
+  setTimeout(function(){
+    $("#feedback_modal").modal("toggle");
+    $("#feedback_notifications").empty();
+  }, 1000);
+<% else %>
+  $("#feedback_notifications").html("<%= j(render("shared/error_messages", errors: @feedback.errors)) %>");
+<% end %>

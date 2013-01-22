@@ -8,3 +8,5 @@ mn:
       topic:
         type: 'Сэдэв'
         content: 'Агуулга'
+      feedback:
+        content: 'Агуулга'
