@@ -6,4 +6,12 @@
   <%= tag :meta, property: "og:url", content: topic_url(topic) %>
 <% end %>
 
-<%= topic.title %>
+<div class="event-container">
+  <div class="container_10 clearfix">
+	  <div class="grid_10">
+		  <div class="topic-list" id="topic-list">
+        <%= render topic %>
+      </div>
+    </div>
+  </div>
+</div>
