@@ -6,7 +6,7 @@
 	  <div class="grid_7 alpha">
 		  <!-- begin left content -->
 		  <div class="left-content">
-        <%= render partial: 'posts/post', locals: { post: latest_post } %>	
+        <%= render partial: 'posts/post', locals: { post: latest_post } unless latest_post.nil? %>	
 		  </div>
 		  <!-- end left content -->
 	  </div>
