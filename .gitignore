@@ -31,3 +31,5 @@
 
 # Ignore all simplecov files
 /coverage
+# Ignoring rvmrc file
+.rvmrc
