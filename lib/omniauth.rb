@@ -31,6 +31,6 @@ class Omniauth
   end
 
   def oauth_expires_at
-    @omniauth[:credentials][:expires_at]
+    Time.at(@omniauth[:credentials][:expires_at])
   end
 end
