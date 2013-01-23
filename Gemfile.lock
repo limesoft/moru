@@ -33,12 +33,16 @@ GEM
     addressable (2.3.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    better_errors (0.3.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     bootstrap-wysihtml5-rails (0.3.1.16)
       railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.8)
+    coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -210,6 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.4.0)
+  better_errors
   bootstrap-sass
   bootstrap-wysihtml5-rails
   cancan

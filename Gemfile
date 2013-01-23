@@ -12,11 +12,11 @@ gem 'cancan'
 gem 'kaminari', '~> 0.14.1'
 gem 'acts_as_votable', '~> 0.4.0'
 gem 'bootstrap-wysihtml5-rails'
+gem 'devise'
 gem 'rails_admin', '0.4.1'
 gem 'koala'
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem 'unicorn'
 
 gem 'omniauth-facebook'
 #gem 'omniauth-twitter'
@@ -35,6 +35,14 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
+end
+
+group :production do
+  gem 'unicorn'
+end
+
+group :development do
+  gem 'better_errors'
 end
 
 group :test, :development do
@@ -60,6 +68,3 @@ end
 
 # To use debugger
 # gem 'debugger'
-
-
-gem "devise"

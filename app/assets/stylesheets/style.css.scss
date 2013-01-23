@@ -98,7 +98,7 @@ a {
 
 	}
 
-header{
+header {
 	display:block;
 	padding:15px 0;
 	border-bottom:solid 5px #eee;
@@ -230,8 +230,8 @@ header{
 				float:left;
 				height:40px;
 			}
-			li.label{
-				a{
+			li.user_profile {
+				a {
 					-webkit-border-top-left-radius: 5px;
 					-webkit-border-bottom-left-radius: 5px;
 					-moz-border-radius-topleft: 5px;
@@ -282,11 +282,17 @@ header{
 		@include radius(5px);
 		background:#5f6871;
 		padding:20px;
-
 		h2{
-			color:#fff;
 			text-transform: uppercase;
 			font-size:20px;
+			color:#fff;
+      a {
+			  font-size:20px;
+			  color:#fff;
+        &:hover {
+          color: #7fcde8;
+        }
+      }
 		}
 		.separator{
 			display:block;

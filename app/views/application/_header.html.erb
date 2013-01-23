@@ -9,7 +9,7 @@
       <% if user_signed_in? %>
 			  <nav class="social-logged">
 				  <ul>
-            <li class="label"> <a href="javascript:void(0)"><%= current_user.name %></a></li>
+            <li class="user_profile"> <a href="javascript:void(0)"><%= current_user.name %></a></li>
 					  <li class="avatar"><%= image_tag(current_user.default_avatar) %></li>
             <li class="logout"><%= link_to "", logout_path %></li>
 				  </ul>
