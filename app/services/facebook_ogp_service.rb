@@ -14,7 +14,7 @@ class FacebookOgpService
 
   private
     def ogp
-      @ogp ||= Koala::Facebook::API.new(user.get_facebook_uid)
+      @ogp ||= Koala::Facebook::API.new(user.get_facebook_token)
       block_given? ? yield(@ogp) : @ogp
     rescue Koala::Facebook::APIError => e
       Rails.logger.info e.to_s

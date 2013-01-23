@@ -25,4 +25,12 @@ class Omniauth
   def name
     @omniauth[:info][:name]
   end
+
+  def oauth_token
+    @omniauth[:credentials][:token]
+  end
+
+  def oauth_expires_at
+    @omniauth[:credentials][:expires_at]
+  end
 end

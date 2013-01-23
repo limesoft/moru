@@ -2,7 +2,7 @@
 
 module OgpContext
 
-  def get_facebook_uid
-    authentications.where(provider: PROVIDER_FACEBOOK).first.uid
+  def get_facebook_token
+    authentications.where(provider: PROVIDER_FACEBOOK).first.oauth_token
   end
 end
