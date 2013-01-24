@@ -960,6 +960,11 @@ Back to top button
     width:auto !important;
     .topic-user{
       width:520px !important;
+      a {
+        margin: {
+          right: 10px;
+        }
+      }
     }
   }
 }
@@ -1048,9 +1053,14 @@ Back to top button
         h2{
           font-weight: bold;
           font-size:13px;
-          color:#000;
           text-transform: uppercase;
           margin-bottom:5px;
+          a {
+            color:#000;
+            &:hover {
+              color: #00a8e7;
+            }
+          }
         }
 				padding:20px 20px 30px 20px;
 			}
