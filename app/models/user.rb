@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
   acts_as_voter
 
   def default_avatar
-    authentications.first.avatar
+    avatar = authentications.first.avatar
+    return (avatar.empty? ? "avatar.gif" : avatar)
   end
 
   def rsvp_of(event)
