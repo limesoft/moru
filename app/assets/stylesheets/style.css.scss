@@ -8,10 +8,10 @@
 	padding:0;
 	background:#f1f2f3;
 }
-a{
-	color:#00a8e7;
-	text-decoration: none;
-	font-weight:bold; 
+a {
+  color:#00a8e7;
+	text-decoration: none !important;
+	font-weight:bold;
 	font-size:13px;
 	transition: color .2s ease-in-out;
 	-webkit-transition: color .2s ease-in-out;
@@ -33,15 +33,15 @@ a{
 		float:right;
 		background:#7fcde8;
 		padding:5px 10px;
-		ul{ 
+		ul{
 			list-style:none;
 			margin:0;
 			padding:0;
 			li{
 				float:left;
 				padding:0 5px;
-			} 
-			li.label{
+			}
+			li.login_btn{
 				span{
 					float:left;
 					color:#fff;
@@ -98,7 +98,7 @@ a{
 
 	}
 
-header{
+header {
 	display:block;
 	padding:15px 0;
 	border-bottom:solid 5px #eee;
@@ -110,7 +110,7 @@ header{
 		background	: image-url('sprite.png') 0 0 no-repeat;
 	}
 
-	nav{
+	nav {
 		float:left;
 		-webkit-border-radius: 5px;
 		-moz-border-radius:5px;
@@ -118,31 +118,30 @@ header{
 		margin-top:5px;
 	}
 
-
 	/* begin main menu */
 	.main-menu{
-		float:right;
-		background:#707982;
-		padding:9px 10px;
-		margin-right:20px;
-		ul{ 
-			list-style:none;
-			margin:0;
-			padding:0;
-			li{
-				float:left;
-				padding:0 20px;
-				a{
-					font-size:14px;
+		float: right;
+		background: #707982;
+		padding: 10px 10px;
+		margin-right: 20px;
+		ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			li {
+				float: left;
+				padding: 0px 20px;
+				a {
+					font-size: 14px;
 					font-weight: bold;
 					text-transform: uppercase;
-					color:#fff;
-					&:hover{
-						color:#7fcde8;
+					color: #fff;
+					&:hover {
+						color: #7fcde8;
 					}
 				}
-				a.active{
-					color:#7fcde8;
+				a.active {
+					color: #7fcde8;
 				}
 			} 
 		}
@@ -231,8 +230,8 @@ header{
 				float:left;
 				height:40px;
 			}
-			li.label{
-				a{
+			li.user_profile {
+				a {
 					-webkit-border-top-left-radius: 5px;
 					-webkit-border-bottom-left-radius: 5px;
 					-moz-border-radius-topleft: 5px;
@@ -283,12 +282,17 @@ header{
 		@include radius(5px);
 		background:#5f6871;
 		padding:20px;
-
 		h2{
-			color:#fff;
 			text-transform: uppercase;
 			font-size:20px;
-			margin-bottom:20px;
+			color:#fff;
+      a {
+			  font-size:20px;
+			  color:#fff;
+        &:hover {
+          color: #7fcde8;
+        }
+      }
 		}
 		.separator{
 			display:block;
@@ -379,7 +383,7 @@ header{
 			}	
 		}
 		.guest-tool{
-			padding:20px 0 0 0;
+			padding:10px 0 0 0;
 			.member-count{
 				float:left;
 				background:#fff;
@@ -593,7 +597,7 @@ header{
 
 }
 .right-content{
-	background:#e1e5ea;
+	// background:#e1e5ea;
 }
 footer{
 	padding:30px 0 40px 0;
@@ -1416,45 +1420,6 @@ Back to top button
  /********** END EVENT VIEW CSS ************/
  /******************************************/
 
-/*********************************************/
-/********** BEGIN GLOBAL ALERT CSS ************/
-
-.alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.alert-success {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
-
-.alert-danger, .alert-error {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
-}
-
-.alert-info {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-
-
-/********** END GLOBAL ALERT CSS ************/
-/*********************************************/
-
-
  /*********************************************/
  /********** BEGIN GLOBAL TOOLTIP CSS *********/
  .tooltip {
@@ -1541,7 +1506,20 @@ Back to top button
    border-width: 0 5px 5px;
  }
 
- /********** END GLOBAL TOOLTIP CSS ***********/
- /*********************************************/
+/********** END GLOBAL TOOLTIP CSS ***********/
+/*********************************************/
 
+#feedback_content {
+  width: 450px;
+}
 
+#feedback_notifications {
+  width: 450px;
+  margin: 20px auto 0 auto;
+}
+
+.alert {
+  li {
+    list-style: none;
+  }
+}

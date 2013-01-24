@@ -99,9 +99,9 @@ mn:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: хүлээн зөвшөөрөгдсөн байх ёстой
-      blank: хоосон байж болохгүй
+      blank: хоосон байна
       confirmation: адилгүй байна
-      empty: байхгүй байж болохгүй
+      empty: байхгүй байна
       equal_to: ! '%{count}-тэй тэнцүү байх ёстой'
       even: тэгш байх ёстой
       exclusion: бол ашиглахад хориотой

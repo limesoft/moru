@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130119142114) do
+ActiveRecord::Schema.define(:version => 20130123091345) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,11 +35,13 @@ ActiveRecord::Schema.define(:version => 20130119142114) do
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
-    t.string   "email",      :limit => 100
-    t.boolean  "default",                   :default => false
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "email",            :limit => 100
+    t.boolean  "default",                         :default => false
     t.string   "avatar"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   create_table "comments", :force => true do |t|
@@ -77,6 +79,15 @@ ActiveRecord::Schema.define(:version => 20130119142114) do
     t.datetime "date"
     t.integer  "comments_count", :default => 0
   end
+
+  create_table "feedbacks", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "feedbacks", ["user_id"], :name => "index_feedbacks_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"

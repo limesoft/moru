@@ -1,0 +1,19 @@
+<div id="feedback_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="feedback_modal_label" aria-hidden="true">
+  <%= form_for Feedback.new, remote: true do |f| %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="feedback_modal_label">Санал, хүсэлт</h3>
+    </div>
+    <div id="feedback_notifications"></div>
+    <center>
+      <div class="modal-body">
+        <%= f.text_area :content, rows: 10 %>
+      </div>
+    </center>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Хаах</button>
+      <%= f.submit "Илгээх", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
+<a href="#feedback_modal" role="button" data-toggle="modal">Санал, хүсэлт</a>

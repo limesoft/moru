@@ -11,13 +11,13 @@
   margin-bottom: 20px;
   text-transform: uppercase;
 }
-  .dk_container:focus {
-    outline: 0;
-  }
-  .dk_container a {
-    cursor: pointer;
-    text-decoration: none;
-  }
+.dk_container:focus {
+  outline: 0;
+}
+.dk_container a {
+  cursor: pointer;
+  text-decoration: none;
+}
 
 /* Opens the dropdown and holds the menu label */
 .dk_toggle {
@@ -26,6 +26,7 @@
   background-position: 90% center;
   color: #fff;
   padding: 12px 20px;
+  width: 160px !important;
   &:hover{
     background-color:#99d8ed;
     @include radius(3px);
@@ -46,9 +47,8 @@
    */
   z-index: 10;
 }
-  .dk_open .dk_toggle {
-     
-  }
+.dk_open .dk_toggle {
+}
 
 /* The outer container of the options */
 .dk_options {
@@ -102,10 +102,12 @@
   display: none;
   float: left;
   position: relative;
+  width: 200px;
 }
-  .dk_container a {
-    outline: 0;
-  }
+
+.dk_container a {
+  outline: 0;
+}
 
 .dk_toggle {
   display: -moz-inline-stack;
@@ -113,6 +115,7 @@
   *display: inline;
   position: relative;
   zoom: 1;
+  width: 170px;
 }
 
 .dk_open {
@@ -123,6 +126,7 @@
   }
   .dk_open .dk_label {
     color: inherit;
+    width: 150px;
   }
 
 .dk_options {

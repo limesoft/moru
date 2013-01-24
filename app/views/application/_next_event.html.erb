@@ -4,7 +4,7 @@
 		<div class="grid_10">
 			<div class="grid_5 alpha">
 				<div class="event-box">
-          <h2><%= current_event.title %></h2>
+          <h2><%= link_to current_event.title, event_path(current_event) %></h2>
 					<div class="separator clearfix"></div>
 					<ul class="event-declare">
 						<li><span><i class="icon-location"></i>EMPATHY ТӨВИЙН 4 ДАВХАРТ ЛЕКТОР ТӨВИЙН БАЙР</span></li>
@@ -58,7 +58,6 @@
 								<span class="other-stat">Магадгүй: <%= current_event.count_maybe %></span>
 							</div>
             <% end %>
-            <%= link_to "Дэлгэрэнгүй", event_path(current_event), class: 'topic-more' %>
 					</div>
 				</div>
 			</div>
