@@ -954,6 +954,15 @@ Back to top button
 		padding:0 20px 0 0 ;
 	}
 }
+
+.list-view{
+  .topic-item{
+    width:auto !important;
+    .topic-user{
+      width:520px !important;
+    }
+  }
+}
 .topic-list{
 	margin-bottom:60px;
 	.topic-item{
@@ -1046,16 +1055,12 @@ Back to top button
 				padding:20px 20px 30px 20px;
 			}
 		}
-		.topic-tools{
-			background:#e1e5ea;
-			margin:0 10px;
-			padding:10px;
-			-webkit-border-bottom-right-radius: 5px;
-			-webkit-border-bottom-left-radius: 5px;
-			-moz-border-radius-bottomright: 5px;
-			-moz-border-radius-bottomleft: 5px;
-			border-bottom-right-radius: 5px;
-			border-bottom-left-radius: 5px;
+
+    .topic-show-tools{
+      padding:0 20px 20px 20px;
+      overflow:hidden;
+    }
+		.topic-tools, .topic-show-tools{
       .presenter{
         float:left;
         background:#707982;
@@ -1101,6 +1106,43 @@ Back to top button
         }
 			}
 		}
+    .topic-tools{
+      -webkit-border-bottom-right-radius: 5px;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background:#e1e5ea;
+      margin:0 10px;
+      padding:10px;
+      ul{
+        @include none_styled_ul;
+        li{
+          float:left;
+          height:30px;
+          margin-right:10px;
+          span{
+            float:left;
+            color:#444;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size:12px;
+            margin-top:5px;
+          }
+          a{
+            float:left;
+            width:30px;
+            height:30px;
+            img{
+              width:30px;
+              height:30px;
+              @include radius(5px);
+            }
+          }
+        }
+      }
+    }
 	}
 }
 /*************** END TOPIC CSS ************/
@@ -1509,6 +1551,21 @@ Back to top button
 /********** END GLOBAL TOOLTIP CSS ***********/
 /*********************************************/
 
+a.feedback{
+  @include radius(5px);
+  background:#7fcde8;
+  line-height:40px;
+  padding:0 10px;
+  text-align: center;
+  color:#fff;
+  font-size:14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position:fixed;
+  right:20px;
+  bottom:20px;
+}
+
 #feedback_content {
   width: 450px;
 }
@@ -1523,3 +1580,4 @@ Back to top button
     list-style: none;
   }
 }
+
