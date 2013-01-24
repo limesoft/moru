@@ -1126,7 +1126,7 @@ Back to top button
       background:#e1e5ea;
       margin:0 10px;
       padding:10px;
-      ul{
+      ul.topic_view {
         @include none_styled_ul;
         li{
           float:left;
@@ -1562,7 +1562,12 @@ Back to top button
 /*********************************************/
 
 a.feedback{
-  @include radius(5px);
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   background:#7fcde8;
   line-height:40px;
   padding:0 10px;
@@ -1572,7 +1577,7 @@ a.feedback{
   font-weight: bold;
   text-transform: uppercase;
   position:fixed;
-  right:20px;
+  right:0px;
   bottom:20px;
 }
 
@@ -1590,4 +1595,3 @@ a.feedback{
     list-style: none;
   }
 }
-
