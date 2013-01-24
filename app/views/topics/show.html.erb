@@ -2,8 +2,8 @@
   <%= tag :meta, property: "fb:app_id", content: ENV["OAUTH_FACEBOOK_APP_ID"] %>
   <%= tag :meta, property: "og:site_name", content: "Moru" %>
   <%= tag :meta, property: "og:type", content: "mongolian_rubyist:topic" %>
-  <%= tag :meta, property: "og:title", content: topic.title %>
-  <%= tag :meta, property: "og:url", content: topic_url(topic) %>
+  <%= tag :meta, property: "og:title", content: @topic.title %>
+  <%= tag :meta, property: "og:url", content: topic_url(@topic) %>
   <%= tag :meta, property: "og:image", content: moru_logo_url %>
 <% end %>
 
@@ -15,43 +15,43 @@
 					<div class="topic-item">
 						<div class="topic-context clearfix">
 							<div class="topic-header clearfix">
-								<div class="avatar"><%= image_tag(topic.user.default_avatar) %></div>
+								<div class="avatar"><%= image_tag(@topic.user.default_avatar) %></div>
 								<div class="topic-user">
-									<span><%= topic.user.name %><br/>
-										<em><%= time_ago_in_words(topic.created_at) %> өмнө</em>
+									<span><%= @topic.user.name %><br/>
+										<em><%= time_ago_in_words(@topic.created_at) %> өмнө</em>
 									</span>
-									<%= link_to "-", downvote_topic_path(topic), class: "vote-down", remote: true, method: :put %>
-									<%= link_to "+", upvote_topic_path(topic), class: "vote-up", remote: true, method: :put %>
+									<%= link_to "-", downvote_topic_path(@topic), class: "vote-down", remote: true, method: :put %>
+									<%= link_to "+", upvote_topic_path(@topic), class: "vote-up", remote: true, method: :put %>
 								</div>
-								<div class="pulse"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
+								<div class="pulse"><span class="down" id="topic-<%= @topic.id %>-votes"><%= @topic.avg_votes %></span></div>
 							</div>
 							<div class="topic-text">
-								<h2><%= topic.try(:title) %></h2>
-								<%= topic.content %>
+								<h2><%= @topic.try(:title) %></h2>
+								<%= @topic.content %>
 							</div>
 							<div class="topic-show-tools">
-								<div id="topic-speaker-<%= topic.id %>">
-									<% if topic.speaker %>
-										<%= render partial: 'speaker', locals: {topic: topic} %>
+								<div id="topic-speaker-<%= @topic.id %>">
+									<% if @topic.speaker %>
+										<%= render partial: 'speaker', locals: {topic: @topic} %>
 									<% elsif user_signed_in? %>
-										<%= link_to "энэ сэдвийг ярих", assign_topic_path(topic), class: "speak-topic", remote: true, method: :put %>
+										<%= link_to "энэ сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put %>
 									<% end %>
 								</div>
 								<nav class="social-login noneBackground nonePadding">
 									<ul>
-										<%= render partial: 'shared/share_buttons', locals: {url: topic_url(topic)} %>
+										<%= render partial: 'shared/share_buttons', locals: {url: topic_url(@topic)} %>
 									</ul>
 								</nav>
 							</div>
 						</div>
 						<div class="topic-tools clearfix">
 							<ul id="member-list">
+								<li><span> Санал  өгсөн </span></li>
+                <% @topic.votes.voters.each do |voter| %>
 								  <li>
-										<span> Санал  өгсөн </span>
+										<%= link_to image_tag(voter.default_avatar), "", { rel: 'tooltip', title: voter.name} %>
 								  </li>
-									<li>
-										<%= link_to image_tag('avatar.gif'), "", { rel: 'tooltip', title: 'bayarjargal'} %>
-									</li>
+                <% end %>
 							</ul>
 						</div>
 					</div>

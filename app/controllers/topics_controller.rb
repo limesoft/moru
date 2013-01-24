@@ -24,7 +24,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    respond_with topic
+    @topic = Topic.includes(votes: :voter).find(params[:id])
+    respond_with @topic
   end
 
   def assign
