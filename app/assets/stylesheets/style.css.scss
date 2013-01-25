@@ -1,5 +1,13 @@
  @import "shared-mixins";
  @import "reset";
+
+:focus{
+  box-shadow:none!important;
+  -webkit-box-shadow:none!important;
+  -moz-box-shadow:none!important;
+  -o-box-shadow:none!important;
+}
+
  body {
 	font: 13px/20px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
@@ -559,6 +567,12 @@ header {
             width:20px;
             height:20px;
             background:image-url("sprite.png") -430px 0 no-repeat;
+          }
+          .f-social-google{
+            float:left;
+            width:20px;
+            height:20px;
+            background:image-url("sprite.png") -460px 0 no-repeat;
           }
         }
       }

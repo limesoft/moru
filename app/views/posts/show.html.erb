@@ -14,10 +14,10 @@
 					</div>
 					<div class="post-item-tools">
 						<ul>
-							<li><span>share</span></li>
-							<li><a href="javascript:void(0)" class="f-social-twitter"></a></li>
-							<li><a href="javascript:void(0)" class="f-social-facebook"></a></li>
-							<li><a href="javascript:void(0)" class="f-social-rss"></a></li>
+							<li><span>Түгээх</span></li>
+              <li><a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=300')" class="f-social-twitter" target="_blank" href="https://twitter.com/share?url=<%= post_url(post) %>"></a></li>
+              <li><a class="f-social-facebook" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<%= post_url(post) %>"></a></li>
+              <li><a onclick="return !window.open(this.href, 'GooglePlus', 'width=640,height=300')" href="https://plus.google.com/share?url=<%= post_url(post) %>" class="f-social-google" target="_blank"></a></li>
 						</ul>
 
 						<div class="published_by">
