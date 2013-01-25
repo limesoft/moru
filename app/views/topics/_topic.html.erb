@@ -6,7 +6,6 @@
         <span><%= truncate(topic.user.name, length: 30) %><br/>
           <em><%= time_ago_in_words(topic.created_at) %> өмнө</em>
 				</span>
-        <%= link_to "-", downvote_topic_path(topic), class: "vote-down", remote: true, method: :put %>
         <%= link_to "+", upvote_topic_path(topic), class: "vote-up", remote: true, method: :put %>
 			</div>
       <div class="pulse"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
