@@ -4,14 +4,14 @@
     <div id="topic_error_messages"></div>
     <%= form_for Topic.new, remote: true do |f| %>
 	  <div class="topic-type">
-		  <label for="tt1" class="talk-topic1">
+		  <label for="topic_type_yes" class="talk-topic1">
         <%= f.radio_button :type, 'yes' %>
 				<span>
 					<h2>сэдэв ярих</h2>
 					Сэдэв ярих санал тавих 
 				</span>
 			</label>
-			<label  for="tt2" class="talk-topic2">
+			<label  for="topic_type_no" class="talk-topic2">
         <%= f.radio_button :type, 'no' %>
 				<span>
 					<h2>Сэдэв яриулах</h2>
