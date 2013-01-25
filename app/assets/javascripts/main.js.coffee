@@ -54,7 +54,7 @@ jQuery ->
   w = $(window)
   w.scroll( ->
     return if loading
-    if w.scrollTop() > ($(document).height()-w.height()-20) && page <= number_of_pages
+    if w.scrollTop() > ($(document).height()-w.height()-40) && page <= number_of_pages
       loading = true
       page += 1
       $.getScript(url+"?page="+page, ()->
