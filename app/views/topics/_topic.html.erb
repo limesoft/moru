@@ -3,7 +3,7 @@
 	  <div class="topic-header clearfix">
 		  <div class="avatar"><%= image_tag(topic.user.default_avatar) %></div>
 			<div class="topic-user">
-        <span><%= truncate(topic.user.name, length: 32) %><br/>
+        <span><%= truncate(topic.user.name, length: 30) %><br/>
           <em><%= time_ago_in_words(topic.created_at) %> өмнө</em>
 				</span>
         <%= link_to "-", downvote_topic_path(topic), class: "vote-down", remote: true, method: :put %>

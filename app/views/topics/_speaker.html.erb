@@ -1,5 +1,5 @@
 <div class="presenter">
   <%= image_tag(topic.speaker.default_avatar) %>
-	<span><%= truncate(topic.speaker.name, length: 32) %></span>
+	<span><%= truncate(topic.speaker.name, length: 30) %></span>
   <%= link_to_if(user_signed_in? && topic.speaker_id == current_user.id && !(topic.speaker_id.present? && topic.event_id.present?), "", unassign_topic_path(topic), class: "remove", remote: true, method: :put, rel: 'tooltip', title: 'Болих') %>
 </div>
