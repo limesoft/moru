@@ -1,0 +1,30 @@
+<div class="event-container">
+  <div class="container_10 clearfix">
+    <div class="error_container">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |f| %>
+      <div class="control-group">
+        <%= f.label :email, class: "control-label" %>
+        <div class="controls">
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <%= f.label :password, class: "control-label" %>
+        <div class="controls">
+          <%= f.password_field :password %>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <% if devise_mapping.rememberable? -%>
+            <label class="checkbox"><%= f.check_box :remember_me %> Remember me</label>
+          <% end -%>
+          <%= f.submit "Login", class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
