@@ -1,1 +1,1 @@
-<li><%= topic.speaker.try(:name) %>:&nbsp;<%= link_to topic.try(:title), topic_path(topic) %></li>
+<li><%= truncate(topic.speaker.name, length: 32) %>:&nbsp;<%= link_to topic.try(:title), topic_path(topic) %></li>
