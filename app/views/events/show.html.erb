@@ -21,7 +21,7 @@
                 <h2><%= event.title %></h2>
 								<ul>
 									<li> <span><%=raw(event.content) %></span> </li>
-                  <li><span>Уулзалтанд яригдах сэдвүүд:</span></li>
+                  <li><span>Уулзалтын сэдвүүд:</span></li>
                   <% event.topics.each do |topic| %>
                     <li>&nbsp;&nbsp;&nbsp;- <%= truncate(topic.speaker.name, length: 32) %>:&nbsp;<%= topic.title %></li>
                   <% end %>
