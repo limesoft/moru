@@ -1,5 +1,5 @@
 <div class="presenter">
   <%= image_tag(topic.speaker.default_avatar) %>
 	<span><%= topic.speaker.name %></span>
-  <%= link_to_if(user_signed_in? && topic.speaker.id == current_user.id, "", unassign_topic_path(topic), class: "remove", remote: true, method: :put, rel: 'tooltip', title: 'Болих') %>
+  <%= link_to_if(user_signed_in? && topic.speaker_id == current_user.id && !(topic.speaker_id.present? && topic.event_id.present?), "", unassign_topic_path(topic), class: "remove", remote: true, method: :put, rel: 'tooltip', title: 'Болих') %>
 </div>
