@@ -230,6 +230,12 @@ header {
 				float:left;
 				height:40px;
 			}
+      li.avatar{
+        img{
+          float:left;
+          height:40px;
+        }
+      }
 			li.user_profile {
 				a {
 					-webkit-border-top-left-radius: 5px;
