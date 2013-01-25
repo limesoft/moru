@@ -28,4 +28,8 @@ Moru::Application.routes.draw do
     resources :comments, only: [:create, :index]
   end
 
+  unless Rails.application.config.consider_all_requests_local
+    match '*not_found', to: 'errors#not_found'
+  end
+
 end
