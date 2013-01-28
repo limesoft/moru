@@ -39,7 +39,7 @@ class TopicsController < ApplicationController
   end
 
   def upvote
-    topic.liked_by current_user
+    topic.liked_by current_user if current_user.id != topic.user.id
     respond_with topic
   end
 
