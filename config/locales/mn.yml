@@ -8,5 +8,6 @@ mn:
       topic:
         type: 'Сэдэв'
         content: 'Агуулга'
+        title: 'Гарчиг'
       feedback:
         content: 'Агуулга'
