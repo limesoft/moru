@@ -12,13 +12,13 @@ class FacebookOgpService
   end
   handle_asynchronously :post_topic, run_at: Proc.new { 10.seconds.from_now }
 
-  def post_on_wall(user_id)
+  def post_on_wall(user_id, topic_id, topic_url)
     @user_id = user_id
-    ogp { |p| p.put_wall_post("Hello there!", {
-        "name" => "Link name",
-        "link" => "http://www.moru.mn",
-        "caption" => "I'm posted a new review",
-        "description" => "This is a longer description of the attachment"
+    topic = Topic.find(topic_id)
+    ogp { |p| p.put_wall_post("Би MORU дээр яригдах \"#{topic.title}\" сэдэвт санал өглөө.", {
+        "name" => topic.title,
+        "link" => topic_url,
+        "description" => topic.content
       })
     }
   end
