@@ -5,7 +5,7 @@
 RailsAdmin.config do |config|
 
   require 'i18n'
-  I18n.default_locale = 'en'
+  I18n.default_locale = 'mn'
 
   ################  Global configuration  ################
 
