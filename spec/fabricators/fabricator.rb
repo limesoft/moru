@@ -14,3 +14,8 @@ Fabricator(:event) do
   title { Faker::Lorem.sentence(rand(7)) }
   content { Faker::Lorem.paragraphs(5).join("\n") }
 end
+
+Fabricator(:topic) do
+  title { Faker::Lorem.sentence(rand(5)) }
+  content { Faker::Lorem.paragraphs(5).join("\n") }
+end

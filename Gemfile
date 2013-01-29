@@ -47,10 +47,11 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '2.12.0'
-  gem 'fabrication'
+  gem 'fabrication', '2.5.4'
 end
 
 group :test do
+  gem 'ffaker'
   gem 'simplecov', require: false
 end
 

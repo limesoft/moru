@@ -1,2 +1,0 @@
-Fabricator(:admin) do
-end
