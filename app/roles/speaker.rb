@@ -21,8 +21,10 @@ module Speaker
   end
 
   def assign_topic(topic)
-    topic.speaker = self
-    topic.save
+    in_context do
+      topic.speaker = self
+      topic.save
+    end
   end
 
   def unassign_topic(topic)
