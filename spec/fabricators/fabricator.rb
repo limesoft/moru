@@ -13,9 +13,19 @@ end
 Fabricator(:event) do
   title { Faker::Lorem.sentence(rand(7)) }
   content { Faker::Lorem.paragraphs(5).join("\n") }
+  date { Time.now }
 end
 
 Fabricator(:topic) do
   title { Faker::Lorem.sentence(rand(5)) }
   content { Faker::Lorem.paragraphs(3).join("\n") }
+end
+
+Fabricator(:comment) do
+  content { Faker::Lorem.paragraphs(2).join("\n") }
+end
+
+Fabricator(:post) do
+  title { Faker::Lorem.sentence(rand(5)) }
+  content { Faker::Lorem.paragraphs(rand(10)).join("\n") }
 end
