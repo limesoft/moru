@@ -2,7 +2,7 @@
 
 Fabricator(:user) do
   name { Faker::Name.name }
-  email { |attrs| "#{attrs[:name].parameterize}@example.com" }
+  role { ROLE_USER }
 end
 
 Fabricator(:authentication) do
@@ -17,5 +17,5 @@ end
 
 Fabricator(:topic) do
   title { Faker::Lorem.sentence(rand(5)) }
-  content { Faker::Lorem.paragraphs(5).join("\n") }
+  content { Faker::Lorem.paragraphs(3).join("\n") }
 end
