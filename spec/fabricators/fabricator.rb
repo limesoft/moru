@@ -26,6 +26,6 @@ Fabricator(:comment) do
 end
 
 Fabricator(:post) do
-  title { Faker::Lorem.sentence(rand(5)) }
-  content { Faker::Lorem.paragraphs(rand(10)).join("\n") }
+  title { Faker::Lorem.sentence(rand(1..5)) }
+  content { Faker::Lorem.paragraphs(rand(2..10)).join("\n") }
 end
