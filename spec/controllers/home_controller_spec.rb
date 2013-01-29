@@ -4,7 +4,6 @@ require 'spec_helper'
 
 describe HomeController do
 
-
   describe "GET index" do
 
     it "render index template" do
@@ -13,7 +12,7 @@ describe HomeController do
     end
 
     context "#latest_post" do
-      # FIXME: Why this test failed? Never mind ???????????????
+      # FIXME: Why this test fail? Never mind ???????????????
       before(:each) do
         @posts = []
         5.times { @posts << Fabricate(:post) }
