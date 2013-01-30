@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require_dependency 'ogp/facebook/post'
-
 ##
 # Facebook Open Graphic Protocol Service
 #
@@ -18,7 +16,7 @@ class FacebookOgpService
   def post_on_wall(user_id, topic_id, topic_url)
     @user_id = user_id
     # TODO: check permission here
-    fb_post = Ogp::Facebook::Post.new(topic, topic_url)
+    fb_post = Ogp::Facebook::WallPost.new(topic, topic_url)
     ogp { |p| p.put_wall_post("Би MORU дээр яригдах \"#{topic.title}\" сэдэвт санал өглөө.", fb_post.to_json) }
   end
   handle_asynchronously :post_on_wall

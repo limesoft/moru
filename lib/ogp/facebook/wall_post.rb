@@ -4,7 +4,7 @@ require 'json'
 
 module Ogp
   module Facebook
-    class Post
+    class WallPost
 
       def initialize(topic, topic_url)
         @topic = topic
@@ -14,7 +14,7 @@ module Ogp
       def to_json(*args)
         {
           "name" => @topic.title,
-          "link" => @topic_url
+          "link" => @topic_url,
           "description" => @topic.content
         }.to_json(*args)
       end
