@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require 'json'
-
 module Ogp
   module Facebook
     class WallPost
@@ -11,14 +9,13 @@ module Ogp
         @topic_url = topic_url
       end
 
-      def to_json(*args)
+      def to_hash
         {
           "name" => @topic.title,
           "link" => @topic_url,
           "description" => @topic.content
-        }.to_json(*args)
+        }
       end
-
     end
   end
 end

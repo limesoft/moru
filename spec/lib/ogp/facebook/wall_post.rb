@@ -9,12 +9,12 @@ module Ogp
       let(:topic_url) { Faker::Internet.domain_name }
       let(:post) { WallPost.new(topic, topic_url) }
 
-      it "#to_json" do
+      it "#to_hash" do
         {
           "name" => topic.title,
           "link" => topic_url,
           "description" => topic.content
-        }.to_json.should eq(post.to_json)
+        }.should eq(post.to_hash)
       end
     end
   end

@@ -17,7 +17,7 @@ class FacebookOgpService
     @user_id = user_id
     # TODO: check permission here
     fb_post = Ogp::Facebook::WallPost.new(topic, topic_url)
-    ogp { |p| p.put_wall_post("Би MORU дээр яригдах \"#{topic.title}\" сэдэвт санал өглөө.", fb_post.to_json) }
+    ogp { |p| p.put_wall_post("Би MORU дээр яригдах \"#{topic.title}\" сэдэвт санал өглөө.", fb_post.to_hash) }
   end
   handle_asynchronously :post_on_wall
 
