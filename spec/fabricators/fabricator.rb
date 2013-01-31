@@ -29,3 +29,7 @@ Fabricator(:post) do
   title { Faker::Lorem.sentence(rand(1..5)) }
   content { Faker::Lorem.paragraphs(rand(2..10)).join("\n") }
 end
+
+Fabricator(:feedback) do
+  content { Faker::Lorem.paragraphs(rand(2..4)).join("\n") }
+end
