@@ -7,7 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'pg'
 gem 'strong_parameters'
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.4'
 gem 'cancan'
 gem 'kaminari', '~> 0.14.1'
 gem 'acts_as_votable', '~> 0.4.0'
