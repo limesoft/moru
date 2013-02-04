@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   respond_to :js
 	
   def index
-    @topics = Topic.includes(:user).order("(cached_votes_up-cached_votes_down) DESC").page(params[:page]).per(6)
+    @topics = Topic.includes(:user).where("event_id IS NULL").order("cached_votes_up DESC").page(params[:page]).per(6)
     respond_with @topics
   end
 
