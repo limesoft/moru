@@ -7,8 +7,7 @@ class HomeController < ApplicationController
 
   private
     def current_event
-      @current_event ||= Event.last
-      @current_event.extend GoingContext
+      @current_event ||= Event.last.extend GoingContext
     end
     helper_method :current_event
 

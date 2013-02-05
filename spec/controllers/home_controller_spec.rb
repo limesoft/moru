@@ -16,14 +16,17 @@ describe HomeController do
       before(:each) do
         @posts = []
         5.times { @posts << Fabricate(:post) }
-        get :index
       end
 
-      it { assigns(:latest_post).should eq([@posts.last]) }
+      it "#latest_post" do
+        get :index
+        assigns(:latest_post).should eq([@posts.last])
+      end
     end
 
     context "#current_event" do
       # TODO: write test for current_event helper method
+      # it { assigns(:current_event).should eq(@current_event) }
     end
   end
 end
