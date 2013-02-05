@@ -4,4 +4,18 @@ require 'spec_helper'
 
 describe OgpContext do
 
+  let(:authentication) { Fabricate(:authentication, provider: PROVIDER_FACEBOOK) }
+  let(:oauth_token) { authentication.oauth_token }
+  subject do
+    user = Fabricate(:user).extend(OgpContext)
+    user.authentications << authentication
+    user.save
+    user
+  end
+
+
+  context "#get_facebook_token" do
+    it { should respond_to :get_facebook_token }
+    its(:get_facebook_token) { should eq(oauth_token) }
+  end
 end
