@@ -18,7 +18,7 @@ module GoingContext
     rsvps.where('going=?', rsvp).size
   end
 
-  def find_going
+  def find_goings
     rsvps.where('going=?', RSVP_YES)
   end
 end

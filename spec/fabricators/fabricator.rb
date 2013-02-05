@@ -33,3 +33,7 @@ end
 Fabricator(:feedback) do
   content { Faker::Lorem.paragraphs(rand(2..4)).join("\n") }
 end
+
+Fabricator(:rsvp) do
+  going { RSVPS.sample }
+end
