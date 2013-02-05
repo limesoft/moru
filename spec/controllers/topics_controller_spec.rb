@@ -72,13 +72,25 @@ describe TopicsController do
   end
 
   describe "PUT upvote" do
-    before(:each) { login_in_as(user) }
 
-    it "#upvote" do
-      expect {
-        xhr :put, :upvote, id: topic.id
-        topic.reload
-      }.to change(topic, :cached_votes_up).by(1)
+    context "#when normal" do
+      before(:each) { login_in_as(user) }
+      it do
+        expect {
+          xhr :put, :upvote, id: topic.id
+          topic.reload
+        }.to change(topic, :cached_votes_up).by(1)
+      end
+    end
+
+    context "#when creator trying to vote" do
+      before(:each) { login_in_as(topic.user) }
+      it do
+        expect {
+          xhr :put, :upvote, id: topic.id
+          topic.reload
+        }.not_to change(topic, :cached_votes_up)
+      end
     end
   end
 
