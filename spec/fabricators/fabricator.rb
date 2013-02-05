@@ -36,4 +36,5 @@ end
 
 Fabricator(:rsvp) do
   going { RSVPS.sample }
+  user
 end
