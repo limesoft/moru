@@ -19,6 +19,7 @@ end
 Fabricator(:topic) do
   title { Faker::Lorem.sentence(rand(2..5)) }
   content { Faker::Lorem.paragraphs(rand(1..3)).join("\n") }
+  user
 end
 
 Fabricator(:comment) do

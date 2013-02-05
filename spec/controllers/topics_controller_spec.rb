@@ -45,4 +45,41 @@ describe TopicsController do
     end
   end
 
+  describe "PUT assign" do
+    before(:each) { login_in_as(user) }
+
+    it "#assign" do
+      expect {
+        xhr :put, :assign, id: topic.id
+        topic.reload
+      }.to change(topic, :speaker_id).from(nil).to(user.id)
+    end
+  end
+
+  describe "PUT unassign" do
+    before(:each) do
+      login_in_as(user)
+      topic.speaker = user
+      topic.save
+    end
+
+    it "#unassign" do
+      expect {
+        xhr :put, :unassign, id: topic.id
+        topic.reload
+      }.to change(topic, :speaker_id).from(user.id).to(nil)
+    end
+  end
+
+  describe "PUT upvote" do
+    before(:each) { login_in_as(user) }
+
+    it "#upvote" do
+      expect {
+        xhr :put, :upvote, id: topic.id
+        topic.reload
+      }.to change(topic, :cached_votes_up).by(1)
+    end
+  end
+
 end
