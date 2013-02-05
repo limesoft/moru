@@ -8,11 +8,13 @@ describe OgpContext do
   let(:oauth_token) { authentication.oauth_token }
   subject do
     user = Fabricate(:user).extend(OgpContext)
+    %w(twitter github google).each do |provider|
+      user.authentications << Fabricate(:authentication, provider: provider)
+    end
     user.authentications << authentication
     user.save
     user
   end
-
 
   context "#get_facebook_token" do
     it { should respond_to :get_facebook_token }
