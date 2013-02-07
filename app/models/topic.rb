@@ -9,6 +9,7 @@ class Topic < ActiveRecord::Base
   belongs_to :user
   belongs_to :speaker, class_name: 'User'
   belongs_to :event
+  has_many :comments, as: :commentable, dependent: :destroy, inverse_of: :commentable
 
   ##
   # Validations
@@ -24,11 +25,13 @@ class Topic < ActiveRecord::Base
   rails_admin do
     configure :user, :belongs_to_association
     configure :speaker, :belongs_to_association
+    configure :comments_count, :integer
 
     list do
       field :title
       field :user
       field :speaker
+      field :comments_count
     end
 
     edit do

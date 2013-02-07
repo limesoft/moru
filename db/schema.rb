@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130123091345) do
+ActiveRecord::Schema.define(:version => 20130207030734) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20130123091345) do
     t.integer  "cached_votes_total",                :default => 0
     t.integer  "cached_votes_up",                   :default => 0
     t.integer  "cached_votes_down",                 :default => 0
+    t.integer  "comments_count"
   end
 
   add_index "topics", ["cached_votes_down"], :name => "index_topics_on_cached_votes_down"

@@ -54,6 +54,15 @@
 							</ul>
 						</div>
 					</div>
+					<div style="float:left;">
+					<!-- COMMENTS -->
+					<%= render(partial: 'comments/comments',
+						 locals: {
+										 comments: @comments,
+										 pagination_url: topic_comments_path(@topic),
+										 commentable: topic
+						 }) %>
+					</div>
 				</div>
 			</div>
 			<div class="grid_3 omega">

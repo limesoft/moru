@@ -25,6 +25,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.includes(votes: :voter).find(params[:id])
+    @comments = topic.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     respond_with @topic
   end
 
