@@ -11,6 +11,12 @@
 		  <div class="topic-list" id="topic-list">
         <%= render partial: 'topic', collection: @topics %>
 		  </div>
+			<div class="topic-list-title">
+				<span>Яригдсан Сэдвүүд</span>
+			</div>
+			<div class="topic-list clearfix" id="topic-list-past">
+				<%= render partial: 'topic', collection: @past_topics %>
+			</div>
 	  </div>
   <% end %>
 </div>

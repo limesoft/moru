@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
 	
   def index
     @topics = Topic.includes(:user).where("event_id IS NULL").order("cached_votes_up DESC").page(params[:page]).per(6)
+    @past_topics = Topic.includes(:user, :event).where("events.date < ?", DateTime.now).order("cached_votes_up DESC").page(params[:page]).per(6)
     respond_with @topics
   end
 
