@@ -23,9 +23,11 @@ class Topic < ActiveRecord::Base
   end
 
   rails_admin do
+    configure :comments, :has_many_association
     configure :user, :belongs_to_association
     configure :speaker, :belongs_to_association
     configure :comments_count, :integer
+
 
     list do
       field :title
