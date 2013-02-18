@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -42,7 +42,7 @@ group :production do
 end
 
 group :development do
-  gem 'better_errors'
+  gem 'better_errors', '0.6.0'
 end
 
 group :test, :development do
