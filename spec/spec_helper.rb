@@ -8,6 +8,7 @@ SimpleCov.start do
   add_group 'Contexts', 'app/contexts'
   add_group 'Roles', 'app/roles'
   add_group 'Services', 'app/services'
+  add_filter '/config/'
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'

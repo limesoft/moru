@@ -29,7 +29,6 @@ shared_examples "rsvp_update" do
   before(:each) do
     user.extend RsvpContext
     @rsvp = user.send(:create_rsvp, Fabricate(:event), RSVP_YES)
-    puts '----------------------', @rsvp.class
     @rsvp_old_value = @rsvp.going
     login_in_as user
   end
