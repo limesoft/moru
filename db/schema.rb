@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(:version => 20130207030734) do
     t.integer  "cached_votes_total",                :default => 0
     t.integer  "cached_votes_up",                   :default => 0
     t.integer  "cached_votes_down",                 :default => 0
-    t.integer  "comments_count"
+    t.integer  "comments_count",                    :default => 0
   end
 
   add_index "topics", ["cached_votes_down"], :name => "index_topics_on_cached_votes_down"
