@@ -5,20 +5,20 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-gem 'strong_parameters'
+gem 'pg', '0.14.1'
+gem 'strong_parameters', '0.2.0'
 gem 'jquery-rails', '2.1.4'
-gem 'cancan'
+gem 'cancan', '1.6.9'
 gem 'kaminari', '~> 0.14.1'
 gem 'acts_as_votable', '~> 0.4.0'
 gem 'bootstrap-wysihtml5-rails'
 gem 'devise'
-gem 'rails_admin', '0.4.3'
-gem 'koala'
+gem 'rails_admin', '0.4.5'
+gem 'koala', '1.6.0'
 gem 'daemons'
 gem 'delayed_job_active_record'
 
-gem 'omniauth-facebook'
+gem 'omniauth-facebook', '1.4.1'
 #gem 'omniauth-twitter'
 #gem 'omniauth-google-oauth2'
 #gem 'omniauth-github'
@@ -46,14 +46,14 @@ group :development do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '2.12.0'
-  gem 'fabrication', '2.5.4'
+  gem 'rspec-rails', '2.12.2'
+  gem 'fabrication', '2.6.1'
 end
 
 group :test do
-  gem 'ffaker'
-  gem 'database_cleaner'
-  gem 'simplecov', require: false
+  gem 'ffaker', '1.15.0'
+  gem 'database_cleaner', '0.9.1'
+  gem 'simplecov', '0.7.1', require: false
 end
 
 # To use ActiveModel has_secure_password
