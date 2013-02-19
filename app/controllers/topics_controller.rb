@@ -20,13 +20,13 @@ class TopicsController < ApplicationController
     else
       @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
     end
-    ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.errors.empty?
+    ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.persisted?
     respond_with @topic
   end
 
   def show
     @topic = Topic.includes(votes: :voter).find(params[:id])
-    @comments = topic.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @comments = @topic.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     respond_with @topic
   end
 
