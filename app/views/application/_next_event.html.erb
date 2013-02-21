@@ -1,67 +1,131 @@
 <% if current_event %>
-<aside class="next_event clearfix">
-	<div class="container_10">
-		<div class="grid_10">
-			<div class="grid_5 alpha">
-				<div class="event-box">
-          <h2><%= link_to current_event.title, event_path(current_event) %></h2>
-					<div class="separator clearfix"></div>
-					<ul class="event-declare">
-						<li><span><i class="icon-location"></i>EMPATHY ТӨВИЙН 4 ДАВХАРТ ЛЕКТОР ТӨВИЙН БАЙР</span></li>
-            <li><span><i class="icon-time"></i><%= current_event.date.strftime("%H:%M") %> ЦАГТ</span></li>
-					</ul>	
-					<div class="event-calendar clearfix">
-						<div class="cal-item">
-							<span class="cal-item-left"></span>
-							<span class="cal-item-center">
-                <%= current_event.date.month %>
-							</span>
-							<span class="cal-item-right"></span>
-						</div>
-						<div class="cal-item">
-							<span class="cal-item-left"></span>
-							<span class="cal-item-center">
-                <%= current_event.date.day %>
-							</span>
-							<span class="cal-item-right"></span>
-						</div>
-						<div class="cal-item last-item">
-							<span class="cal-item-left"></span>
-							<span class="cal-item-center">
-                <%= l current_event.date, format: :weekday %>
-							</span>
-							<span class="cal-item-right"></span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="grid_5 omega">
-				<div class="event-box clearfix">
-					<h2> яригдах сэдвүүд:</h2>
-					<ul class="event-topic">
-            <%= render partial: 'events/topic', collection: current_event.topics %>
-					</ul>
-					<div class="guest-tool">
-            <% if user_signed_in? %>
-              <%= form_for Rsvp.new, remote: true do |f| %>
-                <%= f.select :going,
-                  options_for_select(
-                    [['Та очих уу?', RSVP_NO_ANSWER],
-                      ['Тийм', RSVP_YES],
-                      ['Магадгүй', RSVP_MAYBE],
-                      ['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
-                <div class="member-count" id="going-count"><span><%= current_event.count_going %></span></div>
-              <% end %>
-            <% else %>
-							<div class="rsvp-statistics clearfix">
-								<span class="yes-stat">Очно: <%= current_event.count_going %></span>
-								<span class="other-stat">Магадгүй: <%= current_event.count_maybe %></span>
-							</div>
-            <% end %>
-					</div>
-				</div>
-			</div>
+<div class="next-event">
+	<div class="event-title">
+		 2 сарын 23-ны уулзалт
+	</div>
+
+	<div class="event-calendar clearfix">
+		<div class="cal-item">
+			<span class="cal-item-left"></span>
+			<span class="cal-item-center"><%= current_event.date.month %></span>
+			<span class="cal-item-right"></span>
+		</div>
+		<div class="cal-item">
+			<span class="cal-item-left"></span>
+			<span class="cal-item-center"><%= current_event.date.day %></span>
+			<span class="cal-item-right"></span>
+		</div>
+		<div class="cal-item weekly">
+			<span class="cal-item-left"></span>
+			<span class="cal-item-center"><%= l current_event.date, format: :weekday %></span>
+			<span class="cal-item-right"></span>
 		</div>
 	</div>
-</aside>
+
+	<div class="event-location clearfix">
+		<div class="loc-name">
+			<div class="loc-left">
+				<span><i class="loc-marker"></i>байршил</span>
+			</div>
+			<div class="loc-right">
+				<span><i class="loc-time"></i>13:25</span>
+			</div>
+		</div>
+		<div class="loc-text">
+			<i class="loc-arrow"></i>
+			<span>Empathy төвийн 4 давхарт Лектор төвийн байр</span>
+		</div>
+	</div>
+
+	<div class="event-topics">
+		<div class="topic-label">
+			<i class="topic-icon"></i>
+			яригдах сэдвүүд
+		</div>
+		<div class="topic-text">
+			<div class="topic-arrow"></div>
+			<ul class="clearfix">
+				<%= render partial: 'events/topic', collection: current_event.topics %>
+			</ul>
+		</div>
+	</div>
+
+	<div class="rsvp-going">
+		<% if user_signed_in? %>
+			<div class="rsvp-label">
+				<i class="rsvp-icon"></i>
+				та очих уу?
+			</div>
+			<div class="rsvp-text">
+				<div class="rsvp-arrow"></div>
+				<%= form_for Rsvp.new, remote: true do |f| %>
+					<%= f.select :going,
+											 options_for_select(
+															 [['Та очих уу?', RSVP_NO_ANSWER],
+																['Тийм', RSVP_YES],
+																['Магадгүй', RSVP_MAYBE],
+																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
+					<div class="member-count" id="going-count"><span><%= current_event.count_going %></span></div>
+				<% end %>
+			</div>
+		<% else %>
+		<div class="rsvp-label">
+			<i class="rsvp-icon"></i>
+			  та очих уу?
+		</div>
+		<div class="rsvp-text clearfix">
+			<div class="rsvp-arrow"></div>
+				<div class="going-form clearfix">
+					<%= form_for Rsvp.new, remote: true do |f| %>
+						<%= f.select :going,
+												 options_for_select(
+																 [['- Сонгох -', RSVP_NO_ANSWER],
+																	['Тийм', RSVP_YES],
+																	['Магадгүй', RSVP_MAYBE],
+																	['Үгүй', RSVP_NO]], ''), {}, tabindex: 0, class: 'dk_container' %>
+				</div>
+				<div class="rsvp-stat clearfix">
+					<div class="stat-title">
+						тийм:  <%= current_event.count_going %>
+					</div>
+					<div class="stat-list">
+						<ul >
+							<% current_event.with_going.each do |rsvp| %>
+								<li>
+									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div class="rsvp-stat clearfix">
+					<div class="stat-title"> магадгүй:  <%= current_event.count_maybe %> </div>
+					<div class="stat-list">
+						<ul >
+							<% current_event.with_maybe.each do |rsvp| %>
+								<li>
+									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div class="rsvp-stat clearfix">
+					<div class="stat-title"> үгүй:  <%= current_event.count_not_going %> </div>
+					<div class="stat-list">
+						<ul>
+							<% current_event.with_no.each do |rsvp| %>
+								<li>
+									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+
+				<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>
 <% end %>

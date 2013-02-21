@@ -10,6 +10,7 @@
   line-height: 14px;
   margin-bottom: 20px;
   text-transform: uppercase;
+  text-transform: uppercase;
 }
 .dk_container:focus {
   outline: 0;
@@ -26,7 +27,7 @@
   background-position: 90% center;
   color: #fff;
   padding: 12px 20px;
-  width: 160px !important;
+  width: 180px !important;
   &:hover{
     background-color:#99d8ed;
     @include radius(3px);
@@ -102,7 +103,7 @@
   display: none;
   float: left;
   position: relative;
-  width: 200px;
+  width: 220px;
 }
 
 .dk_container a {
@@ -114,8 +115,8 @@
   display: inline-block;
   *display: inline;
   position: relative;
+  text-align:center;
   zoom: 1;
-  width: 170px;
 }
 
 .dk_open {
