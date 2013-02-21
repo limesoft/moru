@@ -6,22 +6,23 @@
 			<a class="moru-logo"></a>
 
 			<!-- social login section -->
-      <% if user_signed_in? %>
-			  <nav class="social-logged">
-				  <ul>
-            <li class="user_profile"> <a href="javascript:void(0)"><%= truncate(current_user.name, length: 30) %></a></li>
-					  <li class="avatar"><%= image_tag(current_user.default_avatar) %></li>
-            <li class="logout"><%= link_to "", logout_path %></li>
-				  </ul>
-        </nav>
-      <% else %>
-			  <nav class="social-login">
-			    <ul>
-					  <li class="login_btn"><span> нэвтрэх </span></li>
-					  <li><%= login_with_facebook %></li>
-				  </ul>
-			  </nav>
-      <% end %>
+			<% if user_signed_in? %>
+				<nav class="social-logged">
+					<ul>
+						<li class="avatar"><%= image_tag(current_user.default_avatar) %></li>
+						<li class="user_profile"> <a href="javascript:void(0)"><%= truncate(current_user.name, length: 30) %></a></li>
+						<li class="logout"><%= link_to "", logout_path %></li>
+					</ul>
+				</nav>
+			<% else %>
+				<nav class="social-login">
+					<ul>
+						<li class="social-icon"><%= login_with_facebook %></li>
+						<li class="login_btn"><span> нэвтрэх </span></li>
+					</ul>
+				</nav>
+			<% end %>
+
 
 			<!-- main menu -->
 			<nav class="main-menu">
@@ -30,7 +31,7 @@
           <%= link_to_page "Блог", posts_path, "posts" %>
           <%= link_to_page "Уулзалт", events_path, "events" %>
           <%= link_to_page "Сэдэв", topics_path, "topics" %>
-				</ul>	
+				</ul>
 			</nav>
 		</div>
 	</div>

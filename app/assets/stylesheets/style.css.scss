@@ -108,10 +108,11 @@ a {
 
 header {
 	display:block;
-	padding:15px 0;
-	border-bottom:solid 5px #eee;
-	background:#fff;
+	border-bottom:solid 5px #fff;
+	background:#707982;
+  height:78px;
 	a.moru-logo{
+    margin:14px 0 0 0;
 		float:left;
 		width				:	125px;
 		height			:	50px;
@@ -123,29 +124,30 @@ header {
 		-webkit-border-radius: 5px;
 		-moz-border-radius:5px;
 		border-radius: 5px;
-		margin-top:5px;
 	}
 
 	/* begin main menu */
 	.main-menu{
 		float: right;
-		background: #707982;
-		padding: 10px 10px;
-		margin-right: 20px;
+		margin-right: 110px;
+    padding:0 20px;
+    height:78px;
 		ul {
 			list-style: none;
 			margin: 0px;
 			padding: 0px;
 			li {
 				float: left;
-				padding: 0px 20px;
 				a {
+          float:left;
 					font-size: 14px;
 					font-weight: bold;
 					text-transform: uppercase;
 					color: #fff;
+          padding: 29px 20px;
 					&:hover {
 						color: #7fcde8;
+            background:#5f6871;
 					}
 				}
 				a.active {
@@ -158,32 +160,39 @@ header {
 
 	/* begin social login */
 	.social-login{
+    padding:0;
+    margin:20px 0 0 0;
 		float:right;
-		background:#7fcde8;
-		padding:5px 10px;
-		ul{ 
+		background:#00a8e7;
+		ul{
 			list-style:none;
 			margin:0;
 			padding:0;
-			li{
-				float:left;
-				padding:0 5px;
-			} 
-			li.label{
-				span{
-					float:left;
-					color:#fff;
-					font-weight: bold;
-					margin:4px 10px 0 0;
-				}
+      height:40px;
+			li.social-icon{
+        flaot:left;
+        height:40px;
+        width:40px;
+        padding:0;
 			}
+      li.login_btn{
+        float:left;
+        padding:0 30px;
+        span{
+          float:left;
+          margin:8px 0 0 0;
+          font-size:14px;
+          color:#fff;
+          font-weight: normal;
+        }
+      }
 		}
 
 		a.social-twitter{
 			float:left;
 			width:30px;
-			height:30px;
-			@include radius(3px);
+			height:40px;
+			@include radius(5px);
 			@include transit;
 			background:#6ab8d3 image-url("sprite.png") -140px 0 no-repeat;
 			&:hover{
@@ -192,11 +201,11 @@ header {
 		}
 		a.social-facebook{
 			float:left;
-			width:30px;
-			height:30px;
-			@include radius(3px);
+			width:40px;
+			height:40px;
+			@include radius(5px);
 			@include transit;
-			background:#6ab8d3 image-url("sprite.png") -260px 0 no-repeat;	
+			background:#5f6871 image-url("sprite.png") -255px 3px no-repeat;
 			&:hover{
 				background-color:#3b5998;
 			}
@@ -232,6 +241,7 @@ header {
 		float:right;
 		overflow:hidden;
 		padding:0 0 0 20px;
+    margin:20px 0 0 0;
 		ul{
 			@include none_styled_ul();
 			li{
@@ -242,23 +252,23 @@ header {
         img{
           float:left;
           height:40px;
+          -webkit-border-top-left-radius: 5px;
+          -webkit-border-bottom-left-radius: 5px;
+          -moz-border-radius-topleft: 5px;
+          -moz-border-radius-bottomleft: 5px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
         }
       }
 			li.user_profile {
 				a {
-					-webkit-border-top-left-radius: 5px;
-					-webkit-border-bottom-left-radius: 5px;
-					-moz-border-radius-topleft: 5px;
-					-moz-border-radius-bottomleft: 5px;
-					border-top-left-radius: 5px;
-					border-bottom-left-radius: 5px;
 					float:left;
 					height:30px;
 					@include transit;
 					color:#fff;
 					font-weight: bold;
 					padding:10px 20px 0 20px;
-					background:#7fcde8;
+					background:#00a8e7;
 					&:hover{
 						background:#99d8ed;
 					}
@@ -273,7 +283,7 @@ header {
 					width:40px;
 					height:40px;
 					@include transit;
-					background:#707982 image-url("sprite.png") -140px -60px no-repeat;
+					background:#5f6871 image-url("sprite.png") -140px -60px no-repeat;
 					&:hover, &:active{
 						background-color:#858f9a;
 					}	
