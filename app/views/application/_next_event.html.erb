@@ -1,7 +1,7 @@
 <% if current_event %>
 <div class="next-event">
 	<div class="event-title">
-		 2 сарын 23-ны уулзалт
+		<%= link_to current_event.title, event_path(current_event) %>
 	</div>
 
 	<div class="event-calendar clearfix">
@@ -28,7 +28,7 @@
 				<span><i class="loc-marker"></i>байршил</span>
 			</div>
 			<div class="loc-right">
-				<span><i class="loc-time"></i>13:25</span>
+				<span><i class="loc-time"></i><%= current_event.date.strftime("%H:%M") %></span>
 			</div>
 		</div>
 		<div class="loc-text">
@@ -98,31 +98,6 @@
 						</ul>
 					</div>
 				</div>
-				<div class="rsvp-stat clearfix">
-					<div class="stat-title"> магадгүй:  <%= current_event.count_maybe %> </div>
-					<div class="stat-list">
-						<ul >
-							<% current_event.with_maybe.each do |rsvp| %>
-								<li>
-									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
-								</li>
-							<% end %>
-						</ul>
-					</div>
-				</div>
-				<div class="rsvp-stat clearfix">
-					<div class="stat-title"> үгүй:  <%= current_event.count_not_going %> </div>
-					<div class="stat-list">
-						<ul>
-							<% current_event.with_no.each do |rsvp| %>
-								<li>
-									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
-								</li>
-							<% end %>
-						</ul>
-					</div>
-				</div>
-
 				<% end %>
 		</div>
 		<% end %>
