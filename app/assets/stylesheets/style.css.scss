@@ -628,11 +628,9 @@ header {
 
 }
 .right-content{
-	// background:#e1e5ea;
   background:#707982;
   padding:20px 0 10px 0;
   @include radius(5px);
-
   .next-event{
     .event-title{
       background:#7fcde8;
@@ -685,18 +683,17 @@ header {
       }
     }
     .event-location{
-      padding-top:40px;
+      padding-top:30px;
       .loc-name{
         .loc-left{
           float:left;
           width:60%;
           line-height:50px;
           background:#5f6871;
-          text-align: center;
           span{
             .loc-marker{
               display:inline-block;
-              margin:0 5px -3px 0;
+              margin:0 10px -3px 0;
               width:10px;
               height:16px;
               background:image-url('sprite.png') -220px -60px no-repeat;
@@ -707,12 +704,11 @@ header {
           float:left;
           width:40%;
           line-height:50px;
-          text-align:center;
           background:#b6d99f;
           span{
             .loc-time{
               display:inline-block;
-              margin:0 5px -3px 0;
+              margin:0 10px -3px 0;
               width:15px;
               height:16px;
               background:image-url('sprite.png') -180px -60px no-repeat;
@@ -720,10 +716,12 @@ header {
           }
         }
         span{
+          margin:0 0 0 20px;
           color:#fff;
           font-weight: bold;
           font-size:13px;
           text-transform: uppercase;
+
         }
       }
       .loc-text{
@@ -751,7 +749,7 @@ header {
         font-size:13px;
         font-weight: bold;
         text-transform: uppercase;
-        text-align:center;
+        padding-left:20px;
         .topic-icon{
           display:inline-block;
           margin:0 5px -3px 0;
@@ -825,7 +823,7 @@ header {
         font-size:13px;
         font-weight: bold;
         text-transform: uppercase;
-        text-align:center;
+        padding-left:20px;
         span{
           color:#7fcbe6;
         }
@@ -847,7 +845,7 @@ header {
         }
         ul.going-list{
           margin:0;
-          padding:20px 0;
+          padding:20px;
           list-style:none;
           li{
             float:left;
