@@ -473,6 +473,7 @@ header {
 		background:#fff;
 		padding:20px 0;
     margin-top:40px;
+    box-shadow: 0 1px rgba(0,0,0,0.2);
 		.post-img{
 			display:block;
 			margin-bottom:20px;
@@ -506,33 +507,36 @@ header {
 				padding:15px 0 20px 0;
 			}
 			.post-tool{
-				span.comment-count{
+				span.tool-item{
 					float:left;
 					color:#444;
-					font-size:13px;
-					margin:15px 0 0 0;
+					font-size:11px;
+					margin:15px 20px 10px 0;
 					.comment-icon{
 						float:left;
-						width:16px;
-						height:15px;
-						margin:3px 10px 0 0 ;
-						background:image-url("sprite.png") -40px -60px no-repeat;
+						width:10px;
+						height:10px;
+						margin:6px 10px 0 0 ;
+						background:image-url("sprite.png") -140px -100px no-repeat;
 					}
+          .author-icon{
+            float:left;
+            width:10px;
+            height:10px;
+            margin:5px 10px 0 0 ;
+            background:image-url("sprite.png") -220px -100px no-repeat;
+          }
+          .createdby-icon{
+            float:left;
+            width:10px;
+            height:10px;
+            margin:5px 10px 0 0 ;
+            background:image-url("sprite.png") -180px -100px no-repeat;
+          }
 				}
 				a.post-more{
-					float:right;
-					background:#00a8e7;
-					@include radius(5px);
-					padding:8px 15px;
-					font-weight: bold;
-					color:#fff;
-					@include transit;
-					&:hover{
-						background:#49c0ec;
-					}
-					&:active{
-						background-color:#108fbe;	
-					}
+					float:left;
+					@include moru_button();
 				}
 			}
 		}
@@ -964,7 +968,8 @@ footer{
 	}
 
 	.footer-social{
-		float:right;
+		float:left;
+    padding-left:50px;
 		a{
 			margin-left:10px;
 		}	
@@ -995,6 +1000,7 @@ footer{
 
 	}
 	.developed_by{
+    float:right;
 		font-size:12px;
 		color:#a6a7a8;
 		text-transform: uppercase;
@@ -1884,23 +1890,9 @@ Back to top button
 /*********************************************/
 
 a.feedback{
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background:#7fcde8;
-  line-height:40px;
-  padding:0 10px;
-  text-align: center;
-  color:#fff;
-  font-size:14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  position:fixed;
-  right:0px;
-  bottom:20px;
+  float:right;
+  margin-top:40px;
+  @include moru_button();
 }
 
 #feedback_content {
