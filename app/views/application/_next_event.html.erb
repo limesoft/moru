@@ -38,18 +38,18 @@
 	</div>
 
 	<% unless current_event.topics.empty? %>
-	<div class="event-topics">
-		<div class="topic-label">
-			<i class="topic-icon"></i>
-			яригдах сэдвүүд
-		</div>
-		<div class="topic-text">
-			<div class="topic-arrow"></div>
-			<ul class="clearfix">
-				<%= render partial: 'events/topic', collection: current_event.topics %>
-			</ul>
-		</div>
-	</div>
+	  <div class="event-topics">
+		  <div class="topic-label">
+			  <i class="topic-icon"></i>
+			  яригдах сэдвүүд
+		  </div>
+		  <div class="topic-text">
+			  <div class="topic-arrow"></div>
+			  <ul class="clearfix">
+				  <%= render partial: 'events/topic', collection: current_event.topics %>
+			  </ul>
+		  </div>
+	  </div>
 	<% end %>
 
 	<div class="rsvp-going">
