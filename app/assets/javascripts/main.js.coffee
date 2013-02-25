@@ -5,6 +5,9 @@ jQuery ->
         $("#new_rsvp").submit() if parseInt(value) > 0
     )
 
+  if $('.best_in_place').length > 0
+    $('.best_in_place').best_in_place()
+
   if $('#event-list').length > 0 || $('#topic-list').length > 0
     $("#back-top").hide()
     # fade in #back-top

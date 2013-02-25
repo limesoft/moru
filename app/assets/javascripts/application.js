@@ -20,3 +20,5 @@
 //= require bootstrap-modal
 //= require html5shiv
 //= require main
+//= require jquery.purr
+//= require best_in_place
