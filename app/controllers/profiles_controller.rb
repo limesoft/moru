@@ -2,7 +2,7 @@
 
 class ProfilesController < ApplicationController
 
-	respond_to :json, only: [:update]
+	respond_to :js, :json, only: [:update]
 
 	def show
 		@user = User.find(params[:id])

@@ -1,13 +1,22 @@
-<DIV style="text-align: center; color: gray;";>
+<div style="text-align: center; color: gray;";>
 	<H1>Хэрэглэгчийн профайл:</H1>
-</DIV><br/>
+</div><br/>
 
-<DIV style="color:gray; position: relative; left: 550px">
+<div style="color:gray; position: relative; left: 550px">
 	<b>НЭР:</b>
 	<%= best_in_place_if user_signed_in? && current_user.id == @user.id, @user, :name, path: profile_path(@user) %>
 	<br/>
 
 	<b>БҮРТГЭГДСЭН ОГНОО:</b>
-	<em><%= @user.created_at%></em><br/>
+	<em><%= @user.created_at.to_date %></em><br/>
 	<br/>	
 </DIV>
+
+<div style=" border:2px; border-color:gray; position: relative; left: 500px";>
+	<ul>
+	<% @user.topics.each do |topic|%>
+		<li><%= link_to topic.title, topic_path(topic) %></li>
+		<%= label_tag :"#{topic.comments_count} comments, #{topic.votes.voters.count} votes"%>
+	<% end %>
+	</ul>
+</div><br/>
