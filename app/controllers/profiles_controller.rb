@@ -1,0 +1,15 @@
+# encoding: utf-8
+
+class ProfilesController < ApplicationController
+
+	respond_to :json, only: [:update]
+
+	def show
+		@user = User.find(params[:id])
+	end
+
+	def update
+		current_user.update_attributes(name: params[:user][:name])
+		respond_with(current_user)
+	end
+end

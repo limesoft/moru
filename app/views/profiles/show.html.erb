@@ -1,0 +1,13 @@
+<DIV style="text-align: center; color: gray;";>
+	<H1>Хэрэглэгчийн профайл:</H1>
+</DIV><br/>
+
+<DIV style="color:gray; position: relative; left: 550px">
+	<b>НЭР:</b>
+	<%= best_in_place_if user_signed_in? && current_user.id == @user.id, @user, :name, path: profile_path(@user) %>
+	<br/>
+
+	<b>БҮРТГЭГДСЭН ОГНОО:</b>
+	<em><%= @user.created_at%></em><br/>
+	<br/>	
+</DIV>
