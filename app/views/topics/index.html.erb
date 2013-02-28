@@ -30,7 +30,7 @@
   <p id="back-top"><a href="#top"><span></span>Дээш очих</a></p>
   <script>
     $(function(){
-      infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>, 'list_type=<%= params[:list_type] %>');
+      infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>, 'view=<%= params[:view] %>');
     });
   </script>
 </div>

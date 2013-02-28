@@ -8,9 +8,9 @@ class TopicsController < ApplicationController
   def index
     @topics = case params[:view].to_s
                 when 'newest'
-                  Topic.includes(:user, :event).where("event_id IS NULL").order("created_at DESC")
+                  Topic.includes(:user).where("event_id IS NULL").order("created_at DESC")
                 when 'voted'
-                  Topic.includes(:user).order("cached_votes_up DESC")
+                  Topic.includes(:user).where("event_id IS NULL").order("cached_votes_up DESC")
                 when 'talked'
                   Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("topics.created_at DESC")
                 else

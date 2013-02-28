@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 	respond_to :js, :json, only: [:update]
 
 	def show
-		@user = User.find(params[:id])
+		@user = User.includes(topics: :votes).find(params[:id])
 	end
 
 	def update
