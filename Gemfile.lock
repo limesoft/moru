@@ -224,16 +224,16 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.4.0)
-  best_in_place
+  best_in_place (= 2.1.0)
   better_errors (= 0.6.0)
   bootstrap-sass
   bootstrap-wysihtml5-rails
   cache_digests (= 0.2.0)
   cancan (= 1.6.9)
   coffee-rails (~> 3.2.1)
-  daemons
+  daemons (= 1.1.9)
   database_cleaner (= 0.9.1)
-  delayed_job_active_record
+  delayed_job_active_record (= 0.3.3)
   devise
   fabrication (= 2.6.1)
   ffaker (= 1.15.0)
