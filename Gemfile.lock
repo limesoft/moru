@@ -44,6 +44,8 @@ GEM
     bootstrap-wysihtml5-rails (0.3.1.17)
       railties (>= 3.0)
     builder (3.0.4)
+    cache_digests (0.2.0)
+      actionpack (>= 3.2)
     cancan (1.6.9)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -226,6 +228,7 @@ DEPENDENCIES
   better_errors (= 0.6.0)
   bootstrap-sass
   bootstrap-wysihtml5-rails
+  cache_digests (= 0.2.0)
   cancan (= 1.6.9)
   coffee-rails (~> 3.2.1)
   daemons

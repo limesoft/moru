@@ -18,6 +18,7 @@ gem 'koala', '1.6.0'
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'best_in_place'
+gem 'cache_digests', '0.2.0'
 
 gem 'omniauth-facebook', '1.4.1'
 #gem 'omniauth-twitter'

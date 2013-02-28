@@ -1,4 +1,4 @@
-<% if current_event %>
+<% cache [current_user, current_event] do %>
 <div class="next-event">
 	<div class="event-title">
 		<%= link_to current_event.title, event_path(current_event) %>
