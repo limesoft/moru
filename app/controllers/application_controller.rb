@@ -24,6 +24,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+    def current_event
+      @current_event ||= Event.last.extend GoingContext
+    end
+    helper_method :current_event
+
     def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
     end

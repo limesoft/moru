@@ -1,5 +1,7 @@
 <div class="event-container">
 	<div class="container_10 clearfix">
+
+    <!-- CONTENT -->
 		<div class="grid_7">
 			<div class="left-content">
 				<%= render 'new_topic' %>
@@ -16,16 +18,19 @@
 				<% end %>
 			</div>
 		</div>
+
+    <!-- SIDEBAR -->
 		<div class="grid_3">
 			<div class="right-content clearfix">
-
+				<%= render 'next_event' %>
 			</div>
 		</div>
-</div>
-<p id="back-top"><a href="#top"><span></span>Дээш очих</a></p>
-<script>
-  $(function(){
-    infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>, 'list_type=<%= params[:list_type] %>');
-  });
-</script>
+
+  </div>
+  <p id="back-top"><a href="#top"><span></span>Дээш очих</a></p>
+  <script>
+    $(function(){
+      infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>, 'list_type=<%= params[:list_type] %>');
+    });
+  </script>
 </div>

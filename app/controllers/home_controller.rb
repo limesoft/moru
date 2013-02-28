@@ -6,11 +6,6 @@ class HomeController < ApplicationController
   end
 
   private
-    def current_event
-      @current_event ||= Event.last.extend GoingContext
-    end
-    helper_method :current_event
-
     def latest_post
       @latest_post ||= Post.last
     end

@@ -1,22 +1,20 @@
 <div class="event-container">
 <div class="container_10 clearfix">
-	<!-- begin grid_10 -->
 	<div class="grid_10">
 		<div class="grid_7 alpha">
-			<!-- begin left content -->
 			<div class="left-content">
         <%= render @posts %>
         <%= paginate @posts, theme: 'moru' %>
 			</div>
-			<!-- end left content -->
 		</div>
-		<!-- begin grid 3 -->
+
+    <!-- SIDEBAR -->
 		<div class="grid_3 omega">
 			<div class="right-content clearfix">
-				&nbsp;
+				<%= render 'next_event' %>
 			</div>
 		</div>
-		<!-- end grid 3 -->
+
 	</div>
 </div>
 </div>
