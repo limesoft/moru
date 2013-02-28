@@ -5,10 +5,10 @@
 				<%= render 'new_topic' %>
 				<% unless @topics.empty? %>
 					<div class="topic-filter">
-						<%= link_to_topic("Шинээр нэмэгдсэн","new_list") %>
-						<%= link_to_topic("их саналтай","voted_up") %>
-						<%= link_to_topic("Бүгд","") %>
-						<%= link_to_topic("яригдсан", "talked", content_tag(:i, '', class: "talked-icon" ), 'past-topic') %>
+						<%= link_to_topic("шинээр нэмэгдсэн", "newest") %>
+						<%= link_to_topic("их саналтай", "voted") %>
+						<%= link_to_topic("бүгд", "") %>
+						<%= link_to_topic("яригдсан", "talked") %>
 					</div>
 					<div class="topic-list" id="topic-list">
 						<%= render partial: 'topic', collection: @topics %>

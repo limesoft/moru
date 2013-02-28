@@ -6,10 +6,10 @@ class TopicsController < ApplicationController
   respond_to :js, only: [:index, :create, :upvote, :downvote, :assign, :unassign]
 	
   def index
-    @topics = case params[:list_type].to_s
-                when 'new_list'
+    @topics = case params[:view].to_s
+                when 'newest'
                   Topic.includes(:user, :event).where("event_id IS NULL").order("created_at DESC")
-                when 'voted_up'
+                when 'voted'
                   Topic.includes(:user).order("cached_votes_up DESC")
                 when 'talked'
                   Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("topics.created_at DESC")

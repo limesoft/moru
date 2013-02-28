@@ -18,14 +18,14 @@ module ApplicationHelper
     request.protocol + request.host_with_port + "/assets/logo.png"
   end
 
-  def link_to_topic(title, type, iconImage='', classValue='')
-    if classValue != ''
-    css_class = classValue
-    else
-    css_class = " selected" if params[:list_type] == type
+  def link_to_topic(title, view)
+    if view == 'talked'
+      css_class = 'past-topic'
+      title = content_tag(:i, '', class: 'talked-icon') << title
+    elsif params[:view] == view
+      css_class = 'selected'
     end
-
-    link_to(iconImage << title, topics_path(list_type: type), class: css_class)
+    link_to(title, topics_path(view: view), class: css_class)
   end
 
 end
