@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   ##
   # Validations
   validates_inclusion_of :role, in: ROLES
+  validates :name, presence: true
 
   ##
   # Relationships

@@ -1,22 +1,39 @@
-<div style="text-align: center; color: gray;";>
-	<H1>Хэрэглэгчийн профайл:</H1>
-</div><br/>
+<div class="container_10 clearfix">
+	<div class="grid_7">
+		<div class="profile-container">
+			<div class="profile-header">
+				<div class="header-arrow"></div>
+				<div class="profile-avatar">
+					<%= image_tag(@user.default_avatar) %>
+				</div>
+				<div class="profile-name">
+					<%= best_in_place_if user_signed_in? && current_user.id == @user.id, @user, :name, path: profile_path(@user), activator: "#activator-#{@user.id}" %>
+					<%= link_to "","", id: "activator-#{@user.id}", class: "edit-me" %>
+					<em>MORU - д нэгдсэн огноо <%= @user.created_at.to_date %></em>
+				</div>
+			</div>
+			<div class="profile-body">
+				<div class="profile-topic">
+					<div class="topic-hd">
+						<div class="topic-label">
+							< >
+						</div>
+						<span>Сэдвүүд</span>
+					</div>
+					<ul class="current_user_topic">
+						<% @user.topics.each do |topic| %>
+							<li>
+								<%= link_to topic.title, topic_path(topic) %>
+								<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
+								<div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
+							</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grid_3">
 
-<div style="color:gray; position: relative; left: 550px">
-	<b>НЭР:</b>
-	<%= best_in_place_if user_signed_in? && current_user.id == @user.id, @user, :name, path: profile_path(@user) %>
-	<br/>
-
-	<b>БҮРТГЭГДСЭН ОГНОО:</b>
-	<em><%= @user.created_at.to_date %></em><br/>
-	<br/>	
-</DIV>
-
-<div style=" border:2px; border-color:gray; position: relative; left: 500px";>
-	<ul>
-	<% @user.topics.each do |topic|%>
-		<li><%= link_to topic.title, topic_path(topic) %></li>
-		<%= label_tag :"#{topic.comments_count} comments, #{topic.votes.voters.count} votes"%>
-	<% end %>
-	</ul>
-</div><br/>
+	</div>
+</div>

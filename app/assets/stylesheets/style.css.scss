@@ -1916,4 +1916,156 @@ a.feedback{
     top: 120px;
     bottom: 120px;
   }
-}
+   }
+
+/***********************************/
+/******** BEGIN PROFILE CSS ********/
+ .profile-container{
+   margin:40px 0;
+   background:#e1e5ea;
+   box-shadow: 0 1px rgba(0,0,0,0.2);
+   @include radius(5px);
+   .profile-header{
+     position:relative;
+     padding:30px;
+     width:600px;
+     height:55px;
+     background:image-url("profile-header.png");
+
+     .header-arrow{
+       display:inline-block;
+       position:absolute;
+       width:15px;
+       height:15px;
+       left:30px;
+       bottom:-15px;
+       background:image-url("sprite.png") -60px -170px no-repeat;
+     }
+     .profile-avatar{
+       float:left;
+       width:50px;
+       height:50px;
+       img{
+         width:50px;
+         height:50px;
+         @include radius(5px);
+       }
+     }
+     .profile-name{
+       float:left;
+       padding:0 0 0 30px;
+       span{
+         color:#7fcde8;
+         text-transform: uppercase;
+         font-weight: bold;
+         font-size:18px;
+       }
+       a.edit-me{
+         display:inline-block;
+         margin:0 0 0 20px;
+         width:15px;
+         height: 15px;
+         background:image-url("sprite.png") -140px -170px no-repeat;
+       }
+       em{
+         padding:10px 0 0 0;
+         display:block;
+         font-style:normal;
+         font-size:11px;
+         color:#fff;
+         text-transform: uppercase;
+       }
+     }
+   }
+   .profile-body{
+     padding:40px 30px;
+     .profile-topic{
+       .topic-hd{
+         overflow:hidden;
+         padding:0 0 30px 0;
+         .topic-label{
+           float:left;
+           width:40px;
+           height:32px;
+           padding-top:8px;
+           text-align:center;
+           color:#e1e5ea;
+           @include radius(5px);
+           background:#707982;
+         }
+         span{
+           float:left;
+           color:#707982;
+           text-transform: uppercase;
+           font-size: 15px;
+           font-weight: bold;
+           margin:8px 0 0 20px;
+         }
+       }
+       ul.current_user_topic{
+         @include none_styled_ul();
+         li{
+           background: #707982;
+           height:30px;
+           @include radius(5px);
+           a{
+             float:left;
+             color:#fff;
+             font-size:13px;
+             text-transform: uppercase;
+             font-weight: normal;
+             margin:5px 0 0 20px;
+           }
+           .comment{
+             float:right;
+             height:30px;
+             background:#b6d99f;
+             padding:0 15px;
+             i.comment-icon{
+               float:left;
+               width:10px;
+               height:9px;
+               margin:11px 10px 0 0;
+               background:image-url("sprite.png") -80px -170px no-repeat;
+             }
+             span{
+               float:left;
+               color:#fff;
+               margin:5px 0 0 0;
+               font-size:13px;
+               text-transform: uppercase;
+             }
+           }
+           .vote{
+             float:right;
+             height:30px;
+             background:#7fcde8;
+             padding:0 15px;
+             -webkit-border-top-right-radius: 5px;
+             -webkit-border-bottom-right-radius: 5px;
+             -moz-border-radius-topright: 5px;
+             -moz-border-radius-bottomright: 5px;
+             border-top-right-radius: 5px;
+             border-bottom-right-radius: 5px;
+             i.vote-icon{
+               float:left;
+               width:10px;
+               height:10px;
+               margin:9px 10px 0 0;
+               background:image-url("sprite.png") -110px -170px no-repeat;
+             }
+             span{
+               float:left;
+               margin:5px 0 0 0;
+               color:#fff;
+               font-size:13px;
+               text-transform: uppercase;
+             }
+           }
+         }
+       }
+     }
+   }
+ }
+/******** END PROFILE CSS **********/
+/***********************************/
