@@ -2187,6 +2187,7 @@ a.feedback{
          @include none_styled_ul();
          li{
            background: #707982;
+           margin-bottom: 10px;
            height:30px;
            @include radius(5px);
            a{

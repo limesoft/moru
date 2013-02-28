@@ -7,33 +7,40 @@
 					<%= image_tag(@user.default_avatar) %>
 				</div>
 				<div class="profile-name">
-					<%= best_in_place_if user_signed_in? && current_user.id == @user.id, @user, :name, path: profile_path(@user), activator: "#activator-#{@user.id}" %>
-					<%= link_to "","", id: "activator-#{@user.id}", class: "edit-me" %>
-					<em>MORU - д нэгдсэн огноо <%= @user.created_at.to_date %></em>
+					<% if user_signed_in? && current_user.id == @user.id %>
+						<%= best_in_place @user, :name, path: profile_path(@user), activator: "#activator-#{@user.id}" %>
+						<%= link_to "","", id: "activator-#{@user.id}", class: "edit-me" %>
+					<% else %>
+						<span><%= @user.name %></span>
+					<% end %>
+					<em>MORU-д нэгдсэн огноо <%= @user.created_at.to_date %></em>
 				</div>
 			</div>
 			<div class="profile-body">
 				<div class="profile-topic">
-					<div class="topic-hd">
-						<div class="topic-label">
-							< >
+					<% if @user.topics.length > 0 %>
+						<div class="topic-hd">
+							<div class="topic-label">
+								< >
+							</div>
+							<span>Сэдвүүд</span>
 						</div>
-						<span>Сэдвүүд</span>
-					</div>
-					<ul class="current_user_topic">
-						<% @user.topics.each do |topic| %>
-							<li>
-								<%= link_to topic.title, topic_path(topic) %>
-								<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
-								<div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
-							</li>
-						<% end %>
-					</ul>
+						<ul class="current_user_topic">
+							<% @user.topics.each do |topic| %>
+								<li>
+									<%= link_to topic.title, topic_path(topic) %>
+									<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
+									<div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
+								</li>
+							<% end %>
+						</ul>
+					<% else %>
+						Одоогоор сэдэв үүсгээгүй байна ..
+					<% end %>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="grid_3">
-
 	</div>
 </div>
