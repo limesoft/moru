@@ -3,39 +3,32 @@
 class TopicsController < ApplicationController
 
   before_filter :become_speaker, only: [:create, :assign, :unassign]
-  respond_to :js
+  respond_to :js, only: [:index, :create, :upvote, :downvote, :assign, :unassign]
 	
   def index
-    if params[:list_type] == 'new_list'
-      @topics = Topic.includes(:user, :event).where("event_id IS NULL").order("created_at DESC").page(params[:page]).per(6)
-    elsif params[:list_type] == 'voted_up'
-      @topics = Topic.includes(:user).order("cached_votes_up DESC").page(params[:page]).per(6)
-    elsif params[:list_type] == 'talked'
-      @topics = Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("").page(params[:page]).per(6)
-    else
-      @topics = Topic.includes(:user).order("created_at DESC").page(params[:page]).per(6)
-      puts @topics.length
-    end
-      respond_with @topics
+    @topics = case params[:list_type].to_s
+                when 'new_list'
+                  Topic.includes(:user, :event).where("event_id IS NULL").order("created_at DESC")
+                when 'voted_up'
+                  Topic.includes(:user).order("cached_votes_up DESC")
+                when 'talked'
+                  Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("topics.created_at DESC")
+                else
+                  Topic.includes(:user).order("created_at DESC")
+                end.page(params[:page]).per(5)
+    respond_with @topics
   end
 
   def create
     @topic = Topic.new(topic_params)
-     current_user.create_topic @topic
-    #if topic_type == 'yes'
-    #  current_user.create_and_assign_topic @topic
-    #elsif topic_type == 'no'
-    #  current_user.create_topic @topic
-    #else
-    #  @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
-    #end
-    ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.persisted?
+    current_user.create_topic @topic
+    # ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.persisted?
     respond_with @topic
   end
 
   def show
     @topic = Topic.includes(votes: :voter).find(params[:id])
-    @comments = @topic.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @comments = @topic.comments.includes(:user).order("created_at DESC").page(params[:page]).per(10)
     respond_with @topic
   end
 
@@ -50,7 +43,7 @@ class TopicsController < ApplicationController
   end
 
   def upvote
-    if current_user.id != topic.user.id && !current_user.voted_for?(topic)
+    if current_user.id != topic.user.id
       topic.liked_by current_user
       ogp.post_on_wall(current_user.id, topic.id, topic_url(topic))
     end
@@ -58,7 +51,7 @@ class TopicsController < ApplicationController
   end
 
   def downvote
-    if current_user.id != topic.user.id && current_user.voted_for?(topic)
+    if current_user.id != topic.user.id
       topic.downvote_from current_user
     end
     respond_with topic

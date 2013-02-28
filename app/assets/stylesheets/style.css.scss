@@ -1240,7 +1240,7 @@ Back to top button
         height:50px;
         top:30px;
         right:-20px;
-        a.to-poll{
+        a.votable {
           float:left;
           width:40px;
           height:50px;
@@ -1252,7 +1252,7 @@ Back to top button
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        a.voted-poll{
+        a.up-voted{
           float:left;
           width:40px;
           height:50px;

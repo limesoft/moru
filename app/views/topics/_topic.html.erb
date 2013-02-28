@@ -4,16 +4,18 @@
 			<%= link_to "", event_path(topic.event.id), {class:"past-event", rel: 'tooltip', title: topic.event.title+"aнд яригдсан" } %>
 		<% end  %>
 		<div class="topic-vote">
-			<% if user_signed_in? && topic.user.id != current_user.id %>
+			<% if user_signed_in? && topic.user_id != current_user.id %>
 				<% if current_user.voted_up_on?(topic) %>
-					<%= link_to "", upvote_topic_path(topic), class: "to-poll", remote: true, method: :put %>
+					<%= link_to "", downvote_topic_path(topic), class: "up-voted", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
+				<% elsif current_user.voted_down_on?(topic) %>
+					<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
 				<% else %>
-					<%= link_to "", downvote_topic_path(topic), class: "voted-poll", remote: true, method: :put %>
+					<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
 				<% end %>
 			<% else %>
-			<a href="javascript:void(0)" class="to-poll" style="cursor:default;"></a>
+				<a href="javascript:void(0)" class="votable" style="cursor:default;" id="topic-<%= topic.id %>-vote-link"></a>
 			<% end %>
-			<div class="poll-stat"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.avg_votes %></span></div>
+			<div class="poll-stat"><span class="down" id="topic-<%= topic.id %>-votes"><%= topic.cached_votes_up %></span></div>
 		</div>
 		<div class="avatar <%= 'past-avatar' if topic.event.present? %>"><%= image_tag(topic.user.default_avatar) %></div>
 		<div class="topic-text">
@@ -39,6 +41,7 @@
 			<div class="social-login">
 				<ul>
 					<%= render partial: 'shared/share_buttons', locals: {url: topic_url(topic)} %>
+					<li><%= link_to "", topic_path(topic), class: "topic-more" %></li>
 				</ul>
 			</div>
 		</div>
@@ -49,6 +52,3 @@
 		</div>
 	</div>
 </div>
-
-
-

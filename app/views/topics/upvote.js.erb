@@ -1,1 +1,3 @@
 $('#topic-<%= @topic.id %>-votes').html("<%= @topic.avg_votes %>");
+$("a#topic-<%= @topic.id %>-vote-link").addClass('up-voted').removeClass('votable');
+$("a#topic-<%= @topic.id %>-vote-link").attr('href', '<%= downvote_topic_path(@topic) %>');
