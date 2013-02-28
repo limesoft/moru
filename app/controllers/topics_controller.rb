@@ -6,20 +6,29 @@ class TopicsController < ApplicationController
   respond_to :js
 	
   def index
-    @topics = Topic.includes(:user).where("event_id IS NULL").order("cached_votes_up DESC").page(params[:page]).per(6)
-    @past_topics = Topic.includes(:user, :event).where("events.date < ?", DateTime.now).order("cached_votes_up DESC").page(params[:page]).per(6)
-    respond_with @topics
+    if params[:list_type] == 'new_list'
+      @topics = Topic.includes(:user, :event).where("event_id IS NULL").order("created_at DESC").page(params[:page]).per(6)
+    elsif params[:list_type] == 'voted_up'
+      @topics = Topic.includes(:user).order("cached_votes_up DESC").page(params[:page]).per(6)
+    elsif params[:list_type] == 'talked'
+      @topics = Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("").page(params[:page]).per(6)
+    else
+      @topics = Topic.includes(:user).order("created_at DESC").page(params[:page]).per(6)
+      puts @topics.length
+    end
+      respond_with @topics
   end
 
   def create
     @topic = Topic.new(topic_params)
-    if topic_type == 'yes'
-      current_user.create_and_assign_topic @topic
-    elsif topic_type == 'no'
-      current_user.create_topic @topic
-    else
-      @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
-    end
+     current_user.create_topic @topic
+    #if topic_type == 'yes'
+    #  current_user.create_and_assign_topic @topic
+    #elsif topic_type == 'no'
+    #  current_user.create_topic @topic
+    #else
+    #  @topic.errors.add(:type, "ярих эсэхээ сонгоно уу!")
+    #end
     ogp.post_topic(current_user.id, @topic.id, topic_url(@topic)) if @topic.persisted?
     respond_with @topic
   end
@@ -44,6 +53,13 @@ class TopicsController < ApplicationController
     if current_user.id != topic.user.id && !current_user.voted_for?(topic)
       topic.liked_by current_user
       ogp.post_on_wall(current_user.id, topic.id, topic_url(topic))
+    end
+    respond_with topic
+  end
+
+  def downvote
+    if current_user.id != topic.user.id && current_user.voted_for?(topic)
+      topic.downvote_from current_user
     end
     respond_with topic
   end

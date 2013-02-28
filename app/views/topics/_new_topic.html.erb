@@ -1,35 +1,30 @@
-<div class="grid_10">
   <!-- сэдэв ярих санал тавих -->
-	<div class="offer-topic clearfix">
-    <div id="topic_error_messages"></div>
-    <%= form_for Topic.new, remote: true do |f| %>
-	  <div class="topic-type">
-		  <label for="topic_type_yes" class="talk-topic1">
-        <%= f.radio_button :type, 'yes' %>
-				<span>
-					<h2>сэдэв ярих</h2>
-					Сэдэв ярих санал тавих 
-				</span>
-			</label>
-			<label  for="topic_type_no" class="talk-topic2">
-        <%= f.radio_button :type, 'no' %>
-				<span>
-					<h2>Сэдэв яриулах</h2>
-					Сэдэв яриулах санал тавих
-				</span>
-			</label>
-		</div>
-		<div class="topic-write-side">
-			<label>
-				<span> Гарчиг </span>
-        <%= f.text_field :title %>
-			</label>
-			<%= f.text_area :content, class: "topicarea" %>
-		</div>
-		<div class="send-topic">
-			<div class="logo"></div>	
-      <%= f.submit "Илгээх", class: "send" %>
-		</div>
-    <% end %>
+
+<div class="post-item">
+	<div class="create-topic">
+		<a href="#topic_modal" role="button" data-toggle="modal">Сэдэв нэмэх</a>
 	</div>
+</div>
+<div id="topic_modal" class="modal hide fade sedev" tabindex="-1" role="dialog" aria-labelledby="feedback_modal_label" aria-hidden="true">
+	<div id="topic_error_messages"></div>
+	<%= form_for Topic.new, remote: true do |f| %>
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3 id="feedback_modal_label">Сэдэв үүсгэх</h3>
+			</div>
+			<div class="sedev_container">
+				<div id="feedback_notifications"></div>
+					<div class="sedev_garchig">
+						<label for="sedev_garchig">
+							<span>Гарчиг</span>
+						</label>
+						<%= f.text_field :title, id: "topic_title" %>
+					</div>
+				<%= f.text_area :content, class: "sedev_inf" %>
+				<div class="sedev_buttons">
+					<button class="tovch sedev_close" data-dismiss="modal" aria-hidden="true">Хаах</button>
+					<%= f.submit "Илгээх", class: "tovch sedev_send" %>
+				</div>
+			</div>
+		<% end %>
 </div>

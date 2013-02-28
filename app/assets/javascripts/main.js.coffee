@@ -32,14 +32,6 @@ jQuery ->
                             , isAnimated: true
                             )
 
-  if $('#topic-list').length > 0
-    $("#topic-list").masonry(
-                            itemSelector: ".topic-item"
-                            , gutterWidth: 40
-                            , layoutPriorities: { upperPosition: 1, shelfOrder: 1}
-                            , isAnimated: true
-                            )
-
   if $('#topic-list-past').length > 0
     $("#topic-list-past").masonry(
                             itemSelector: ".topic-item"
@@ -58,7 +50,7 @@ jQuery ->
 
   $("a[rel*=tooltip]").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
 
-@infinity_pagination = (url, number_of_pages)->
+@infinity_pagination = (url, number_of_pages, params = '')->
   page = 1
   loading = false
   w = $(window)
@@ -67,7 +59,7 @@ jQuery ->
     if w.scrollTop() > ($(document).height()-w.height()-40) && page <= number_of_pages
       loading = true
       page += 1
-      $.getScript(url+"?page="+page, ()->
+      $.getScript(url+"?page="+page+"&"+params, ()->
         loading = false
       )
   )

@@ -1,1 +1,1 @@
-$('#topic-speaker-<%= @topic.id %>').html("<%= j(link_to("энэ сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put)) %>");
+$('#topic-speaker-<%= @topic.id %>').html("<%= j(link_to(image_tag('talk-topic.png')<<content_tag(:span, "сэдвийг ярих"), assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put)) %>");

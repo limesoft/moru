@@ -20,6 +20,7 @@ Moru::Application.routes.draw do
     put :assign, on: :member
     put :unassign, on: :member
     put :upvote, on: :member
+    put :downvote, on: :member
     resources :comments, only: [:create, :index]
   end
   resources :rsvps, only: [:create]

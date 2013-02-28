@@ -1,29 +1,31 @@
 <div class="event-container">
-<div class="container_10 clearfix">
-
-  <%= render 'new_topic' if user_signed_in? %>
-
-  <% unless @topics.empty? %>
-	  <div class="grid_10">
-		  <div class="topic-list-title">
-			  <span>Сэдвүүд</span>
-		  </div>
-		  <div class="topic-list" id="topic-list">
-        <%= render partial: 'topic', collection: @topics %>
-		  </div>
-			<div class="topic-list-title">
-				<span>Яригдсан Сэдвүүд</span>
+	<div class="container_10 clearfix">
+		<div class="grid_7">
+			<div class="left-content">
+				<%= render 'new_topic' %>
+				<% unless @topics.empty? %>
+					<div class="topic-filter">
+						<%= link_to_topic("Шинээр нэмэгдсэн","new_list") %>
+						<%= link_to_topic("их саналтай","voted_up") %>
+						<%= link_to_topic("Бүгд","") %>
+						<%= link_to_topic("яригдсан", "talked", content_tag(:i, '', class: "talked-icon" ), 'past-topic') %>
+					</div>
+					<div class="topic-list" id="topic-list">
+						<%= render partial: 'topic', collection: @topics %>
+					</div>
+				<% end %>
 			</div>
-			<div class="topic-list clearfix" id="topic-list-past">
-				<%= render partial: 'topic', collection: @past_topics %>
+		</div>
+		<div class="grid_3">
+			<div class="right-content clearfix">
+
 			</div>
-	  </div>
-  <% end %>
+		</div>
 </div>
 <p id="back-top"><a href="#top"><span></span>Дээш очих</a></p>
 <script>
   $(function(){
-    infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>);
+    infinity_pagination('<%= topics_path %>', <%= @topics.num_pages %>, 'list_type=<%= params[:list_type] %>');
   });
 </script>
 </div>

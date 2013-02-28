@@ -17,4 +17,15 @@ module ApplicationHelper
   def moru_logo_url
     request.protocol + request.host_with_port + "/assets/logo.png"
   end
+
+  def link_to_topic(title, type, iconImage='', classValue='')
+    if classValue != ''
+    css_class = classValue
+    else
+    css_class = " selected" if params[:list_type] == type
+    end
+
+    link_to(iconImage << title, topics_path(list_type: type), class: css_class)
+  end
+
 end

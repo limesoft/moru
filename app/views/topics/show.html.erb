@@ -33,7 +33,7 @@
 									<% if @topic.speaker %>
 										<%= render partial: 'speaker', locals: {topic: @topic} %>
 									<% elsif user_signed_in? %>
-										<%= link_to "энэ сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put %>
+										<%= link_to "сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put %>
 									<% end %>
 								</div>
 								<nav class="social-login noneBackground nonePadding">

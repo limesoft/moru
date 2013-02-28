@@ -1,8 +1,4 @@
 <% unless @topics.empty? %>
   var topics = $("<%= j(render(partial: 'topic', collection: @topics)) %>");
-  $("#topic-list").append(topics).masonry('appended', topics, true);
-<% end %>
-<% unless @past_topics.empty? %>
-var past_topics = $("<%= j(render(partial: 'topic', collection: @past_topics))%>");
-$("#topic-list-past").append(past_topics).masonry('appended', past_topics, true);
+  $("#topic-list").append(topics);
 <% end %>
