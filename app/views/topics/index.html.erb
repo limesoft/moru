@@ -9,7 +9,12 @@
 					<div class="topic-filter">
 						<%= link_to_topic("шинээр нэмэгдсэн", "newest") %>
 						<%= link_to_topic("их саналтай", "voted") %>
-						<%= link_to_topic("бүгд", "") %>
+						<% if params[:view] == nil %>
+							<% params[:view] = "all" %>
+							<%= link_to_topic("бүгд", "all") %>
+						<% else %>
+							<%= link_to_topic("бүгд", "all") %>
+						<% end %>
 						<%= link_to_topic("яригдсан", "talked") %>
 					</div>
 					<div class="topic-list" id="topic-list">

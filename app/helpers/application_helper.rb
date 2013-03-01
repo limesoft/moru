@@ -23,9 +23,8 @@ module ApplicationHelper
       css_class = 'past-topic'
       title = content_tag(:i, '', class: 'talked-icon') << title
     elsif params[:view] == view
-      css_class = 'selected'
+      css_class = 'selected' 
     end
     link_to(title, topics_path(view: view), class: css_class)
   end
-
 end
