@@ -27,18 +27,11 @@ jQuery ->
   if $('#event-list').length > 0
     $("#event-list").masonry(
                             itemSelector: ".box"
-                            , gutterWidth: 60
+                            , gutterWidth: 40
                             , layoutPriorities: { upperPosition: 1, shelfOrder: 1}
                             , isAnimated: true
                             )
 
-  if $('#topic-list-past').length > 0
-    $("#topic-list-past").masonry(
-                            itemSelector: ".topic-item"
-                            , gutterWidth: 40
-                            , layoutPriorities: { upperPosition: 1, shelfOrder: 1}
-                            , isAnimated: true
-                            2)
   if $('#new_comment').length > 0
     $('#new_comment').keypress((event)->
         if event.which == 13 && !!$('#comment_content').val()

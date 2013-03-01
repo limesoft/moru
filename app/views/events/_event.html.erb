@@ -1,17 +1,15 @@
 <li class="box">
-  <div class="<%= cycle("odd", "even") %>"></div>
   <div class="event-up clearfix">
-    <div class="event-title">
-      <%= link_to event.title, event_path(event) %><br/>
-      <span class="event-where"><i class="marker"></i> Empathy төв </span>
-    </div>
-    <div class="event-date">
-      <span><%= I18n.localize(event.date, format: :short) %></span>
-    </div>
+    <div class="event-title"> <%= link_to event.title, event_path(event) %></div>
+		<div class="event-info">
+			<span><i class="date"></i><%= I18n.localize(event.date, format: :short) %></span>
+			<span><i class="icon-location"></i>emphaty</span>
+			<span><i class="comment"></i><%= event.comments_count %></span>
+		</div>
   </div>
-  <%= raw(event.content) %>
-  <ul class="event-topics">
-    <span>уулзалтын сэдвүүд:</span>
-    <%= render partial: 'topic', collection: event.topics %>
-  </ul>
+	<div class="event-body">
+		<ul class="event-topics">
+			<%= render partial: 'topic', collection: event.topics %>
+		</ul>
+	</div>
 </li>
