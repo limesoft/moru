@@ -1,8 +1,5 @@
 <div class="write-comment">
-  <div class="write-title clearfix">
-	  <span> сэтгэгдэл үлдээх </span>
-    <span class="comment-count">нийт сэтгэгдэл <em id="comments-counter"><%= commentable.comments_count %></em></span>
-	</div>
+
 	<div class="write-field clearfix">
     <div id="comment_error_messages"></div>
     <%= form_for [commentable, Comment.new], remote: true do |f| %>

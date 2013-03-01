@@ -1224,6 +1224,7 @@ Back to top button
 	margin-bottom:60px;
 	.topic-item-s{
 		margin-top:40px;
+    box-shadow: 0 1px rgba(0,0,0,0.2);
     .topic-header{
       position:relative;
       padding:15px 0;
@@ -1516,6 +1517,42 @@ Back to top button
       }
     }
 	}
+  .voted-members{
+    padding:40px 0 0 0;
+
+    ul{
+      display:block;
+      background:blue;
+      @include none_styled_ul;
+      li{
+        float:left;
+        margin:0 10px 10px 0;
+         img{
+           border: 3px dashed white!important;
+           padding: 5px;
+           margin-bottom: 5px;
+           margin-right: 5px;
+           transition: opacity .2s ease-in-out;
+           -moz-transition: opacity .2s ease-in-out;
+           -webkit-transition: opacity .2s ease-in-out;
+           -o-transition: opacity .2s ease-in-out;
+           -ms-transition: opacity .2s ease-in-out;
+           width: 50px;
+           height: 50px;
+           @include radius(100%);
+           &:hover{
+             opacity: 0.6;
+             -khtml-opacity: 0.6;
+             -moz-opacity: 0.6;
+             -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+             filter: alpha(opacity=60);
+             cursor: pointer;
+           }
+         }
+
+      }
+    }
+  }
 }
 /*************** END TOPIC CSS ************/
 /******************************************/
@@ -1731,19 +1768,10 @@ Back to top button
        }
      }
      .write-field{
-       background:#fff;
-       -webkit-border-bottom-right-radius: 5px;
-       -webkit-border-bottom-left-radius: 5px;
-       -moz-border-radius-bottomright: 5px;
-       -moz-border-radius-bottomleft: 5px;
-       border-bottom-right-radius: 5px;
-       border-bottom-left-radius: 5px;
-       padding:20px;
-
        img{
          float:left;
-         width:40px;
-         height:40px;
+         width:50px;
+         height:50px;
          margin-right:20px;
          @include radius(5px);
        }
@@ -1752,14 +1780,10 @@ Back to top button
          background:#e1e5ea;
          @include radius(5px);
          border:none;
-         width:535px;
+         width:570px;
          height:94px;
          padding:10px;
          text-align: left;
-         &:focus{
-           background: #eee;
-         }
-
        }
        span{
          float:right;
@@ -1774,33 +1798,32 @@ Back to top button
      }
    }
    .comment-list{
-     padding:10px 0 0 0;
      .comment-item{
-       position:relative;
-       @include radius(5px);
-       margin-top:30px;
-       background:#fff;
-       padding:20px;
-       .comment-arrow{
-         float:left;
-         width:10px;
-         height:10px;
-         overflow:hidden;
-         position:absolute;
-         left:20px;
-         top:-10px;
-         background:image-url("sprite.png") -80px -100px no-repeat;
-       }
+       margin:20px 0 0 0;
        img{
          float:left;
-         width:40px;
-         height:40px;
-         margin-right:20px;
+         width:50px;
+         height:50px;
+         margin-right:30px;
          @include radius(5px);
        }
        .item-left{
+         position:relative;
          float:left;
-         width:560px;
+         width:520px;
+         background:#fff;
+         padding:30px;
+         @include radius(5px);
+         .comment-arrow{
+           float:left;
+           width:10px;
+           height:10px;
+           overflow:hidden;
+           position:absolute;
+           left:-10px;
+           top:20px;
+           background:image-url("sprite.png") -80px -100px no-repeat;
+         }
          .comment-info{
            overflow:hidden;
            span{
@@ -1816,6 +1839,7 @@ Back to top button
              color:#aeaeae;
              font-size:11px;
              line-height:12px;
+             text-transform: uppercase;
              i.comment-date{
                float:left;
                width:12px;
@@ -1824,9 +1848,28 @@ Back to top button
                background:image-url("sprite.png") -110px -60px no-repeat;
              }
            }
+           a.edit-comment{
+             float:left;
+             width:15px;
+             height:15px;
+             margin:0 0 0 20px;
+             background:image-url("sprite.png") -140px -170px no-repeat;
+           }
+           a.remove-comment{
+             float:left;
+             width:15px;
+             height:15px;
+             margin:0 0 0 10px;
+             background:image-url("sprite.png") -80px -60px no-repeat;
+           }
          }
          .comment-text{
            margin-top:10px;
+           input{
+             border:none;
+             border-top:1px dashed #c3ced9;
+             border-bottom:1px dashed #c3ced9;
+           }
          }
        }
      }
@@ -2251,3 +2294,24 @@ a.feedback{
  }
 /******** END PROFILE CSS **********/
 /***********************************/
+
+/********* GLOBAL CSS **************/
+ .title-label{
+   margin:0 0 20px 0;
+   padding:20px 0;
+   span{
+     float:left;
+     color:#707982;
+     text-transform: uppercase;
+     font-size:15px;
+     font-weight: bold;
+     line-height:5px;
+     padding:0 20px 0 0;
+     background:#f1f3f5;
+   }
+   .line{
+     width:100%;
+     background:#fff;
+     height:3px;
+   }
+ }

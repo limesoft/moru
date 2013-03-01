@@ -11,58 +11,77 @@
   <div class="container_10 clearfix">
 	  <div class="grid_10">
 			<div class="grid_7 alpha">
-				<div class="topic-list list-view clearfix">
-					<div class="topic-item">
-						<div class="topic-context clearfix">
-							<div class="topic-header clearfix">
-								<div class="avatar"><%= image_tag(@topic.user.default_avatar) %></div>
-								<div class="topic-user">
-									<span><%= @topic.user.name %><br/>
-										<em><%= time_ago_in_words(@topic.created_at) %> өмнө</em>
-									</span>
-									<%= link_to("+", upvote_topic_path(@topic), class: "vote-up", remote: true, method: :put) if user_signed_in? %>
-								</div>
-								<div class="pulse"><span class="down" id="topic-<%= @topic.id %>-votes"><%= @topic.avg_votes %></span></div>
-							</div>
-							<div class="topic-text">
-								<h2><%= @topic.try(:title) %></h2>
-								<%= @topic.content %>
-							</div>
-							<div class="topic-show-tools">
-								<div id="topic-speaker-<%= @topic.id %>">
-									<% if @topic.speaker %>
-										<%= render partial: 'speaker', locals: {topic: @topic} %>
-									<% elsif user_signed_in? %>
-										<%= link_to "сэдвийг ярих", assign_topic_path(@topic), class: "speak-topic", remote: true, method: :put %>
+				<div class="topic-list">
+					<div class="topic-item-s">
+						<div class="topic-header">
+							<% if @topic.event.present? %>
+								<%= link_to "", event_path(@topic.event.id), {class:"past-event", rel: 'tooltip', title: @topic.event.title+"aнд яригдсан" } %>
+							<% end  %>
+							<div class="topic-vote">
+								<% if user_signed_in? && @topic.user.id != current_user.id %>
+									<% if current_user.voted_up_on?(@topic) %>
+										<%= link_to "", upvote_topic_path(@topic), class: "to-poll", remote: true, method: :put %>
+									<% else %>
+										<%= link_to "", downvote_topic_path(@topic), class: "voted-poll", remote: true, method: :put %>
 									<% end %>
+								<% else %>
+									<a href="javascript:void(0)" class="to-poll" style="cursor:default;"></a>
+								<% end %>
+								<div class="poll-stat"><span class="down" id="topic-<%= @topic.id %>-votes"><%= @topic.avg_votes %></span></div>
+							</div>
+							<div class="avatar <%= 'past-avatar' if @topic.event.present? %>"><%= image_tag(@topic.user.default_avatar) %></div>
+							<div class="topic-text">
+								<h2><%= link_to topic.try(:title), topic_path(topic), class: "topic-title" %></h2>
+								<div class="topic-tool">
+									<span class="topic-author"><i class="author"></i> <%= truncate(topic.user.name, length: 30) %> </span>
+									<span class="topic-date"><i class="date"></i> <%= time_ago_in_words(topic.created_at) %> өмнө </span>
+									<span class="topic-comment"><i class="comment"></i> <%= topic.comments_count %> </span>
 								</div>
-								<nav class="social-login noneBackground nonePadding">
-									<ul>
-										<%= render partial: 'shared/share_buttons', locals: {url: topic_url(@topic)} %>
-									</ul>
-								</nav>
 							</div>
 						</div>
-						<div class="topic-tools clearfix">
-							<ul id="member-list" class="topic_view">
-								<li><span> Санал  өгсөн </span></li>
-                <% @topic.votes.voters.each do |voter| %>
-								  <li>
-										<%= link_to image_tag(voter.default_avatar), "", { rel: 'tooltip', title: voter.name} %>
-								  </li>
-                <% end %>
-							</ul>
+						<div class="topic-body clearfix">
+							<div class="left-tool">
+								<div class="topic-speaker">
+									<div id="topic-speaker-<%= topic.id %>">
+										<% if topic.speaker %>
+											<%= render partial: 'speaker', locals: {topic: topic} %>
+										<% elsif user_signed_in? %>
+											<%= link_to image_tag("talk-topic.png")<<content_tag(:span, "сэдвийг ярих"), assign_topic_path(topic), class: "speak-topic", remote: true, method: :put %>
+										<% end %>
+									</div>
+								</div>
+								<div class="social-login">
+									<ul>
+										<%= render partial: 'shared/share_buttons', locals: {url: topic_url(topic)} %>
+									</ul>
+								</div>
+							</div>
+							<div class="right-tool">
+								<span> <%= topic.content %> </span>
+							</div>
 						</div>
 					</div>
-					<div style="float:left;">
+
+					<div class="voted-members clearfix">
+						<div class="title-label">
+							<span> Саналаа өгсөн гишүүд </span>
+							<div class="line"></div>
+						</div>
+						<ul id="member-list">
+							<% @topic.votes.voters.each do |voter| %>
+								<li>
+									<%= link_to image_tag(voter.default_avatar), profile_path(voter), { rel: 'tooltip', title: voter.name} %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
 					<!-- COMMENTS -->
 					<%= render(partial: 'comments/comments',
-						 locals: {
-										 comments: @comments,
-										 pagination_url: topic_comments_path(@topic),
-										 commentable: topic
-						 }) %>
-					</div>
+										 locals: {
+														 comments: @comments,
+														 pagination_url: topic_comments_path(@topic),
+														 commentable: topic
+										 }) %>
 				</div>
 			</div>
 			<div class="grid_3 omega">

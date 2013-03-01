@@ -1,5 +1,9 @@
 <div class="comment-container">
   <!-- COMMENT LIST -->
+	<div class="title-label">
+		<span> Сэтгэгдэл (<em id="comments-counter"><%= commentable.comments_count %></em>)</span>
+		<div class="line"></div>
+	</div>
 	<div class="comment-list" id="comment-list">
     <%= render partial: 'comments/comment', collection: comments %>
 	</div>

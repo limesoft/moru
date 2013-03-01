@@ -1,13 +1,18 @@
-<div class="comment-item clearfix">
-  <div class="comment-arrow"></div>
+<div class="comment-item clearfix" id="comment-<%= comment.id %>">
   <%= image_tag(comment.user.default_avatar) %>
 	<div class="item-left">
+		<div class="comment-arrow"></div>
     <div class="comment-info">
-      <span><%= truncate(comment.user.name, length: 30) %></span>&nbsp;
+      <span><%= truncate(comment.user.name, length: 30) %></span>
+			<% if user_signed_in? && current_user.id == comment.user_id %>
+			<%= link_to "","", id: "activator-#{comment.id}", class: "edit-comment" %>
+			<%= link_to '',comment_path(comment), method: :delete, remote: :true, class: "remove-comment" %>
+		 <% end %>
+
       <em><i class="comment-date"></i><%= time_ago_in_words comment.created_at %> өмнө</em>
     </div>
 		<div class="comment-text">
-      <%= comment.content %>
+			<%= best_in_place_if user_signed_in? && current_user.id == comment.user_id, comment, :content, path: comment_path(comment), activator: "#activator-#{comment.id}" %>
 		</div>
 	</div>
 </div>

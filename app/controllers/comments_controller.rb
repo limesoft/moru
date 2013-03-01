@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
   before_filter :become_commenter, only: [:create, :index]
 
   # load_and_authorize_resource
-  respond_to :js
+  respond_to :js, expect: [:update]
+  respond_to :json, only: [:update]
 
   def index
     @comments = commentable.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
@@ -21,6 +22,18 @@ class CommentsController < ApplicationController
     puts '----------------- EXCEPTION'
   end
 
+  def update
+    comment.update_attributes(content: params[:comment][:content])
+    respond_with(comment)
+  end
+
+  def destroy
+    @comments_count = comment.commentable.comments_count
+    comment.destroy
+    flash[:notice] = "таны бичсэн сэтгэгдэл амжилттай устгагдлаа."
+    respond_with comment
+  end
+
   private
     def comment_params
       params.require(:comment).permit(:content)
@@ -34,4 +47,9 @@ class CommentsController < ApplicationController
     def become_commenter
       current_user.extend Commenter
     end
+
+    def comment
+      @comment ||= Comment.find(params[:id])
+    end
+    helper_method :comment
 end

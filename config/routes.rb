@@ -29,6 +29,8 @@ Moru::Application.routes.draw do
     resources :comments, only: [:create, :index]
   end
 
+  resources :comments, only: [:destroy, :update]
+
   resources :profiles, only: [:show, :update]
 
   unless Rails.application.config.consider_all_requests_local
