@@ -4,7 +4,9 @@
     <!-- CONTENT -->
 		<div class="grid_7">
 			<div class="left-content">
-				<%= render 'new_topic' %>
+				<% if user_signed_in? %>
+					<%= render 'new_topic' %>
+				<% end %>
 				<% unless @topics.empty? %>
 					<div class="topic-filter">
 						<%= link_to_topic("шинээр нэмэгдсэн", "newest") %>
