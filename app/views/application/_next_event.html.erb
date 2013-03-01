@@ -67,7 +67,6 @@
 																['Тийм', RSVP_YES],
 																['Магадгүй', RSVP_MAYBE],
 																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
-					<div class="member-count" id="going-count"><span><%= current_event.count_going %></span></div>
 				<% end %>
 			</div>
 		<% else %>

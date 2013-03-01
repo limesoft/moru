@@ -138,7 +138,6 @@ header {
 	/* begin main menu */
 	.main-menu{
 		float: right;
-		margin-right: 110px;
     padding:0 20px;
     height:78px;
 		ul {
@@ -153,10 +152,9 @@ header {
 					font-weight: bold;
 					text-transform: uppercase;
 					color: #fff;
-          padding: 29px 20px;
+          padding: 29px 30px;
 					&:hover {
 						color: #7fcde8;
-            background:#5f6871;
 					}
 				}
 				a.active {
@@ -172,9 +170,10 @@ header {
 	/* begin social login */
 	.social-login{
     padding:0;
-    margin:20px 0 0 0;
+    margin:20px 0 0 20px;
 		float:right;
-		background:#00a8e7;
+		background:#7fcde8;
+		width: 260px;
 		ul{
 			list-style:none;
 			margin:0;
@@ -188,60 +187,47 @@ header {
 			}
       li.login_btn{
         float:left;
-        padding:0 30px;
+        padding: 5px 0 0 15px;
         span{
-          float:left;
-          margin:8px 0 0 0;
-          font-size:14px;
+          font-size:13px;
           color:#fff;
-          font-weight: normal;
+          font-weight: bold;
+          text-transform: uppercase;
         }
       }
 		}
 
-		a.social-twitter{
+		.social-twitter{
 			float:left;
 			width:30px;
 			height:40px;
-			@include radius(5px);
+			@include radius(3px 0 0 3px);
 			@include transit;
-			background:#6ab8d3 image-url("sprite.png") -140px 0 no-repeat;
-			&:hover{
-				background-color:#32ccff;
-			}
+			background:#b6d99f image-url("sprite.png") -140px 0 no-repeat;
 		}
-		a.social-facebook{
+		.social-facebook{
 			float:left;
 			width:40px;
 			height:40px;
-			@include radius(5px);
+			@include radius(3px 0 0 3px);
 			@include transit;
-			background:#5f6871 image-url("sprite.png") -255px 3px no-repeat;
-			&:hover{
-				background-color:#3b5998;
-			}
+			background:#b6d99f image-url("sprite.png") -255px 5px no-repeat;
 		}
-		a.social-github{
+		.social-github{
 			float:left;
 			width:30px;
 			height:30px;
-			@include radius(3px);
+			@include radius(3px 0 0 3px);
 			@include transit;
-			background:#6ab8d3 image-url("sprite.png") -180px 0 no-repeat;
-			&:hover{
-				background-color:#4c8ac7;
-			}
+			background:#b6d99f image-url("sprite.png") -180px 0 no-repeat;
 		}
-		a.social-google_oauth2{
+		.social-google_oauth2{
 			float:left;
 			width:30px;
 			height:30px;
-			@include radius(3px);
+			@include radius(3px 0 0 3px);
 			@include transit;
-			background:#6ab8d3 image-url("sprite.png") -220px 0 no-repeat;
-			&:hover{
-				background-color:#d6492d;
-			}
+			background:#b6d99f image-url("sprite.png") -220px 0 no-repeat;
 		}
 
 	}
@@ -274,18 +260,15 @@ header {
 			li.user_profile {
 				a {
 					float:left;
-					height:30px;
+					height:40px;
 					@include transit;
 					color:#fff;
 					font-weight: bold;
-					padding:10px 20px 0 20px;
-					background:#00a8e7;
-					&:hover{
-						background:#99d8ed;
-					}
-					&:active{
-						background:#61b0cc;
-					}
+					padding:8px 20px 0 20px;
+					background:#7fcde8;
+					width: 140px;
+					line-height: 25px;
+					overflow: hidden;
 				}
 			}
 			li.logout{
@@ -294,13 +277,8 @@ header {
 					width:40px;
 					height:40px;
 					@include transit;
-					background:#5f6871 image-url("sprite.png") -140px -60px no-repeat;
-					&:hover, &:active{
-						background-color:#858f9a;
-					}	
-					&:active{
-						background-color:#4f5861;
-					}
+					@include radius(0 3px 3px 0);
+					background:#b6d99f image-url("sprite.png") -140px -60px no-repeat;
 				}
 			}
 		}
@@ -523,6 +501,7 @@ header {
 					color:#444;
 					font-size:11px;
 					margin:15px 20px 10px 0;
+					text-transform: uppercase;
 					.comment-icon{
 						float:left;
 						width:10px;
@@ -547,7 +526,7 @@ header {
 				}
 				a.post-more{
 					float:left;
-					@include moru_button();
+					text-transform: uppercase;
 				}
 			}
 		}
@@ -607,6 +586,7 @@ header {
         background:#eee;
         @include radius(5px);
         padding:10px 20px;
+        text-transform: uppercase;
         span{
           font-size:12px;
           color:#555;
@@ -767,7 +747,7 @@ header {
         padding-left:20px;
         .topic-icon{
           display:inline-block;
-          margin:0 5px -3px 0;
+          margin:0 10px -4px 0;
           width:11px;
           height:16px;
           background:image-url('sprite.png') -270px -60px no-repeat;
@@ -844,11 +824,15 @@ header {
         }
         .rsvp-icon{
           display:inline-block;
-          margin:0 5px -3px 0;
+          margin:0 10px -4px 0;
           width:14px;
           height:16px;
           background:image-url('sprite.png') -300px -60px no-repeat;
         }
+      }
+      .dk_container{
+      	margin-top: 30px;
+      	margin-left: -10px;
       }
       .rsvp-text{
         .rsvp-arrow{
@@ -1131,8 +1115,8 @@ Back to top button
 */
 #back-top {
 	position: fixed;
-	bottom: 75px;
-	right: 25px;
+	bottom: 25px;
+	right: 50px;
   z-index: 100;
 }
 /* arrow icon (span tag) */
@@ -1154,13 +1138,16 @@ Back to top button
 
 .create-topic{
   text-align:center;
-  a{
+  @include radius(10px);		
+	background:#fff;
+	padding:20px 0;
+  margin-top:40px;
+  box-shadow: 0 1px rgba(0,0,0,0.2);
+  span{
     color:#444;
     font-size:14px;
     font-weight:bold;
     text-transform: uppercase;
-  }
-  span{
     padding:0 10px;
   }
 }
@@ -1315,6 +1302,7 @@ Back to top button
       .topic-text{
          display:inline-block;
          margin:0 0 0 30px;
+         text-transform: uppercase;
         a.topic-title{
           float:left;
           color: #7fcde8;
@@ -2013,7 +2001,7 @@ Back to top button
  .sedev_garchig #topic_title{
    background: #e1e5ea;
    border: none;
-   width: 363px;
+   width: 360px;
    height: 40px;
    padding: 0 15px;
    box-shadow: inset 0 1px 1px rgba(0,0,0,0.2)!important;
