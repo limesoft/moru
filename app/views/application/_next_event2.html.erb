@@ -1,0 +1,26 @@
+<div class="next-event2">
+	<div class="up"></div>
+	<div class="event-left">
+		<div class="event-location"> </div>
+
+		<div class="rsvp-label">
+			<div class="ask-rsvp">
+				<i class="rsvp-icon"></i>
+				<span>Та очих уу?</span>
+			</div>
+			<div class="rsvp-choose">
+				<%= form_for Rsvp.new, remote: true do |f| %>
+					<%= f.select :going,
+											 options_for_select(
+															 [['Та очих уу?', RSVP_NO_ANSWER],
+																['Тийм', RSVP_YES],
+																['Магадгүй', RSVP_MAYBE],
+																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="event-right">
+
+	</div>
+</div>

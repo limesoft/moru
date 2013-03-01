@@ -2264,6 +2264,71 @@ a.feedback{
 /***********************************/
 
 /********* GLOBAL CSS **************/
+
+ .next-event2{
+   margin:83px 0 0 0;
+   .up{
+     position:absolute;
+     width:100%;
+     height:3px;
+     background:image-url("event-up-bg.png") repeat-x;
+     left:0;
+     top:-3px;
+   }
+   position:relative;
+   padding:30px 30px 30px 0;
+   background:#707982 image-url("event-bottom-bg.png") bottom repeat-x;
+
+   .event-left{
+     .event-location{
+       width:430px;
+       height:140px;
+       margin:0 0 0 30px;
+       background:yellow;
+     }
+
+    .rsvp-label{
+      width:460px;
+      padding:20px 0 0 0;
+      background:red;
+      .ask-rsvp{
+        background:#b6d99f;
+        height:32px;
+        width:130px;
+        padding:8px 30px 0 30px;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        i.rsvp-icon{
+          float:left;
+          width:14px;
+          height: 15px;
+          margin:3px 10px 0 0;
+          background:image-url("sprite.png") -110px -200px no-repeat;
+        }
+        span{
+          font-size:12px;
+          font-weight: bold;
+          color:#fff;
+          text-transform: uppercase;
+        }
+      }
+      .rsvp-select{
+        .dk_container{
+          display:inline;
+          height:40px;
+        }
+      }
+    }
+   }
+   .event-right{
+
+   }
+ }
+
  .title-label{
    margin:0 0 20px 0;
    padding:20px 0;
