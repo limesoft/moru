@@ -47,7 +47,7 @@
 			  <ul class="clearfix">
 					<% current_event.topics.each_with_index do | topic, index | %>
 					<li <%= 'class=last' if current_event.topics.length-1 == index %> >
-						<div class="speaker"> <%= link_to image_tag(topic.user.default_avatar), "", { rel: 'tooltip', title: topic.user.name } %> </div>
+						<div class="speaker"> <%= link_to image_tag(topic.user.default_avatar), profile_path(topic.user), { rel: 'tooltip', title: topic.user.name } %> </div>
 						<div class="speaker-topic">
 							<%= link_to topic.try(:title), topic_path(topic) %>
 							<span> <%=  topic.cached_votes_total %> санал авсан </span>
@@ -78,7 +78,7 @@
 				<ul class="going-list">
 					<% current_event.with_going.each do |rsvp| %>
 						<li>
-							<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+							<%= link_to image_tag(rsvp.user.default_avatar), profile_path(rsvp.user), { rel: 'tooltip', title: rsvp.user.name } %>
 						</li>
 					<% end %>
 				</ul>
@@ -92,7 +92,7 @@
 				<ul class="going-list">
 					<% current_event.with_going.each do |rsvp| %>
 						<li>
-							<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+							<%= link_to image_tag(rsvp.user.default_avatar), profile_path(rsvp.user), { rel: 'tooltip', title: rsvp.user.name } %>
 						</li>
 					<% end %>
 				</ul>

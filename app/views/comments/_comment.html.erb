@@ -1,12 +1,12 @@
 <div class="comment-item clearfix" id="comment-<%= comment.id %>">
-  <%= image_tag(comment.user.default_avatar) %>
+  <%= link_to image_tag(comment.user.default_avatar), profile_path(comment.user), { rel: 'tooltip', title: comment.user.name } %>
 	<div class="item-left">
 		<div class="comment-arrow"></div>
     <div class="comment-info">
       <span><%= truncate(comment.user.name, length: 30) %></span>
 			<% if user_signed_in? && current_user.id == comment.user_id %>
 			<%= link_to "","", id: "activator-#{comment.id}", class: "edit-comment" %>
-			<%= link_to '',comment_path(comment), method: :delete, remote: :true, class: "remove-comment" %>
+			<%= link_to '', comment_path(comment), method: :delete, remote: :true, class: "remove-comment" %>
 		 <% end %>
 
       <em><i class="comment-date"></i><%= time_ago_in_words comment.created_at %> өмнө</em>

@@ -1,9 +1,14 @@
 <div class="event-container">
   <div class="container_10 clearfix">
     <div class="grid_10">
-			<%= render partial: 'application/event', locals: {event: current_event} %>
-      <ul id="event-list">
-        <%= render partial: 'event', collection: @events %>
+      <% @events.each_with_index do |event, index| %>
+        <% if index == 0 %>
+          <%= render partial: 'application/event', locals: {event: @events.first.extend(GoingContext) } %>
+          <ul id="event-list">
+        <% else %>
+          <%= render partial: 'events/event', locals: { event: event } %>
+        <% end %>
+      <% end %>
       </ul>
       <p id="back-top">
         <a href="#top"><span></span>Дээш очих</a>
