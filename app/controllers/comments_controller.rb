@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
     end
 
     def comment
-      @comment ||= Comment.find(params[:id])
+      @comment ||= current_user.comments.find(params[:id])
     end
     helper_method :comment
 end
