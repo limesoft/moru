@@ -23,9 +23,9 @@
 			<% end %>
 		</div>
 		<div class="social-links clearfix">
-			<a href="javascript:void(0)" class="tweet-event"></a>
-			<a href="javascript:void(0)" class="fb-event"></a>
-			<a href="javascript:void(0)" class="gplus-event"></a>
+			<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=300')" class="tweet-event" target="_blank" href="https://twitter.com/share?url=<%= event_url(current_event) %>"></a>
+			<a class="fb-event" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<%= event_url(current_event) %>"></a>
+			<a class="gplus-event" onclick="return !window.open(this.href, 'GooglePlus', 'width=640,height=300')" href="https://plus.google.com/share?url=<%= event_url(current_event) %>" target="_blank" ></a>
 
 			<span class="rsvp-count">
 				Уулзалтанд <span><%= current_event.count_going %></span> хүн ирнэ

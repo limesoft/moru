@@ -1,67 +1,31 @@
-<div class="event-container">
 <div class="container_10 clearfix" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 	<div class="grid_10">
-		<div class="grid_7 alpha">
-			<!-- begin left content -->
-			<div class="left-content">
-				<div class="event-view-container">
-					<div class="event-content">
-						<div class="event-map">
-							<iframe width="620" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&amp;msid=215856206744799561428.0004d34aca70dcfa12167&amp;ie=UTF8&amp;t=h&amp;iwloc=0004d34ad183a7237804f&amp;ll=47.924521,106.921113&amp;spn=0,0&amp;output=embed"></iframe>
-						</div>
-						<div class="event-text">
-							<div class="event-topic-schedule">
-								<div class="event-date">
-                  <span><%= event.date.year %></span>
-                  <em><%= l(event.date, format: :event_short) %></em>
-								</div>
-                <div class="event-time"><span><%= event.date.strftime("%H:%M") %></span></div>
-							</div>
-							<div class="event-topic-text">
-                <h2><%= event.title %></h2>
-								<ul>
-									<li> <span><%=raw(event.content) %></span> </li>
-                  <li><span>Уулзалтын сэдвүүд:</span></li>
-                  <% event.topics.each do |topic| %>
-                    <li>&nbsp;&nbsp;&nbsp;- <%= truncate(topic.speaker.name, length: 32) %>:&nbsp;<%= topic.title %></li>
-                  <% end %>
-								</ul>
-							</div>
-						</div>
-						<div class="event-bottom-tool clearfix">
-							<ul class="social-buttons">
-                <%= render partial: 'shared/share_buttons', locals: {url: event_url(event)} %>
-							</ul>
-						</div>
-					</div>
-					<div class="member-list clearfix">
-						<ul id="member-list">
-              <% event.with_going.each do |rsvp| %>
-                <li>
-									<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
-                </li>
-              <% end %>
-						</ul>
-					</div>
-
-          <!-- COMMENTS -->
-          <%= render(partial: 'comments/comments',
-                     locals: {
-                        comments: @comments,
-                        pagination_url: event_comments_path(event),
-                        commentable: event
-                    }) %>
-
+		<%= render 'next_event2' %>
+		<div class="grid_3 alpha">
+			<div class="event-members clearfix">
+				<div class="title-label">
+					<span> Ирэх гишүүд </span>
+					<div class="line"></div>
 				</div>
+				<ul id="member-list">
+					<% event.with_going.each_with_index do |rsvp, index| %>
+						<% index += 1  %>
+						<li <%= 'class=last' if index % 5 == 0 %> >
+							<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+						</li>
+					<% end %>
+				</ul>
 			</div>
-			<!-- end left content -->
 		</div>
-		<div class="grid_3 omega">
-			<!-- begin right content -->
-			<div class="right-content clearfix">
-			</div>
-			<!-- end right content -->
+		<div class="grid_7 omega">
+			<!-- COMMENTS -->
+			<%= render(partial: 'comments/comments',
+								 locals: {
+												 comments: @comments,
+												 pagination_url: event_comments_path(event),
+												 commentable: event
+								 }) %>
 		</div>
 	</div>
 </div>
-</div>
+
