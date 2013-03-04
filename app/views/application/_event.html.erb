@@ -17,35 +17,35 @@
 																 [['Та очих уу?', RSVP_NO_ANSWER],
 																	['Тийм', RSVP_YES],
 																	['Магадгүй', RSVP_MAYBE],
-																	['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
+																	['Үгүй', RSVP_NO]], current_user.rsvp_of(event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
 					<% end %>
 				</div>
 			<% end %>
 		</div>
 		<div class="social-links clearfix">
-			<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=300')" class="tweet-event" target="_blank" href="https://twitter.com/share?url=<%= event_url(current_event) %>"></a>
-			<a class="fb-event" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<%= event_url(current_event) %>"></a>
-			<a class="gplus-event" onclick="return !window.open(this.href, 'GooglePlus', 'width=640,height=300')" href="https://plus.google.com/share?url=<%= event_url(current_event) %>" target="_blank" ></a>
+			<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=300')" class="tweet-event" target="_blank" href="https://twitter.com/share?url=<%= event_url(event) %>"></a>
+			<a class="fb-event" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<%= event_url(event) %>"></a>
+			<a class="gplus-event" onclick="return !window.open(this.href, 'GooglePlus', 'width=640,height=300')" href="https://plus.google.com/share?url=<%= event_url(event) %>" target="_blank" ></a>
 
 			<span class="rsvp-count">
-				Уулзалтанд <span><%= current_event.count_going %></span> хүн ирнэ
+				Уулзалтанд <span><%= event.count_going %></span> хүн ирнэ
 			</span>
 		</div>
 
 	</div>
 	<div class="event-right clearfix">
-		<div class="event-title"> <%= link_to current_event.title, event_path(current_event) %></div>
+		<div class="event-title"> <%= link_to event.title, event_path(event) %></div>
 		<div class="event-info">
-			<span><i class="date"></i><%= I18n.localize(current_event.date, format: :short) %> / 13 цагт</span>
+			<span><i class="date"></i><%= I18n.localize(event.date, format: :short) %> / 13 цагт</span>
 			<span><i class="icon-location"></i>emphaty</span>
-			<span><i class="comment"></i><%= current_event.comments_count %> сэтгэгдэл</span>
+			<span><i class="comment"></i><%= event.comments_count %> сэтгэгдэл</span>
 		</div>
 		<div class="event-body">
-			<%=raw(current_event.content) %>
+			<%=raw(event.content) %>
 		</div>
-		<% unless current_event.topics.empty? %>
+		<% unless event.topics.empty? %>
 		<ul class="current_user_topic">
-			<% current_event.topics.each do |topic| %>
+			<% event.topics.each do |topic| %>
 				<li>
 					<%= link_to truncate(topic.title, length: 35), topic_path(topic) %>
 					<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>

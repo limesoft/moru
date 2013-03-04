@@ -1,6 +1,6 @@
 <div class="container_10 clearfix" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 	<div class="grid_10">
-		<%= render 'next_event2' %>
+		<%= render  partial: 'application/event', locals: {event: event.extend(GoingContext)}%>
 		<div class="grid_3 alpha">
 			<div class="event-members clearfix">
 				<div class="title-label">

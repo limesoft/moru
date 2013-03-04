@@ -1,11 +1,10 @@
 <div class="event-container">
   <div class="container_10 clearfix">
     <div class="grid_10">
-			<%= render 'next_event2' %>
+			<%= render partial: 'application/event', locals: {event: current_event} %>
       <ul id="event-list">
         <%= render partial: 'event', collection: @events %>
       </ul>
-
       <p id="back-top">
         <a href="#top"><span></span>Дээш очих</a>
       </p>
