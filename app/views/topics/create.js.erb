@@ -1,13 +1,13 @@
 <% if @topic.errors.empty? %>
   $("#topic_error_messages").empty();
-	$("#feedback_notifications").html("<%= j(content_tag(:div, "Таны үүсгэсэн сэдэв амжилттай нэмэгдлээ", class: 'alert alert-info')) %>");
+	$("#topic_notifications").html("<%= j(content_tag(:div, "Таны үүсгэсэн сэдэв амжилттай нэмэгдлээ", class: 'alert alert-info')) %>");
   $("#topic_title").val('');
   $("#topic_content").val('');
   var topic = $("<%= j(render(@topic)) %>");
   $("#topic-list").prepend(topic);
 	setTimeout(function(){
 		$("#topic_modal").modal("toggle");
-		$("#feedback_notifications").empty();
+		$("#topic_notifications").empty();
 	}, 1000);
 <% else %>
   $("#topic_error_messages").html("<%= j(render("shared/error_messages", errors: @topic.errors)) %>");
