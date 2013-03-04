@@ -10,7 +10,7 @@
 				<nav class="social-logged">
 					<ul>
 						<li class="avatar"><%= image_tag(current_user.default_avatar) %></li>
-						<li class="user_profile"> <%= link_to truncate(current_user.name, length: 30), profile_path(current_user) %></li>
+						<li class="user_profile"> <%= link_to truncate(current_user.name, length: 15), profile_path(current_user) %></li>
 						<li class="logout"><%= link_to "", logout_path %></li>
 					</ul>
 				</nav>
