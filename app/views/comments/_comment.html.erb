@@ -12,7 +12,7 @@
       <em><i class="comment-date"></i><%= time_ago_in_words comment.created_at %> өмнө</em>
     </div>
 		<div class="comment-text">
-			<%= best_in_place_if user_signed_in? && current_user.id == comment.user_id, comment, :content, path: comment_path(comment), activator: "#activator-#{comment.id}" %>
+			<%= best_in_place_if user_signed_in? && current_user.id == comment.user_id, comment, :content, type: :textarea, path: comment_path(comment), activator: "#activator-#{comment.id}" %>
 		</div>
 	</div>
 </div>

@@ -70,7 +70,7 @@
 				<%= form_for Rsvp.new, remote: true do |f| %>
 					<%= f.select :going,
 											 options_for_select(
-															 [['Та очих уу?', RSVP_NO_ANSWER],
+															 [['- Сонгох -', RSVP_NO_ANSWER],
 																['Тийм', RSVP_YES],
 																['Магадгүй', RSVP_MAYBE],
 																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>

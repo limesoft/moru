@@ -266,6 +266,7 @@ header {
 					padding:8px 20px 0 20px;
 					background:#7fcde8;
 					text-transform: uppercase;
+					line-height: 24px;
 				}
 			}
 			li.logout{
@@ -1773,11 +1774,15 @@ Back to top button
    .comment-list{
      .comment-item{
        margin:20px 0 0 0;
+       a{
+       	width: 50px;
+       	height: 50px;
+       	float: left;
+       	margin-right:30px
+       }
        img{
-         float:left;
          width:50px;
          height:50px;
-         margin-right:30px;
          @include radius(5px);
        }
        .item-left{
@@ -1838,10 +1843,11 @@ Back to top button
          }
          .comment-text{
            margin-top:10px;
-           input{
-             border:none;
-             border-top:1px dashed #c3ced9;
-             border-bottom:1px dashed #c3ced9;
+           textarea{
+            width: 100%;
+            background: #e1e5ea;
+            border: none;
+            padding: 10px;
            }
          }
        }
