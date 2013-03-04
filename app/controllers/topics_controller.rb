@@ -45,13 +45,13 @@ class TopicsController < ApplicationController
   def upvote
     if current_user.id != topic.user.id
       topic.liked_by current_user
-      ogp.post_on_wall(current_user.id, topic.id, topic_url(topic))
+      # ogp.post_on_wall(current_user.id, topic.id, topic_url(topic))
     end
     respond_with topic
   end
 
   def downvote
-    if current_user.id != topic.user.id
+    if current_user.id != topic.user_id && current_user.voted_up_on?(topic)
       topic.downvote_from current_user
     end
     respond_with topic

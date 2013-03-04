@@ -7,8 +7,6 @@
 			<% if user_signed_in? && topic.user_id != current_user.id %>
 				<% if current_user.voted_up_on?(topic) %>
 					<%= link_to "", downvote_topic_path(topic), class: "up-voted", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
-				<% elsif current_user.voted_down_on?(topic) %>
-					<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
 				<% else %>
 					<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
 				<% end %>

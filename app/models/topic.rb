@@ -18,9 +18,10 @@ class Topic < ActiveRecord::Base
 
   acts_as_votable
 
-  def avg_votes
-    cached_votes_up-cached_votes_down
-  end
+  #def avg_votes
+    #cached_votes_up-cached_votes_down
+  #  upvotes.size-downvotes.size
+  #end
 
   rails_admin do
     configure :comments, :has_many_association

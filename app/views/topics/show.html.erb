@@ -14,22 +14,20 @@
 				<div class="topic-list">
 					<div class="topic-item-s">
 						<div class="topic-header">
-							<% if @topic.event.present? %>
-								<%= link_to "", event_path(@topic.event.id), {class:"past-event", rel: 'tooltip', title: @topic.event.title+"aнд яригдсан" } %>
-							<% end  %>
+
+							<%= link_to "", event_path(@topic.event.id), {class:"past-event", rel: 'tooltip', title: @topic.event.title+"aнд яригдсан" } if @topic.event.present? %>
+
 							<div class="topic-vote">
-							<% if user_signed_in? && topic.user_id != current_user.id %>
-								<% if current_user.voted_up_on?(topic) %>
-									<%= link_to "", downvote_topic_path(topic), class: "up-voted", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
-								<% elsif current_user.voted_down_on?(topic) %>
-									<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
+								<% if user_signed_in? && @topic.user.id != current_user.id %>
+									<% if current_user.voted_up_on?(@topic) %>
+										<%= link_to "", downvote_topic_path(@topic), class: "voted-poll", remote: true, method: :put %>
+									<% else %>
+										<%= link_to "", upvote_topic_path(@topic), class: "to-poll", remote: true, method: :put %>
+									<% end %>
 								<% else %>
-									<%= link_to "", upvote_topic_path(topic), class: "votable", id: "topic-#{topic.id}-vote-link", remote: true, method: :put %>
+									<a href="javascript:void(0)" class="to-poll" style="cursor:default;"></a>
 								<% end %>
-							<% else %>
-								<a href="javascript:void(0)" class="votable" style="cursor:default;" id="topic-<%= topic.id %>-vote-link"></a>
-							<% end %>
-								<div class="poll-stat"><span class="down" id="topic-<%= @topic.id %>-votes"><%= @topic.avg_votes %></span></div>
+								<div class="poll-stat"><span class="down" id="topic-<%= @topic.id %>-votes"><%= @topic.cached_votes_up %></span></div>
 							</div>
 							<div class="avatar <%= 'past-avatar' if @topic.event.present? %>"><%= image_tag(@topic.user.default_avatar) %></div>
 							<div class="topic-text">
@@ -65,7 +63,7 @@
 					</div>
 
           <!-- VOTERS -->
-          <% if @topic.votes.voters.length > 0 %>
+          <% downvote_fromif @topic.votes.voters.length > 0 %>
 					  <div class="voted-members clearfix">
 						  <div class="title-label">
                 <span> Санал өгсөн гишүүд (<%= @topic.votes.voters.length %>)</span>
@@ -89,8 +87,12 @@
 										 }) %>
 				</div>
 			</div>
-			<div class="grid_3 omega">
 
+      <!-- SIDEBAR -->
+			<div class="grid_3 omega">
+			  <div class="right-content clearfix">
+				  <%= render 'next_event' %>
+			  </div>
 			</div>
     </div>
   </div>
