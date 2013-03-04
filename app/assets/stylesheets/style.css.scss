@@ -2322,7 +2322,6 @@ a.feedback{
       .rsvp-select{
         float:right;
         width:220px;
-        background:blue;
         .dk_container{
           display:inline;
           height:40px;
@@ -2330,7 +2329,7 @@ a.feedback{
       }
     }
     .social-links{
-      padding:20px 0 0 30px;
+      padding-left: 30px;
       a{
         float:left;
         width:40px;
@@ -2351,6 +2350,9 @@ a.feedback{
       span.rsvp-count{
         float:right;
         height:30px;
+        width: 180px;
+        text-align: center;
+        text-transform: uppercase;
         padding:10px 20px 0 20px;
         @include radius(5px);
         color:#fff;
