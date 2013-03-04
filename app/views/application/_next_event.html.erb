@@ -1,4 +1,3 @@
-<% cache [current_user, current_event] do %>
 <div class="next-event">
 	<div class="event-title">
 		<%= link_to current_event.title, event_path(current_event) %>
@@ -68,6 +67,13 @@
 																['Магадгүй', RSVP_MAYBE],
 																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
 				<% end %>
+				<ul class="going-list">
+					<% current_event.with_going.each do |rsvp| %>
+						<li>
+							<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+						</li>
+					<% end %>
+				</ul>
 			</div>
     <% elsif current_event.count_going > 0 %>
 			<div class="rsvp-label">
@@ -75,7 +81,6 @@
 				Уулзалтанд <span><%= current_event.count_going %></span> хүн ирнэ
 			</div>
 			<div class="rsvp-text">
-				<div class="rsvp-arrow"></div>
 				<ul class="going-list">
 					<% current_event.with_going.each do |rsvp| %>
 						<li>
@@ -87,4 +92,3 @@
 		<% end %>
 	</div>
 </div>
-<% end %>

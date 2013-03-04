@@ -761,18 +761,14 @@ header {
         }
         ul{
           margin:0;
-          padding:30px 0 20px 0;
+          padding:20px 0 20px 0;
           list-style: none;
           li{
-            float:left;
             width:100%;
             padding:10px 0;
             .speaker{
               float:left;
-              width:30px;
-              height:30px;
               a{
-                float:left;
                 width:30px;
                 height:30px;
                 img{
@@ -782,19 +778,26 @@ header {
                 }
               }
             }
+            li::nth-last-child{
+            	padding-bottom: 0;
+            }
             .speaker-topic{
               padding:0 0 0 20px;
-              display:inline-block;
+              overflow: hidden;
               a{
                 color:#fff;
                 font-size:13px;
                 text-transform: uppercase;
                 font-weight: normal;
+                &:hover{
+                	color: #7fcde8;
+                }
               }
               span{
                 display:block;
                 color:#b6d99f;
                 font-size:13px;
+                margin-top: 5px;
               }
             }
           }
@@ -830,7 +833,7 @@ header {
       }
       .dk_container{
       	margin-top: 30px;
-      	margin-left: -10px;
+      	margin-left: -11px;
       }
       .rsvp-text{
         .rsvp-arrow{
