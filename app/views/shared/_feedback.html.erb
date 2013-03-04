@@ -7,13 +7,13 @@
     <div id="feedback_notifications"></div>
     <center>
       Танд вэб сайттай холбоотой санал хүсэлт, алдаа дутагдал байвал<br/>бидэн рүү илгээнэ үү. Баярлалаа :)
-      <div class="modal-body">
-        <%= f.text_area :content, rows: 10 %>
-      </div>
     </center>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Хаах</button>
-      <%= f.submit "Илгээх", class: "btn btn-primary" %>
+    <div class="modal-body">
+      <%= f.text_area :content, rows: 10 %>
+      <div class="feedback_buttons">
+          <%= f.submit "Илгээх", class: "tovch feedback_send" %>
+          <button class="tovch feedback_close" data-dismiss="modal" aria-hidden="true">Хаах</button>
+      </div>
     </div>
   <% end %>
 </div>

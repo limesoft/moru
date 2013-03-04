@@ -1945,7 +1945,7 @@ Back to top button
 /********** END GLOBAL TOOLTIP CSS ***********/
 /*********************************************/
 
- .sedev{
+ .sedev, #feedback_modal{
    border-radius: 10px;
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
@@ -1954,7 +1954,7 @@ Back to top button
    width: 540px !important;
  }
 
- .sedev .modal-header{
+ .sedev .modal-header, #feedback_modal .modal-header{
    background: #b6d99f;
    padding: 15px 30px;
    border-bottom: none;
@@ -1970,14 +1970,14 @@ Back to top button
    -khtml-border-top-right-radius: 10px;
  }
 
- .sedev .modal-header h3{
+ .sedev .modal-header h3, #feedback_modal .modal-header h3{
    text-transform: uppercase;
    font-size: 15px;
    font-weight: bold;
    color: white;
  }
 
- .sedev .sedev_container{
+ .sedev .sedev_container, #feedback_modal .modal-body{
    padding: 20px 30px;
    margin-top:20px;
    overflow: hidden;
@@ -2030,8 +2030,7 @@ Back to top button
    -khtml-border-top-left-radius: 3px;
    -khtml-border-bottom-left-radius: 3px;
  }
- .sedev_inf{
-   float:left;
+ .sedev_inf, #feedback_modal #feedback_content{
    width: 450px;
    padding: 15px;
    height: 100px;
@@ -2049,13 +2048,14 @@ Back to top button
    -khtml-box-shadow: inset 0 1px 1px rgba(0,0,0,0.2)!important;
  }
 
- .sedev .sedev_buttons{
+ .sedev .sedev_buttons, #feedback_content .feedback_buttons{
    float: right;
    margin-top: 20px;
    margin-bottom: 10px;
+   overflow: hidden;
  }
 
- .sedev_buttons .tovch{
+ .sedev_buttons .tovch,  .feedback_buttons .tovch{
    height: 40px;
    border: none;
    font-size: 13px;
@@ -2081,15 +2081,20 @@ Back to top button
    }
  }
 
- .sedev_buttons .sedev_send{
+ .sedev_buttons .sedev_send,  .feedback_buttons .feedback_send{
    padding-left: 55px;
    background: #00a8e7 url("icon_send.png") left no-repeat;
    margin-left: 15px;
  }
 
- .sedev_buttons .sedev_close{
+ .sedev_buttons .sedev_close,  .feedback_buttons .feedback_close{
    background: #707982;
  }
+
+.feedback_buttons .feedback_send,  .feedback_buttons .feedback_close{
+	float: right;
+	margin-top: 10px;
+}
 
  a.feedback{
    -webkit-border-top-left-radius: 5px;
