@@ -29,15 +29,25 @@
 	</div>
 	<div class="topic-body clearfix">
 		<div class="left-tool">
+			<% if user_signed_in? %>
 			<div class="topic-speaker">
 				<div id="topic-speaker-<%= topic.id %>">
 					<% if topic.speaker %>
 						<%= render partial: 'speaker', locals: {topic: topic} %>
-					<% elsif user_signed_in? %>
+					<% else %>
 						<%= link_to image_tag("talk-topic.png")<<content_tag(:span, "сэдвийг ярих"), assign_topic_path(topic), class: "speak-topic", remote: true, method: :put %>
 					<% end %>
 				</div>
 			</div>
+		 	<% else %>
+				<% if topic.speaker %>
+					<div class="topic-speaker">
+						<div id="topic-speaker-<%= topic.id %>">
+							<%= render partial: 'speaker', locals: {topic: topic} %>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
 			<div class="social-login">
 				<ul>
 					<%= render partial: 'shared/share_buttons', locals: {url: topic_url(topic)} %>
