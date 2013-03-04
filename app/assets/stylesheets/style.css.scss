@@ -258,7 +258,7 @@ header {
         }
       }
 			li.user_profile {
-				a {
+				a{
 					float:left;
 					height:40px;
 					@include transit;
@@ -266,9 +266,7 @@ header {
 					font-weight: bold;
 					padding:8px 20px 0 20px;
 					background:#7fcde8;
-					width: 140px;
-					line-height: 25px;
-					overflow: hidden;
+					text-transform: uppercase;
 				}
 			}
 			li.logout{
