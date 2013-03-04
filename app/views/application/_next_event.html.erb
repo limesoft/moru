@@ -69,7 +69,7 @@
 																['Үгүй', RSVP_NO]], current_user.rsvp_of(current_event).try(:going)), {}, tabindex: 0, class: 'dk_container' %>
 				<% end %>
 			</div>
-		<% else %>
+    <% elsif current_event.count_going > 0 %>
 			<div class="rsvp-label">
 				<i class="rsvp-icon"></i>
 				Уулзалтанд <span><%= current_event.count_going %></span> хүн ирнэ
