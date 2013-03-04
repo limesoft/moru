@@ -45,8 +45,16 @@
 		  <div class="topic-text">
 			  <div class="topic-arrow"></div>
 			  <ul class="clearfix">
-				  <%= render partial: 'events/topic', collection: current_event.topics %>
-			  </ul>
+					<% current_event.topics.each_with_index do | topic, index | %>
+					<li <%= 'class=last' if current_event.topics.length-1 == index %> >
+						<div class="speaker"> <%= link_to image_tag(topic.user.default_avatar), "", { rel: 'tooltip', title: topic.user.name } %> </div>
+						<div class="speaker-topic">
+							<%= link_to topic.try(:title), topic_path(topic) %>
+							<span> <%=  topic.cached_votes_total %> санал авсан </span>
+						</div>
+					</li>
+					<% end %>
+				</ul>
 		  </div>
 	  </div>
 	<% end %>

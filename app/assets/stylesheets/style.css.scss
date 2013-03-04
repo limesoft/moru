@@ -765,7 +765,8 @@ header {
           list-style: none;
           li{
             width:100%;
-            padding:10px 0;
+            padding:20px 0;
+            background:image-url("topic-brdr.png") bottom repeat-x;
             .speaker{
               float:left;
               a{
@@ -777,9 +778,6 @@ header {
                   @include radius(5px);
                 }
               }
-            }
-            li::nth-last-child{
-            	padding-bottom: 0;
             }
             .speaker-topic{
               padding:0 0 0 20px;
@@ -800,6 +798,10 @@ header {
                 margin-top: 5px;
               }
             }
+          }
+          .last{
+            background-image:none;
+            padding-bottom:0;
           }
           .sep{
             float:left;
@@ -1092,7 +1094,7 @@ Back to top button
 */
 #back-top {
 	position: fixed;
-	bottom: 25px;
+	bottom: 75px;
 	right: 50px;
   z-index: 100;
 }
