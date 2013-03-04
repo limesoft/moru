@@ -2084,11 +2084,25 @@ Back to top button
    background: #707982;
  }
 
-a.feedback{
-  float:right;
-  margin-top:40px;
-  @include moru_button();
-}
+ a.feedback{
+   -webkit-border-top-left-radius: 5px;
+   -webkit-border-bottom-left-radius: 5px;
+   -moz-border-radius-topleft: 5px;
+   -moz-border-radius-bottomleft: 5px;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+   background:#7fcde8;
+   line-height:40px;
+   padding:0 10px;
+   text-align: center;
+   color:#fff;
+   font-size:14px;
+   font-weight: bold;
+   text-transform: uppercase;
+   position:fixed;
+   right:0px;
+   bottom:20px;
+ }
 
 #feedback_content {
   width: 450px;
