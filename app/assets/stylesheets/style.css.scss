@@ -2276,22 +2276,22 @@ a.feedback{
      top:-3px;
    }
    position:relative;
-   padding:30px 30px 30px 0;
+   padding:30px 0;
    background:#707982 image-url("event-bottom-bg.png") bottom repeat-x;
 
    .event-left{
+     float:left;
+     width:460px;
      .event-location{
        width:430px;
        height:140px;
        margin:0 0 0 30px;
-       background:yellow;
      }
-
     .rsvp-label{
       width:460px;
       padding:20px 0 0 0;
-      background:red;
       .ask-rsvp{
+        float:left;
         background:#b6d99f;
         height:32px;
         width:130px;
@@ -2317,15 +2317,141 @@ a.feedback{
         }
       }
       .rsvp-select{
+        float:right;
+        width:220px;
+        background:blue;
         .dk_container{
           display:inline;
           height:40px;
         }
       }
     }
+    .social-links{
+      padding:20px 0 0 30px;
+      a{
+        float:left;
+        width:40px;
+        height:40px;
+        margin-right:20px;
+        @include radius(5px);
+        background-color:#5f6871;
+      }
+      a.tweet-event{
+         background:#5f6871 image-url("sprite.png") -135px 5px no-repeat;
+      }
+      a.fb-event{
+        background:#5f6871 image-url("sprite.png") -255px 5px no-repeat;
+      }
+      a.gplus-event{
+        background:#5f6871 image-url("sprite.png") -215px 5px no-repeat;
+      }
+      span.rsvp-count{
+        float:right;
+        height:30px;
+        padding:10px 20px 0 20px;
+        @include radius(5px);
+        color:#fff;
+        font-size:12px;
+        font-weight: normal;
+        background-color:#5f6871;
+      }
+    }
    }
    .event-right{
-
+     float:left;
+     padding:0 30px 0 40px;
+     width:430px;
+     .event-title{
+       display:inline-block;
+       a{
+         float:left;
+         font-size:15px;
+         font-weight: bold;
+         color:#7fcde8;
+         text-transform: uppercase;
+       }
+     }
+     .event-info{
+       margin:5px 0 0 0;
+       i{
+         margin-right:10px;
+       }
+       span{
+         float:left;
+         font-size:12px;
+         color:#fff;
+         margin-right:30px;
+         text-transform: uppercase;
+       }
+     }
+     .event-body{
+       clear:left;
+       color:#fff;
+       padding:20px 0 20px 0;
+     }
+     ul.current_user_topic{
+       @include none_styled_ul();
+       li{
+         background: #5f6871;
+         margin-bottom: 10px;
+         height:30px;
+         @include radius(5px);
+         a{
+           float:left;
+           color:#fff;
+           font-size:13px;
+           text-transform: uppercase;
+           font-weight: normal;
+           margin:5px 0 0 20px;
+         }
+         .comment{
+           float:right;
+           height:30px;
+           background:#b6d99f;
+           padding:0 15px;
+           i.comment-icon{
+             float:left;
+             width:10px;
+             height:9px;
+             margin:11px 10px 0 0;
+             background:image-url("sprite.png") -80px -170px no-repeat;
+           }
+           span{
+             float:left;
+             color:#fff;
+             margin:5px 0 0 0;
+             font-size:13px;
+             text-transform: uppercase;
+           }
+         }
+         .vote{
+           float:right;
+           height:30px;
+           background:#7fcde8;
+           padding:0 15px;
+           -webkit-border-top-right-radius: 5px;
+           -webkit-border-bottom-right-radius: 5px;
+           -moz-border-radius-topright: 5px;
+           -moz-border-radius-bottomright: 5px;
+           border-top-right-radius: 5px;
+           border-bottom-right-radius: 5px;
+           i.vote-icon{
+             float:left;
+             width:10px;
+             height:10px;
+             margin:9px 10px 0 0;
+             background:image-url("sprite.png") -110px -170px no-repeat;
+           }
+           span{
+             float:left;
+             margin:5px 0 0 0;
+             color:#fff;
+             font-size:13px;
+             text-transform: uppercase;
+           }
+         }
+       }
+     }
    }
  }
 
