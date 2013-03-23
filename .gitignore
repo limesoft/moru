@@ -34,3 +34,6 @@
 /coverage
 # Ignoring rvmrc file
 .rvmrc
+# server configs
+/config/unicorn.rb
+/config/unicorn_init.sh

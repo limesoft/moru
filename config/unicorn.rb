@@ -6,3 +6,4 @@ stdout_path "/data/www/log/moru.log"
 listen "/tmp/unicorn.moru.sock"
 worker_processes 2
 timeout 30
+
