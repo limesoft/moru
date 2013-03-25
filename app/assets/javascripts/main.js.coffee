@@ -6,7 +6,9 @@ jQuery ->
     )
 
   if $('.best_in_place').length > 0
-    $('.best_in_place').best_in_place()
+    #$('.best_in_place').best_in_place()
+    $(".best_in_place").live "change", ->
+        $(this).best_in_place()
 
   if $('#event-list').length > 0 || $('#topic-list').length > 0
     $("#back-top").hide()
@@ -41,7 +43,11 @@ jQuery ->
 
   $(".alerts").alert()
 
-  $("a[rel*=tooltip]").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
+  #$("a[rel*=tooltip]").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
+  $("body").tooltip
+    placement: "bottom"
+    trigger: "hover"
+    selector: "[rel=tooltip]"
 
 @infinity_pagination = (url, number_of_pages, params = '')->
   page = 1
