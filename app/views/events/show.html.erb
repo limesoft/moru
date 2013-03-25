@@ -10,8 +10,8 @@
 				<ul id="member-list">
 					<% event.with_going.each_with_index do |rsvp, index| %>
 						<% index += 1  %>
-						<li <%= 'class=last' if index % 5 == 0 %> >
-							<%= link_to image_tag(rsvp.user.default_avatar), "", { rel: 'tooltip', title: rsvp.user.name } %>
+						<li <%= 'class=last' if index % 5 == 0 %>>
+							<%= link_to image_tag(rsvp.user.default_avatar), profile_path(rsvp.user), { rel: 'tooltip', title: rsvp.user.name } %>
 						</li>
 					<% end %>
 				</ul>
