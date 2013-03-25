@@ -36,7 +36,7 @@
 	<div class="event-right clearfix">
 		<div class="event-title"> <%= link_to event.title, event_path(event) %></div>
 		<div class="event-info">
-			<span><i class="date"></i><%= I18n.localize(event.date, format: :short) %> / 13 цагт</span>
+      <span><i class="date"></i><%= I18n.localize(event.date, format: :short) %> / <%= event.date.strftime("%H:%M") %> цагт</span>
 			<span><i class="icon-location"></i>emphaty</span>
 			<span><i class="comment"></i><%= event.comments_count %> сэтгэгдэл</span>
 		</div>
