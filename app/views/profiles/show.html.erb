@@ -19,24 +19,11 @@
 			<div class="profile-body">
 				<div class="profile-topic">
 					<% if @user.topics.length > 0 %>
-						<div class="topic-hd">
-							<div class="topic-label">
-								< >
-							</div>
-							<span>Сэдвүүд</span>
-						</div>
-						<ul class="current_user_topic">
-							<% @user.topics.each do |topic| %>
-								<li>
-									<%= link_to topic.title, topic_path(topic) %>
-									<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
-									<div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
-								</li>
-							<% end %>
-						</ul>
+            <%= render partial: 'topics', locals: { title: 'Үүсгэсэн сэдвүүд', topics: @user.topics } %>
 					<% else %>
 						Одоогоор сэдэв үүсгээгүй байна ...
 					<% end %>
+          <%= render partial: 'topics', locals: { title: 'Ярьсан сэдвүүд', topics: @user.assigned_topics } if @user.assigned_topics.length > 0 %>
 				</div>
 			</div>
 		</div>

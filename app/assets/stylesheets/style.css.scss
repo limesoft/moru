@@ -2199,7 +2199,7 @@ Back to top button
      }
    }
    .profile-body{
-     padding:40px 30px;
+     padding:40px 30px 0px 30px;
      .profile-topic{
        .topic-hd{
          overflow:hidden;
@@ -2225,6 +2225,9 @@ Back to top button
        }
        ul.current_user_topic{
          @include none_styled_ul();
+         padding: {
+           bottom: 40px !important;
+         }
          li{
            background: #707982;
            margin-bottom: 10px;
