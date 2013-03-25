@@ -584,7 +584,7 @@ header {
         background:#eee;
         @include radius(5px);
         padding:10px 20px;
-        text-transform: uppercase;
+        text-transform: none;
         span{
           font-size:12px;
           color:#555;
