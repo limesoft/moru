@@ -17,7 +17,8 @@
 # Ignore the vendor
 /vendor
 
-
+# Ignore all assets
+/public/assets/*
 
 # Ignore the test
 /test
