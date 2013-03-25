@@ -44,15 +44,15 @@
 			<%=raw(event.content) %>
 		</div>
 		<% unless event.topics.empty? %>
-		<ul class="current_user_topic">
-			<% event.topics.each do |topic| %>
-				<li>
-					<%= link_to truncate(topic.title, length: 35), topic_path(topic) %>
-					<div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
-					<div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
-				</li>
-			<% end %>
-		</ul>
+		  <ul class="current_user_topic">
+			  <% event.topics.each do |topic| %>
+				  <li>
+					  <%= link_to truncate(topic.title, length: 35), topic_path(topic) %>
+					  <div class="vote"><i class="vote-icon"></i><span><%= topic.votes.voters.count%></span></div>
+					  <div class="comment"><i class="comment-icon"></i><span><%= topic.comments_count %></span></div>
+				  </li>
+			  <% end %>
+		  </ul>
 		<% end %>
 	</div>
 </div>

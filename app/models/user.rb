@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   ##
   # Validations
   validates_inclusion_of :role, in: ROLES
-  validates :name, presence: true
+  validates :name, presence: true, length: { in: 2..50 }
 
   ##
   # Relationships
@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
   def default_avatar
     avatar = authentications.first.avatar
     return (avatar.empty? ? "avatar.gif" : avatar)
+  end
+
+  def short_name
+    name.truncate(35, separator: '...')
   end
 
   def rsvp_of(event)

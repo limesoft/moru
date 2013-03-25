@@ -2,8 +2,8 @@
 	<div class="post-content">
     <h2><%= link_to post.title, post_path(post) %></h2>
 		<div class="post-tool clearfix">
-			<span class="tool-item"><i class="author-icon"></i><%= post.user.try(:name) %></span>
-			<span class="tool-item"><i class="createdby-icon"></i><%= time_ago_in_words post.created_at %> өмнө нийтэлсэн</span>
+			<span class="tool-item"><i class="author-icon"></i><%= post.user.try(:short_name) %></span>
+			<span class="tool-item"><i class="createdby-icon"></i><%= time_ago_in_words(post.created_at) %> өмнө нийтэлсэн</span>
 			<span class="tool-item"><i class="comment-icon"></i><%= post.comments_count %> сэтгэгдэлтэй</span>
 		</div>
 		<div class="separator"></div>

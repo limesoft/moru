@@ -21,7 +21,7 @@
 						</ul>
 
 						<div class="published_by">
-              <span><%= post.user.name %>&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;<%= time_ago_in_words post.created_at %> өмнө нийтэлсэн</span>
+              <span><%= truncate(post.user.name, length: 25) %>&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;<%= time_ago_in_words post.created_at %> өмнө нийтэлсэн</span>
 						</div>
 					</div>
 				</div>

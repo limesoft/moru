@@ -1,8 +1,5 @@
 <li>
 	<i class="list-icon"></i>
-	<%= link_to topic.speaker.name, profile_path(topic.speaker), class:"speaker" %>:
+	<%= link_to topic.speaker.short_name, profile_path(topic.speaker), class:"speaker" %>:
 	<%= link_to topic.try(:title), topic_path(topic), class:"event-topic" %>
 </li>
-
-
-
