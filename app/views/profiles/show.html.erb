@@ -8,7 +8,7 @@
 				</div>
 				<div class="profile-name">
 					<% if user_signed_in? && current_user.id == @user.id %>
-						<%= best_in_place @user, :short_name, path: profile_path(@user), activator: "#activator-#{@user.id}" %>
+            <%= best_in_place @user, :name, path: profile_path(@user), activator: "#activator-#{@user.id}", display_as: :short_name %>
 						<%= link_to "","", id: "activator-#{@user.id}", class: "edit-me" %>
 					<% else %>
 						<span><%= @user.short_name %></span>
