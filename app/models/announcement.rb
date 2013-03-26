@@ -7,7 +7,7 @@ class Announcement < ActiveRecord::Base
   ##
   # current
   def self.current(hidden_ids=nil)
-    result = where("starts_at <= :now AND ends_at >= :now", now: Time.now)
+    result = where("starts_at <= :now AND ends_at >= :now", now: Time.zone.now)
     result = result.where("id NOT IN (?)", hidden_ids) if hidden_ids.present?
     result
   end
