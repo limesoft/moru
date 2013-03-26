@@ -1,11 +1,14 @@
 # encoding: utf-8
 
 class Announcement < ActiveRecord::Base
-  # attr_accessible :ends_at, :message, :starts_at
 
   ##
   # current
-  scope :current, -> { where("starts_at <= :now AND ends_at >= :now", now: Time.now) }
+  def self.current(hidden_ids=nil)
+    result = where("starts_at <= :now AND ends_at >= :now", now: Time.now)
+    result = result.where("id NOT IN (?)", hidden_ids) if hidden_ids.present?
+    result
+  end
 
   rails_admin do
     configure :message, :text

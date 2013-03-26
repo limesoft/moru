@@ -12,6 +12,7 @@ Moru::Application.routes.draw do
   match "/auth/:provider/callback" => "authentications#callback"
   match "/auth/failure" => "authentications#failure"
   match 'logout' => 'authentications#logout', as: 'logout'
+  match 'announcements/:id/hide' => 'announcements#hide', as: 'hide_announcement'
 
   resources :events, only: [:index, :show] do
     resources :comments, only: [:create, :index]
