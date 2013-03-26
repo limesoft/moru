@@ -14,7 +14,7 @@
   <!-- ANNOUNCEMENTS -->
   <% Announcement.current(cookies.signed[:hide_announcement_ids]).each do |announcement| %>
     <%= div_for announcement do %>
-      <%= announcement.message %>&nbsp;&nbsp;
+      <%= raw(announcement.message) %>&nbsp;&nbsp;
       [&nbsp;<%= link_to "нуух", hide_announcement_path(announcement), remote: true %>&nbsp;]
     <% end %>
   <% end %>
