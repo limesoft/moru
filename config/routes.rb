@@ -31,7 +31,9 @@ Moru::Application.routes.draw do
 
   resources :comments, only: [:destroy, :update]
   resources :profiles, only: [:show, :update]
-  resources :screencasts, only: [:index, :show]
+  resources :screencasts, only: [:index, :show] do
+    resources :comments, only: [:create, :index]
+  end
 
   unless Rails.application.config.consider_all_requests_local
     match '*not_found', to: 'errors#not_found'

@@ -1,1 +1,29 @@
-<h2><%= screencast.title %></h2>
+<div class="event-container">
+  <div class="container_10 clearfix">
+	  <div class="grid_10">
+
+      <!-- LEFT CONTAINER -->
+		  <div class="grid_7 alpha">
+			  <div class="left-content">
+          <h2><%= screencast.title %></h2>
+
+          <!-- COMMENTS -->
+          <%= render(partial: 'comments/comments',
+                     locals: {
+                        comments: @comments,
+                        pagination_url: screencast_comments_path(screencast),
+                        commentable: screencast
+                    }) %>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+		  <div class="grid_3 omega">
+        <div class="right-content clearfix">
+				  <%= render 'next_event' %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

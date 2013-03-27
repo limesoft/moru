@@ -23,3 +23,6 @@ RSVPS = [RSVP_YES, RSVP_NO, RSVP_MAYBE]
 STATE_FREE = 'free'
 STATE_PRO = 'pro'
 STATES = [STATE_FREE, STATE_PRO]
+
+######################### COMMENTABLE #########################
+COMMENTABLES = [Event, Post, Topic, Screencast]

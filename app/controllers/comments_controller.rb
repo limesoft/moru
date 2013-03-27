@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
     end
 
     def commentable
-      klass = [Event, Post, Topic].detect { |t| params["#{t.name.underscore}_id"] }
+      klass = COMMENTABLES.detect { |t| params["#{t.name.underscore}_id"] }
       @commentable ||= klass.find(params["#{klass.name.underscore}_id"])
     end
 
