@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327040332) do
+ActiveRecord::Schema.define(:version => 20130327064142) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -132,9 +132,15 @@ ActiveRecord::Schema.define(:version => 20130327040332) do
     t.text     "content"
     t.string   "url"
     t.datetime "starts_at"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.string   "state",          :limit => 50
+    t.datetime "ends_at"
+    t.integer  "comments_count",               :default => 0
+    t.integer  "user_id"
   end
+
+  add_index "screencasts", ["user_id"], :name => "index_screencasts_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

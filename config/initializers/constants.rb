@@ -18,3 +18,8 @@ RSVP_MAYBE = 2
 RSVP_NO = 3
 RSVP_NO_ANSWER = 0
 RSVPS = [RSVP_YES, RSVP_NO, RSVP_MAYBE]
+
+######################### STATES #########################
+STATE_FREE = 'free'
+STATE_PRO = 'pro'
+STATES = [STATE_FREE, STATE_PRO]

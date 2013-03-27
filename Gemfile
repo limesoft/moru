@@ -20,6 +20,7 @@ gem 'delayed_job_active_record', '0.3.3'
 gem 'best_in_place', '2.1.0'
 gem 'cache_digests', '0.2.0'
 gem 'acts-as-taggable-on', '~> 2.3.3'
+gem 'rails_admin_tag_list', '0.1.5'
 
 gem 'omniauth', '1.1.3'
 gem 'omniauth-facebook', '1.4.1'
