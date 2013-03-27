@@ -137,8 +137,8 @@ header {
 	/* begin main menu */
 	.main-menu{
 		float: right;
-    padding:0 20px;
-    height:78px;
+    padding: 0 20px;
+    height: 78px;
 		ul {
 			list-style: none;
 			margin: 0px;
@@ -151,7 +151,7 @@ header {
 					font-weight: bold;
 					text-transform: uppercase;
 					color: #fff;
-          padding: 29px 30px;
+          padding: 29px 20px;
 					&:hover {
 						color: #7fcde8;
 					}
@@ -160,8 +160,7 @@ header {
 					color: #7fcde8;
 					background:#5f6871;
 				}
-
-			} 
+			}
 		}
 	}
 	/* end main menu */
