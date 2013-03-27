@@ -75,7 +75,7 @@ class TopicsController < ApplicationController
       params.require(:topic).permit(:type)[:type].to_s.downcase
     end
 
-    def ogp
-      @ogp ||= FacebookOgpService.new
-    end
+    #def ogp
+    #  @ogp ||= FacebookOgpService.new
+    #end
 end
