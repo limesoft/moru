@@ -1,9 +1,18 @@
 # encoding: utf-8
 
 class Screencast < ActiveRecord::Base
-  attr_accessible :content, :starts_at, :title, :url
 
+  ##
+  # Validations
   validates :content, :title, :url, presence: true
+
+  ##
+  # Recent
+  scope :recent, order("created_at DESC")
+
+  ##
+  # Taggable
+  acts_as_taggable
 
   rails_admin do
     configure :title, :string
