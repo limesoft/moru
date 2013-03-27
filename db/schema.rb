@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326073846) do
+ActiveRecord::Schema.define(:version => 20130327021902) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -123,6 +123,15 @@ ActiveRecord::Schema.define(:version => 20130326073846) do
     t.integer  "going"
     t.integer  "user_id"
     t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "screencasts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "url"
+    t.datetime "starts_at"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
