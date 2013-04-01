@@ -17,6 +17,7 @@
 						<% else %>
 							<%= link_to_topic("бүгд", "all") %>
 						<% end %>
+            <%= link_to_topic("яригдсан", "talked") %>
 					</div>
 					<div class="topic-list" id="topic-list">
 						<%= render partial: 'topic', collection: @topics %>
