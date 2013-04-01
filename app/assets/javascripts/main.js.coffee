@@ -41,8 +41,8 @@ jQuery ->
 
   $(".alerts").alert()
 
-  if $('#screencast-list').length > 0
-    $('#screencast-list').masonry(
+  if $('#cast-list').length > 0
+    $('#cast-list').masonry(
       itemSelector: ".s-box"
       , gutterWidth: 30
       , layoutPriorities: { upperPosition: 1, shelfOrder: 1 }

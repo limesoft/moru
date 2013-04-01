@@ -1,14 +1,11 @@
 <div class="screencast-container">
   <div class="container_10 clearfix">
     <div class="grid_10">
-      <% @screencasts.each do |screencast| %>
-        <ul id="screencast-list">
+      <ul id="cast-list">
+        <% @screencasts.each do |screencast| %>
           <%= render partial: 'screencasts/screencast', locals: { screencast: screencast } %>
-        </ul>
-        <p id="back-top">
-          <a href="#top"><span></span>Дээш очих</a>
-        </p>
-      <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

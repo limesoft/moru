@@ -1,0 +1,4 @@
+<% unless @screencast.empty? %>
+  var screencasts = $("<%=j(render(partial: 'screencast', collection: @screencasts))%>");
+  $('#cast-list').append(screencasts).masonry('appended', screencasts, true);
+<% end %>
