@@ -2,8 +2,6 @@
 
 class Screencast < ActiveRecord::Base
 
-  # attr_accessible :name, :tag_list, :title, :content, :url, :starts_at
-
   ##
   # Validations
   validates :content, :title, :url, :state, presence: true
@@ -34,6 +32,7 @@ class Screencast < ActiveRecord::Base
     configure :title, :string
     configure :content, :text
     configure :url, :string
+    configure :image_url, :string
     configure :starts_at, :datetime
     configure :ends_at, :datetime
     configure :comments_count, :integer
@@ -49,6 +48,7 @@ class Screencast < ActiveRecord::Base
     edit do
       field :title
       field :url
+      field :image_url
       field :user
       field :starts_at
       field :ends_at

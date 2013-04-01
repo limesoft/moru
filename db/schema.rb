@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327064142) do
+ActiveRecord::Schema.define(:version => 20130401050108) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -138,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20130327064142) do
     t.datetime "ends_at"
     t.integer  "comments_count",               :default => 0
     t.integer  "user_id"
+    t.string   "image_url"
   end
 
   add_index "screencasts", ["user_id"], :name => "index_screencasts_on_user_id"
