@@ -3,7 +3,8 @@
 
 	  <div class="grid_7 alpha">
 		  <div class="left-content">
-        <%= render partial: 'posts/post', locals: { post: latest_post } unless latest_post.nil? %>	
+        <%= render partial: 'posts/post', collection: @posts %>	
+        <%= paginate @posts, theme: 'moru' %>
 		  </div>
 	  </div>
 
