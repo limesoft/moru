@@ -17,14 +17,16 @@
 				</ul>
 			</div>
 		</div>
-		<div class="grid_7 omega">
+    <div class="grid_7 omega">
+      <div class="right-content">
 			<!-- COMMENTS -->
 			<%= render(partial: 'comments/comments',
 								 locals: {
 												 comments: @comments,
 												 pagination_url: event_comments_path(event),
 												 commentable: event
-								 }) %>
+      }) %>
+      </div>
 		</div>
 	</div>
 </div>

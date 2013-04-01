@@ -456,7 +456,7 @@ header {
 		@include radius(10px);		
 		background:#fff;
 		padding:20px 0;
-    margin-top:40px;
+    margin:40px 0 40px 0;
     box-shadow: 0 1px rgba(0,0,0,0.2);
 		.post-img{
 			display:block;
@@ -1411,7 +1411,7 @@ Back to top button
    }
  }
  .comment-container{
-   padding:30px 0;
+   padding:0 0 30px 0;
    .write-comment{
      .write-title{
        padding:0 20px;
@@ -2195,7 +2195,7 @@ Back to top button
 
  .title-label{
    margin:0 0 10px 0;
-   padding:20px 0;
+   padding:0 0 20px 0;
    span{
      float:left;
      color:#707982;
@@ -2287,7 +2287,7 @@ i.icon-location {
 /*************************************/
 /***** - BEGIN SCREENCASTS LIST -*****/
 .screencast-container{
-  padding:60px 20px;
+  padding:60px 20px 40px 20px;
   background:#f1f3f5 url('../assets/scast-bg.jpg') repeat-x;
     #cast-list{
       list-style:none;
@@ -2364,6 +2364,8 @@ i.icon-location {
         }
         .cast-text{
           padding:0 30px;
+          height:178px;
+          overflow:hidden;
           color:#fff;
           text-align:justify;
           font-size:13px;
@@ -2424,7 +2426,6 @@ i.icon-location {
   }
 }
 .other-screencasts{
-  margin-top:40px;
    .up{
      position:absolute;
      width:100%;
