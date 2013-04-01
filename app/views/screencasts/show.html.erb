@@ -1,3 +1,13 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "fb:app_id", content: ENV["OAUTH_FACEBOOK_APP_ID"] %>
+  <%= tag :meta, property: "og:site_name", content: "Moru" %>
+  <%= tag :meta, property: "og:type", content: "mongolian_rubyist:screencast" %>
+  <%= tag :meta, property: "og:title", content: screencast.title %>
+  <%= tag :meta, property: "og:url", content: screencast_url(screencast) %>
+  <%= tag :meta, property: "og:image", content: screencast.try(:image_url) %>
+  <%= tag :meta, property: "og:video", content: screencast.try(:url) %>
+<% end %>
+
 <div class="event-container">
   <div class="container_10 clearfix">
 	  <div class="grid_10">
