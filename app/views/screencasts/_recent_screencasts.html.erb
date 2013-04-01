@@ -1,0 +1,15 @@
+<div class="other-screencasts">
+  <div class="up"></div>
+  <ul>
+    <% @recent_screencasts.each_with_index do | video, index | %>
+      <li <%= 'class=last' if index == 2 %> >
+        <div class="scast-pic"><%= image_tag(video.image_url)%></div>
+        <h2><%= link_to video.title, screencast_path(video) %></h2>
+        <div class="castshow-tool clearfix">
+          <span class="tool-item"><i class="author-icon"></i><%= video.user.name %></span>
+          <span class="tool-item"><i class="createdby-icon"></i><%= I18n.localize(video.created_at, format: :short) %></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

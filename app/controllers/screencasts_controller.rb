@@ -9,6 +9,7 @@ class ScreencastsController < ApplicationController
 
   def show
     @comments = screencast.comments.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @recent_screencasts = Screencast.limit(3)
     respond_with screencast
   end
 
