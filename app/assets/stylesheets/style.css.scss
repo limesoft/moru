@@ -2582,3 +2582,30 @@ i.icon-location {
     margin: 0 auto;
   }
 }
+
+/*************************************/
+/***** - BEGIN SCREENCASTS LIST -*****/
+.screencast-container{
+  background:#ccc;
+  padding:60px 20px;
+  #screencast-list{
+    ul{
+      li.s-box{
+        width:260px;
+        padding:20px;
+        background:#fff;
+        .screencast-pic{
+          width:260px;
+          height:160px;
+        }
+        h2{
+         font-weight:bold;
+         text-transform:uppercase;
+         color:#00aced;
+         font-size:16px;
+        }
+      }
+    }
+  }
+}
+

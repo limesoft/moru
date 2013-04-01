@@ -1,7 +1,14 @@
-<ul>
-  <% @screencasts.each do |screencast| %>
-    <li>
-      <%= link_to screencast.title, screencast_path(screencast) %>
-    </li>
-  <% end %>
-</ul>
+<div class="screencast-container">
+  <div class="container_10 clearfix">
+    <div class="grid_10">
+      <% @screencasts.each do |screencast| %>
+        <ul id="screencast-list">
+          <%= render partial: 'screencasts/screencast', locals: { screencast: screencast } %>
+        </ul>
+        <p id="back-top">
+          <a href="#top"><span></span>Дээш очих</a>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
