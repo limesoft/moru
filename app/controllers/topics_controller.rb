@@ -11,8 +11,8 @@ class TopicsController < ApplicationController
                   Topic.includes(:user).where("event_id IS NULL").order("created_at DESC")
                 when 'voted'
                   Topic.includes(:user).where("event_id IS NULL").order("cached_votes_up DESC")
-                when 'talked'
-                  Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("topics.created_at DESC")
+                #when 'talked'
+                  #Topic.includes(:user, :event).where("event_id IS NOT NULL AND events.date < ?", DateTime.now).order("topics.created_at DESC")
                 else
                   Topic.includes(:user).order("created_at DESC")
                 end.page(params[:page]).per(5)

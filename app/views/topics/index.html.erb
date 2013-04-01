@@ -17,7 +17,6 @@
 						<% else %>
 							<%= link_to_topic("бүгд", "all") %>
 						<% end %>
-						<%= link_to_topic("яригдсан", "talked") %>
 					</div>
 					<div class="topic-list" id="topic-list">
 						<%= render partial: 'topic', collection: @topics %>
@@ -29,7 +28,7 @@
     <!-- SIDEBAR -->
 		<div class="grid_3">
 			<div class="right-content clearfix">
-				<%= render 'next_event' %>
+				<%= render 'like_box' %>
 			</div>
 		</div>
 
