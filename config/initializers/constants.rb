@@ -25,4 +25,4 @@ STATE_PRO = 'pro'
 STATES = [STATE_FREE, STATE_PRO]
 
 ######################### COMMENTABLE #########################
-COMMENTABLES = [Post, Topic, Screencast]
+COMMENTABLES = [Event, Post, Topic, Screencast]
