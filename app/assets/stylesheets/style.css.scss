@@ -116,7 +116,6 @@ a {
 
 header {
 	display:block;
-	border-bottom:solid 5px #fff;
 	background:#707982;
   height:78px;
 	a.moru-logo{
@@ -448,8 +447,8 @@ header {
 }
 .left-content, .right-content{
 	display:block;
-	margin-top:40px;
   margin-bottom:40px;
+  margin-top:20px;
 }
 .left-content{
 
@@ -619,8 +618,8 @@ header {
 
 }
 .right-content{
-}
 
+}
 footer{
 	padding:30px 0 40px 0;
 	background:#707982;
@@ -710,6 +709,7 @@ footer{
 /************** BEGIN EVENT CSS ***********/
 
 .event-container{
+  background:url('../assets/scast-bg.jpg') repeat-x;
 	#event-list{
 		overflow:hidden;
 		padding:40px 0 0 0;
@@ -2288,7 +2288,7 @@ i.icon-location {
 /***** - BEGIN SCREENCASTS LIST -*****/
 .screencast-container{
   padding:60px 20px;
-  background:#f1f3f5 url('../assets/scast-bg.jpg') no-repeat;
+  background:#f1f3f5 url('../assets/scast-bg.jpg') repeat-x;
     #cast-list{
       list-style:none;
       padding:0;
@@ -2341,6 +2341,83 @@ i.icon-location {
           }
 				}
 			}
+    }
+  }
+  .screencast-show{
+    background:#707982;
+    @include radius(5px);
+    .show-left{
+      float:left;
+      width:300px;
+      padding:20px 0;
+      background:#5f6871;
+        h2{
+         font-weight:bold;
+         text-transform:uppercase;
+         color:#7fcde8;
+         font-size:16px;
+         line-height:24px;
+         margin-left:30px;
+         margin-bottom:20px;
+        }
+        .cast-text{
+          padding:0 30px;
+          color:#fff;
+          text-align:justify;
+          font-size:13px;
+        }
+			.castshow-tool{
+        background:#707982;
+        padding:10px 0 10px 30px;
+				span.tool-item{
+					float:left;
+					color:#fff;
+					font-size:11px;
+          margin:0 20px 0 0;
+          text-transform: uppercase;
+          .author-icon{
+            float:left;
+            width:10px;
+            height:10px;
+            margin:5px 10px 0 0 ;
+            background:image-url("sprite.png") -220px -100px no-repeat;
+          }
+          .createdby-icon{
+            float:left;
+            width:10px;
+            height:10px;
+            margin:5px 10px 0 0 ;
+            background:image-url("sprite.png") -180px -100px no-repeat;
+          }
+				}
+      }
+        .social-links{
+          padding-left:30px;
+          padding-top:20px;
+          a{
+            float:left;
+            width:40px;
+            height:40px;
+            margin-right:20px;
+            @include radius(5px);
+            background-color:#707982;
+           }
+           a.tweet-event{
+             background:#707982 image-url("sprite.png") -135px 5px no-repeat;
+           }
+           a.fb-event{
+             background:#707982 image-url("sprite.png") -255px 5px no-repeat;
+           }
+           a.gplus-event{
+             background:#707982 image-url("sprite.png") -215px 5px no-repeat;
+           }
+        }
+    }
+    .show-right{
+      float:right;
+      width:640px;
+      height:352px;
+      padding:10px;
     }
   }
 }

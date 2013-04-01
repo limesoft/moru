@@ -7,16 +7,51 @@
   <%= tag :meta, property: "og:image", content: screencast.try(:image_url) %>
   <%= tag :meta, property: "og:video", content: screencast.try(:url) %>
 <% end %>
-
-<div class="event-container">
+<div class="screencast-container">
   <div class="container_10 clearfix">
 	  <div class="grid_10">
-
-      <!-- LEFT CONTAINER -->
-		  <div class="grid_7 alpha">
-			  <div class="left-content">
+      <div class="screencast-show clearfix">
+        <div class="show-left">
           <h2><%= screencast.title %></h2>
+          <div class="cast-text"><%= raw(screencast.content) %></div>
+          <div class="castshow-tool clearfix">
+            <span class="tool-item"><i class="author-icon"></i><%= screencast.user.name %></span>
+            <span class="tool-item"><i class="createdby-icon"></i><%= I18n.localize(screencast.created_at, format: :short) %></span>
+          </div>
+		      <div class="social-links clearfix">
+      			<a onclick="return !window.open(this.href, 'Twitter', 'width=640,height=300')" class="tweet-event" target="_blank" href="https://twitter.com/share?url=<%= screencast_url(screencast) %>"></a>
+      			<a class="fb-event" target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<%= screencast_url(screencast) %>"></a>
+      			<a class="gplus-event" onclick="return !window.open(this.href, 'GooglePlus', 'width=640,height=300')" href="https://plus.google.com/share?url=<%=screencast_url(screencast) %>" target="_blank" ></a>
+	    		</div>
+        </div>
+        <div class="show-right">
+          <embed
+            width="640" height="352px"
+            src="<%= screencast.url %>"
+            type="application/x-shockwave-flash">
+          </embed>
+            <object width="640" height="352">
+              <param name="movie" value="<%= screencast.url %>">
+              </param>
+              <param name="wmode" value="transparent">
+              </param>
+              <embed src="<%= screencast.url %>" 
+              type="application/x-shockwave-flash" wmode="transparent" 
+              width="640" height="352">
+              </embed>
+            </object>
+          </div>
+      </div>
+      <!-- LEFT CONTAINER -->
+		  <div class="grid_3 alpha">
+        <div class="left-content">
+          <%= render 'like_box' %>
+        </div>
+      </div>
 
+      <!-- SIDEBAR -->
+		  <div class="grid_7 omega">
+        <div class="right-content clearfix">
           <!-- COMMENTS -->
           <%= render(partial: 'comments/comments',
                      locals: {
@@ -24,13 +59,6 @@
                         pagination_url: screencast_comments_path(screencast),
                         commentable: screencast
                     }) %>
-        </div>
-      </div>
-
-      <!-- SIDEBAR -->
-		  <div class="grid_3 omega">
-        <div class="right-content clearfix">
-				  <%= render 'like_box' %>
         </div>
       </div>
 
