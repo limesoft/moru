@@ -41,6 +41,14 @@ jQuery ->
 
   $(".alerts").alert()
 
+  if $('#cast-list').length > 0
+    $('#cast-list').masonry(
+      itemSelector: ".s-box"
+      , gutterWidth: 30
+      , layoutPriorities: { upperPosition: 1, shelfOrder: 1 }
+      , isAnimated: true
+    )
+
   #$("a[rel*=tooltip]").tooltip('placement': 'bottom', 'trigger':'hover', delay: {show: 100, hide: 100} )
   $("body").tooltip
     placement: "bottom"

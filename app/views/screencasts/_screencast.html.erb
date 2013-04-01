@@ -1,0 +1,9 @@
+<li class="s-box">
+<div class="screencast-pic"><%= image_tag(screencast.image_url) %></div>
+  <h2><%= link_to screencast.title, screencast_path(screencast) %></h2>
+  <span><%= raw(screencast.content) %></span>
+  <div class="screencast-tool clearfix">
+    <span class="tool-item"><i class="author-icon"></i><%= screencast.user.name %></span>
+    <span class="tool-item"><i class="createdby-icon"></i><%= I18n.localize(screencast.created_at, format: :short) %></span>
+  </div>
+</li>
