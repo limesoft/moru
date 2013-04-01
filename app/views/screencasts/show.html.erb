@@ -30,9 +30,15 @@
       </div>
       <!-- LEFT CONTAINER -->
 		  <div class="grid_3 alpha">
-        <div class="left-content">
-          <%= render 'recent_screencasts' %>
-        </div>
+        <% if @recent_screencasts.size > 0 %>
+          <div class="left-content">
+            <%= render 'recent_screencasts' %>
+          </div>
+        <% else %>
+			    <div class="right-content clearfix">
+            <%= render 'like_box' %>
+          </div>
+        <% end %>
       </div>
 
       <!-- SIDEBAR -->
